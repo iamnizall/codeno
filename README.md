@@ -9,7 +9,7 @@
 
 # About CODENO
 
-## Atur databasemu sesuai environment.
+## Atur environment sesuai databasemu. atau sebaaliknya
 
 ## migration dll
 
