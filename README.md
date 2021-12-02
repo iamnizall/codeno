@@ -7,12 +7,12 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## About CODENO
+# About CODENO
 
-# Atur databasemu sesuai environment.
+## Atur databasemu sesuai environment.
 
-# migration dll
+## migration dll
 
-# isi data lewat api . example data nek data.json
+## isi data lewat api . example data nek data.json
 
-#
+
