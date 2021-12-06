@@ -173,13 +173,27 @@
 					</div>
 				</div>
 
-				{{-- row 3 --}}
+				{{-- row 3 Note n Signature --}}
 
 				<div class="row mt-4">
 					<div class="col">
 						<div class="card">
 							<div class="card-body">
-								<h2><i class="fas fa-print"></i> Print PDF?</h2>
+								<div class="row">
+									<div class="col">
+										<input type="text" class="form-control" name="notes" value="{{ old('note') }}" placeholder="Note">
+									</div>
+									<div class="col">
+										<input id="signature" type="text" class="form-control" name="signature" value="{{ old('signature') }}" placeholder="signature">
+									</div>
+								</div>
+								<div class="row">
+									<div class="col">
+										<div class="card mt-4 text-center">
+											<h1> <i class="fas fa-print"></i> Print?</h1>
+										</div>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -243,8 +257,9 @@
 		$('#norek').on('change', function(){
 			var norek = $(this). children("option:selected"). val()
 			$('#account').val(norek);
-
 		});
+
+
 	});
 </script>
 @endsection
