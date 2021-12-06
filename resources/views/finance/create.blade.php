@@ -200,7 +200,11 @@
 						
 						{{-- submit --}}
 						<div class="text-center mt-4">
-							<button style="width: 200px;" type="submit" class="btn btn-primary mx-auto">save</button>
+							<button style="width: 200px;" type="submit" class="btn btn-primary b-on mx-auto">save</button>
+							<button class="btn btn-primary d-none b-of" type="button" disabled>
+								<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+								Loading...
+							</button>
 						</div>
 
 					</div>
@@ -264,6 +268,11 @@
 			var norek = $(this). children("option:selected"). val()
 			$('#account').val(norek);
 		});
+
+		$('.btn').click(function(){
+			$('.b-on').toggleClass('d-none');
+			$('.b-of').toggleClass('d-none');
+		})
 
 
 	});
