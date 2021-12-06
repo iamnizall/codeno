@@ -28,7 +28,8 @@ class InvoiceController extends Controller
      */
     public function create()
     {
-        return view('finance.create');
+        $npo = Invoice::orderby('id', 'DESC')->first();
+        return view('finance.create', compact('npo'));
     }
 
     /**

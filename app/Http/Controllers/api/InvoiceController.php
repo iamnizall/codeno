@@ -19,13 +19,13 @@ class InvoiceController extends Controller
      */
     public function index()
     {
-        // $invoice = Invoice::orderby('id', 'DESC')->get();
+        // $invoice = Invoice::orderby('id', 'DESC')->first(); //mengambil 1 data terakhir
         $invoice = DataTables::of(Invoice::all())->make(true);
         $response=[
             'msg' => 'list invoice table orderby id',
             'data' =>$invoice
         ];
-
+        // return view('test',compact('invoice'));
         return response()->json($response, Response::HTTP_OK); 
     }
 
