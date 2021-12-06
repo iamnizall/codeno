@@ -6,6 +6,7 @@
 	<div class="card">
 
 		@php
+		$now = date('D-M-Y');
 		$scode = 'BBBAIDJA';
 		if($npo == null){
 			$hs = 'KEB-00' . (0 + 1) . date('/m/Y');
@@ -90,14 +91,14 @@
 					</div>
 					{{-- tax --}}
 					<div class="col">
-						<select class="form-control">
+						<select name="tax" id="tax" class="form-control">
 							<option>Tax</option>
-							<option>PPN 10%</option>
-							<option>PPh 21 (freelancer NPWP)</option>
-							<option>PPh 21 (freelancer non NPWP)</option>
-							<option>PPh 21 (expert NPWP)</option>
-							<option>PPh 21 (expert non NPWP)</option>
-							<option>PPh 23 (vendor)</option>
+							<option value="0.12">PPN 10%</option>
+							<option value="0.05">PPh 21 (freelancer NPWP)</option>
+							<option value="0.06">PPh 21 (freelancer non NPWP)</option>
+							<option value="0.025">PPh 21 (expert NPWP)</option>
+							<option value="0.03">PPh 21 (expert non NPWP)</option>
+							<option value="0.02">PPh 23 (vendor)</option>
 						</select>
 					</div>
 				</div>
@@ -105,14 +106,14 @@
 				<div class="form-row mt-4">
 					{{-- account --}}
 					<div class="col">
-						<input id="account" type="text" class="form-control" name="account" id="account" readonly>
+						<input id="account" type="text" class="form-control" readonly>
 					</div>
 					{{-- date --}}
 					<div class="col">
-						<input type="text" class="form-control" readonly placeholder="Invoice Date">
+						<input type="text" name="indate" value="{{ $now }}" class="form-control" readonly>
 					</div>
 					<div class="col">
-						<select id="norek" class="form-control">
+						<select id="norek" name="norek" class="form-control">
 							<option value="">No. Rekening</option>
 							<option value="070 1137302">IDR</option>
 							<option value="0902211411">Dollar</option>
@@ -196,6 +197,12 @@
 								</div>
 							</div>
 						</div>
+						
+						{{-- submit --}}
+						<div class="text-center mt-4">
+							<button style="width: 200px;" type="submit" class="btn btn-primary mx-auto">save</button>
+						</div>
+
 					</div>
 					<div class="col">
 						<div class="card-body">
@@ -220,16 +227,13 @@
 							<div class="form-group row">
 								<label for="staticEmail" class="col-sm-6 col-form-label"><b>Grand Total</b></label>
 								<div class="col-sm-6">
-									<input type="text" id="stotal" readonly class="form-control-plaintext stotal" value="0">
+									<input type="text" name="stotal" id="stotal" readonly class="form-control-plaintext stotal" value="0">
 								</div>
 							</div>
 							<hr>
 							
 						</div>
 					</div>
-				</div>
-				<div style="text-align: center;">
-					<button style="width: 200px;" type="submit" class="btn btn-primary mx-auto">save</button>
 				</div>
 
 			</form>
@@ -240,17 +244,19 @@
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script type="text/javascript">
 	$(document).ready(function() {
-		$("#vol, #price").keyup(function() {
+		$("#vol, #price, #tax").keyup(function() {
 			var price  = $("#price").val();
 			var vol = $("#vol").val();
+			// var tax = $('#tax').find('option:selected').val();
+			var tax = $('#tax'). children("option:selected").val();
 
 			var total = parseInt(price) * parseInt(vol);
 			$("#total").val(total);
 
-			var fax = total * 0.02;
+			var fax = total * parseFloat(tax);
 			$('#fax').val(fax);
 
-			var stotal = total - fax;
+			var stotal = total + fax;
 			$("#stotal").val(stotal);
 		});
 

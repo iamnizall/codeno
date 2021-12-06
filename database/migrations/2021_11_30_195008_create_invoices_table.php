@@ -23,11 +23,14 @@ class CreateInvoicesTable extends Migration
             $table->string('mail');
             $table->string('client');
             $table->string('payment');
-            $table->string('account');
+            $table->string('tax');
+            $table->string('indate');
+            $table->string('norek');
             $table->string('job_desc');
             $table->integer('vol');
-            $table->integer('unit');
+            $table->string('unit');
             $table->integer('price');
+            $table->integer('stotal');
             $table->string('notes');
             $table->string('signature');
             $table->timestamps();

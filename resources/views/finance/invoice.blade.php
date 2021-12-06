@@ -33,7 +33,7 @@
 					<td>{{ $inv->client }}</td>
 					<td>{{ $inv->job_desc }}</td>
 					<td>{{ $inv->signature }}</td>
-					<td>IDR {{ ($inv->price)*($inv->vol) }},-</td>
+					<td>IDR {{ $inv->stotal }},-</td>
 					<td>
 						<a href="{{ route('invoice.edit', $inv->id) }}" class="btn btn-info d-inline"><i class="fas fa-edit"></i></a>
 						<form method="POST" action="{{ route('invoice.destroy', $inv->id) }}" class="d-inline">
