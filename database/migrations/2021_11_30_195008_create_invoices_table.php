@@ -17,22 +17,22 @@ class CreateInvoicesTable extends Migration
             $table->id();
             $table->string('no_inv');
             $table->string('s_code');
-            $table->timestamp('date');        
+            $table->string('date');        
             $table->string('no_po');
             $table->string('address');
             $table->string('mail');
             $table->string('client');
-            $table->string('payment');
+            $table->string('payment')->nullable();
             $table->string('tax');
             $table->string('indate');
             $table->string('norek');
             $table->string('job_desc');
             $table->integer('vol');
-            $table->string('unit');
+            $table->string('unit')->nullable();
             $table->integer('price');
             $table->integer('stotal');
-            $table->string('notes');
-            $table->string('signature');
+            $table->string('notes')->nullable();
+            $table->string('signature')->nullable();
             $table->timestamps();
         });
     }

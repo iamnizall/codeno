@@ -42,7 +42,13 @@ class InvoiceController extends Controller
     {
         $this->validate($request,[
             'no_inv' => 'required|min:5',
-            's_code' => 'required|min:7'
+            's_code' => 'required|min:7',
+            'date' => 'required',
+            'address' => 'required',
+            'mail' => 'required',
+            'client' => 'required',
+            'job_desc' => 'required',
+            'price' => 'required'
         ]);
         Invoice::create($request->all());
 
