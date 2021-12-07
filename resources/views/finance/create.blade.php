@@ -38,7 +38,7 @@
                             <label for="date">Due Date</label>
                             <input id="date" type="text"
                                 class="form-control{{ $errors->has('date') ? ' is-invalid' : '' }}" name="date"
-                                value="{{ old('date') }}">
+                                value="{{ old('date') }}" autocomplete="off">
 
                             @if ($errors->has('date'))
                                 <span class="invalid-feedback" role="alert">

@@ -52,12 +52,12 @@
                             <td>IDR {{ $inv->stotal }},-</td>
                             <td>
                                 <a href="{{ route('invoice.edit', $inv->id) }}" class="btn btn-info d-inline"><i
-                                        class="fas fa-edit"></i></a>
+                                        class="fas fa-edit fa-1x"></i></a>
                                 <form method="POST" action="{{ route('invoice.destroy', $inv->id) }}"
                                     class="d-inline">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" class="btn btn-danger"><i class="fas fa-trash"></i></button>
+                                    <button type="submit" class="btn btn-danger" style="height: 35px"><i class="fas fa-trash-alt"></i></button>
                                 </form>
                             </td>
                         </tr>
