@@ -47,6 +47,7 @@ class InvoiceController extends Controller
             'address'  => 'required',
             'mail'     => 'required',
             'client'   => 'required',
+            'norek'   => 'required',
             'job_desc' => 'required',
             'vol'      => 'required',
             'price'    => 'required'
@@ -105,8 +106,8 @@ class InvoiceController extends Controller
 
     public function search(Request $request)
     {
-     $keyword = $request->search;
-     $invc = Invoice::where('client', 'like', "%" . $keyword . "%")->paginate(5);
-     return view('finance.invoice', compact('invc'))->with('i', (request()->input('page', 1) - 1) * 5);
- }
+       $keyword = $request->search;
+       $invc = Invoice::where('client', 'like', "%" . $keyword . "%")->paginate(5);
+       return view('finance.invoice', compact('invc'))->with('i', (request()->input('page', 1) - 1) * 5);
+   }
 }
