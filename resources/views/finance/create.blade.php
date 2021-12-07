@@ -22,16 +22,19 @@
 				{{-- row 1 --}}
 				<div class="form-row">
 					{{-- no invoice --}}
-					<div class="col">
+					<div class="col">		
+						<label for="no_inv">No. Invoice</label>
 						<input id="no_inv" type="text" class="form-control" name="no_inv" readonly value="{{ $hs }}">
 					</div>
 					{{-- s_code --}}
 					<div class="col">
+						<label for="s_code">Swift Code</label>
 						<input id="s_code" type="text" class="form-control" name="s_code" value="{{ $scode }}" readonly>
 					</div>
 					{{-- date --}}
 					<div class="col">
-						<input id="date" type="date" class="form-control{{ $errors->has('date') ? ' is-invalid' : '' }}" name="date" value="{{ old('date') }}" placeholder="Due Date">
+						<label for="date">Due Date</label>
+						<input id="date" type="date" class="form-control{{ $errors->has('date') ? ' is-invalid' : '' }}" name="date" value="{{ old('date') }}" >
 
 						@if ($errors->has('date'))
 						<span class="invalid-feedback" role="alert">
@@ -44,11 +47,13 @@
 				<div class="form-row mt-4">
 					{{-- no po --}}
 					<div class="col">
+						<label for="no_po">No. PO</label>
 						<input id="no_po" type="text" class="form-control" name="no_po" value="{{ $hs }}" readonly>
 					</div>
 					{{-- address --}}
 					<div class="col">
-						<input id="address" type="text" class="form-control{{ $errors->has('address') ? ' is-invalid' : '' }}" name="address" value="{{ old('address') }}" placeholder="Address">
+						<label for="address">Address</label>
+						<input id="address" type="text" class="form-control{{ $errors->has('address') ? ' is-invalid' : '' }}" name="address" value="{{ old('address') }}" >
 
 						@if ($errors->has('address'))
 						<span class="invalid-feedback" role="alert">
@@ -58,7 +63,8 @@
 					</div>
 					{{-- email --}}
 					<div class="col">
-						<input id="mail" type="text" class="form-control{{ $errors->has('mail') ? ' is-invalid' : '' }}" name="mail" value="{{ old('mail') }}" placeholder="Email">
+						<label for="mail">Email</label>
+						<input id="mail" type="text" class="form-control{{ $errors->has('mail') ? ' is-invalid' : '' }}" name="mail" value="{{ old('mail') }}" >
 
 						@if ($errors->has('mail'))
 						<span class="invalid-feedback" role="alert">
@@ -71,7 +77,8 @@
 				<div class="form-row mt-4">
 					{{-- client name --}}
 					<div class="col">
-						<input id="client" type="text" class="form-control{{ $errors->has('client') ? ' is-invalid' : '' }}" name="client" value="{{ old('client') }}" placeholder="Client Name">
+						<label for="client">Client</label>
+						<input id="client" type="text" class="form-control{{ $errors->has('client') ? ' is-invalid' : '' }}" name="client" value="{{ old('client') }}">
 
 						@if ($errors->has('client'))
 						<span class="invalid-feedback" role="alert">
@@ -81,7 +88,8 @@
 					</div>
 					{{-- paayment --}}
 					<div class="col">
-						<input id="payment" type="text" class="form-control{{ $errors->has('payment') ? ' is-invalid' : '' }}" name="payment" value="{{ old('payment') }}" placeholder="Down Payment">
+						<label for="payment">Down Payment</label>
+						<input id="payment" type="text" class="form-control{{ $errors->has('payment') ? ' is-invalid' : '' }}" name="payment" value="{{ old('payment') }}" >
 
 						@if ($errors->has('payment'))
 						<span class="invalid-feedback" role="alert">
@@ -91,6 +99,7 @@
 					</div>
 					{{-- tax --}}
 					<div class="col">
+						<label for="tax">Tax</label>
 						<select name="tax" id="tax" class="form-control">
 							<option>Tax</option>
 							<option value="0.12">PPN 10%</option>
@@ -106,20 +115,24 @@
 				<div class="form-row mt-4">
 					{{-- account --}}
 					<div class="col">
+						<label for="account">Account</label>
 						<input id="account" type="text" class="form-control" readonly>
 					</div>
 					{{-- date --}}
 					<div class="col">
+						<label for="text">Invoice Date</label>
 						<input type="text" name="indate" value="{{ $now }}" class="form-control" readonly>
 					</div>
 					<div class="col">
+						<label for="norek">No. Rekening</label>
 						<select id="norek" name="norek" class="form-control">
 							<option value="">No. Rekening</option>
-							<option value="070 1137302">IDR</option>
-							<option value="0902211411">Dollar</option>
-							<option value="090 2212221">Euro</option>
-							<option value="3590119073">IDR(Danamon Bank)</option>
-							<option value="financedept@bintang‐35.net">Paypal</option>
+								<option value="070 1137302">IDR</option>
+								<option value="0902211411">Dollar</option>
+								<option value="090 2212221">Euro</option>
+								<option value="3590119073">IDR(Danamon Bank)</option>
+								<option value="financedept@bintang‐35.net">Paypal</option>
+							
 						</select>
 					</div>
 				</div>
@@ -129,7 +142,8 @@
 						<div class="form-row mt">
 							{{-- job desc --}}
 							<div class="col">
-								<input id="job_desc" type="text" class="form-control{{ $errors->has('job_desc') ? ' is-invalid' : '' }}" name="job_desc" value="{{ old('job_desc') }}" placeholder="Job Description">
+								<label for="job_desc">Job Description</label>
+								<input id="job_desc" type="text" class="form-control{{ $errors->has('job_desc') ? ' is-invalid' : '' }}" name="job_desc" value="{{ old('job_desc') }}">
 
 								@if ($errors->has('job_desc'))
 								<span class="invalid-feedback" role="alert">
@@ -139,7 +153,8 @@
 							</div>
 							{{-- vol --}}
 							<div class="col">
-								<input id="vol" type="text" class="form-control{{ $errors->has('vol') ? ' is-invalid' : '' }}" name="vol" value="{{ old('vol') }}" placeholder="Volume">
+								<label for="vol">Volume</label>
+								<input id="vol" type="text" class="form-control{{ $errors->has('vol') ? ' is-invalid' : '' }}" name="vol" value="{{ old('vol') }}" >
 
 								@if ($errors->has('vol'))
 								<span class="invalid-feedback" role="alert">
@@ -149,7 +164,8 @@
 							</div>
 							{{-- unit --}}
 							<div class="col">
-								<input id="unit" type="text" class="form-control{{ $errors->has('unit') ? ' is-invalid' : '' }}" name="unit" value="{{ old('unit') }}" placeholder="Unit">
+								<label for="unit">Unit</label>
+								<input id="unit" type="text" class="form-control{{ $errors->has('unit') ? ' is-invalid' : '' }}" name="unit" value="{{ old('unit') }}">
 
 								@if ($errors->has('unit'))
 								<span class="invalid-feedback" role="alert">
@@ -159,7 +175,8 @@
 							</div>
 							{{-- price --}}
 							<div class="col">
-								<input id="price" type="text" class="form-control{{ $errors->has('price') ? ' is-invalid' : '' }}" name="price" value="{{ old('price') }}" placeholder="Unit Price IDR">
+								<label for="price">Price</label>
+								<input id="price" type="text" class="form-control{{ $errors->has('price') ? ' is-invalid' : '' }}" name="price" value="{{ old('price') }}">
 
 								@if ($errors->has('price'))
 								<span class="invalid-feedback" role="alert">
@@ -168,7 +185,8 @@
 								@endif
 							</div>
 							<div class="col">
-								<input id="total" type="text" class="form-control" readonly placeholder="Amount IDR">
+								<label for="total">Amount</label>
+								<input id="total" type="text" class="form-control" readonly>
 							</div>
 						</div>
 					</div>
@@ -182,17 +200,12 @@
 							<div class="card-body">
 								<div class="row">
 									<div class="col">
-										<input type="text" class="form-control" name="notes" value="{{ old('note') }}" placeholder="Note">
+										<label for="text">Note</label>
+										<input type="text" class="form-control" name="notes" value="{{ old('note') }}" >
 									</div>
 									<div class="col">
-										<input id="signature" type="text" class="form-control" name="signature" value="{{ old('signature') }}" placeholder="signature">
-									</div>
-								</div>
-								<div class="row">
-									<div class="col">
-										<div class="card mt-4 text-center">
-											<h1> <i class="fas fa-print"></i> Print?</h1>
-										</div>
+										<label for="signature">Signature</label>
+										<input id="signature" type="text" class="form-control" name="signature" value="{{ old('signature') }}">
 									</div>
 								</div>
 							</div>
@@ -200,7 +213,8 @@
 						
 						{{-- submit --}}
 						<div class="text-center mt-4">
-							<button style="width: 200px;" type="submit" class="btn btn-primary b-on mx-auto">save</button>
+							<button class="btn btn-success mx-3" style="width: 150px;" type="submit"><i class="fas fa-print"></i> Print</button>
+							<button style="width: 150px;" type="submit" class="btn btn-primary b-on mx-auto"><i class="far fa-save fa-lg"></i> save</button>
 							<button class="btn btn-primary d-none b-of" type="button" disabled>
 								<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
 								Loading...
@@ -215,7 +229,7 @@
 							<div class="form-group row">
 								<label for="staticEmail" class="col-sm-6 col-form-label">Total Cost</label>
 								<div class="col-sm-6">
-									<input type="text" readonly class="form-control-plaintext stotal"  value="0">
+									<input type="text" id="cost" readonly class="form-control-plaintext stotal"  value="0">
 								</div>
 							</div>
 							<hr>
@@ -260,7 +274,8 @@
 			var fax = total * parseFloat(tax);
 			$('#fax').val(fax);
 
-			var stotal = total + fax;
+			var stotal = total - fax;
+			$("#cost").val(total);
 			$("#stotal").val(stotal);
 		});
 

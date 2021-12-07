@@ -1,50 +1,68 @@
 @extends('layouts.main')
-
 @section('content')
 
-<div class="container">
-	<div class="row">
+            <!-- Main content -->
+            <section class="content">
+                {{-- @include('layouts.dashboard') --}}
+                <div class="container-fluid">
+                    <!-- Small boxes (Stat box) -->
+                    <div class="row">
+                        <div class="col-lg-4 col-6">
+                            <!-- small box -->
+                            <div class="small-box bg-info">
+                                <div class="inner">
+                                    <h3>{{ $invc }}</h3>
+                
+                                    <p>Invoice</p>
+                                </div>
+                                <div class="icon">
+                                    <i class="ion ion-bag"></i>
+                                </div>
 
-		{{-- invoice --}}
-		<div class="col-sm">
-			<div class="card">
-				<div class="card-body">
-					<h5><i class="fas fa-shopping-bag"></i> Invoice</h5>
-					<h2 class="d-inline">{{ $invc }}</h2> 
-					<span class="badge badge-success float-right d-inline">+3.5 %</span>
-				</div>
-			</div>
-		</div>
+                            </div>
+                        </div>
+                        <!-- ./col -->
+                        <div class="col-lg-4 col-6">
+                            <!-- small box -->
+                            <div class="small-box bg-success">
+                                <div class="inner">
+                                    <h3>53<sup style="font-size: 20px">%</sup></h3>
+                
+                                    <p>BAST</p>
+                                </div>
+                                <div class="icon">
+                                    <i class="fas fa-archive"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ./col -->
+                        <div class="col-lg-4 col-12">
+                            <!-- small box -->
+                            <div class="small-box bg-warning">
+                                <div class="inner">
+                                    <h3>{{ $invcvol }}</h3>
+                
+                                    <p>Project</p>
+                                </div>
+                                <div class="icon">
+                                    <i class="fas fa-tasks"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-		{{-- bast --}}
-		<div class="col-sm">
-			<div class="card">
-				<div class="card-body">
-					<h5><i class="fas fa-archive"></i> BAST</h5>
-					<h2 class="d-inline">value</h2> 
-					<span class="badge badge-success float-right d-inline">+3.5 %</span>
-				</div>
-			</div>
-		</div>
+                    <div class="card">
+                        <div class="card-header">
+                                <i class="fas fa-tasks"></i> Project
+                        </div>
+                        <div class="card-body">
+                            tes
+                        </div>
+                    </div>
 
-		{{-- project --}}
-		<div class="col-sm">
-			<div class="card">
-				<div class="card-body">
-					<h5><i class="fas fa-file-code"></i> Project</h5>
-					<h2 class="d-inline">{{ $invcvol }}</h2> 
-					<span class="badge badge-success float-right d-inline">+3.5 %</span>
-				</div>
-			</div>
-		</div>
+                </div>
+                
+            </section>
 
-	</div>
-	<div class="card mt-4">
-		<div class="card-header"><i class="fas fa-file-code"></i> <b>Project</b></div>
-		<div class="card-body">
-			<h1>chart</h1>
-		</div>
-	</div>
-</div>
 
-@endsection
+        @endsection
