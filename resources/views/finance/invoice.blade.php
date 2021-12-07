@@ -9,6 +9,15 @@
 			<a href="{{ url('http://127.0.0.1:8000/finance/invoice/create') }}" class="btn btn-primary float-right d-inline"><i class="fas fa-plus"></i> Create Invoice</a>
 		</div>
 
+		<div class="card-body">
+			<form class="form-inline float-right my-3 my-lg-0" method="POST" action="{{ route('finance.invoice.search') }}">
+				@csrf
+				<input class="form-control mr-sm-2" type="search" name="search" placeholder="Search" aria-label="Search">
+				<button type="submit" class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+			</form>
+		</div>
+
+
 		<table class="table">
 			<thead class="thead-light">
 				<tr>
@@ -49,6 +58,9 @@
 				@endforeach
 			</tbody>
 		</table>
+	</div>
+	<div class="d-flex float-right">
+		{!! $invc->links('pagination::bootstrap-4') !!}
 	</div>
 </div>
 @endsection
