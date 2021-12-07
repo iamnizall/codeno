@@ -34,7 +34,7 @@
 					{{-- date --}}
 					<div class="col">
 						<label for="date">Due Date</label>
-						<input id="date" type="date" class="form-control{{ $errors->has('date') ? ' is-invalid' : '' }}" name="date" value="{{ old('date') }}" >
+						<input id="date" type="text" class="form-control{{ $errors->has('date') ? ' is-invalid' : '' }}" name="date" value="{{ old('date') }}" >
 
 						@if ($errors->has('date'))
 						<span class="invalid-feedback" role="alert">

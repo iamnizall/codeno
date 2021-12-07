@@ -30,6 +30,18 @@
     <link rel="stylesheet" href="{{ asset('') }}assets/plugins/daterangepicker/daterangepicker.css">
     <!-- summernote -->
     <link rel="stylesheet" href="{{ asset('') }}assets/plugins/summernote/summernote-bs4.min.css">  
+
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://momentjs.com/downloads/moment.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+    $( function() {
+      $( "#date" ).datepicker({                  
+        minDate: moment().add('d', 0).toDate(),
+      });
+    } );
+    </script>
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -322,6 +334,7 @@ All rights reserved.
     <script src="{{ asset('') }}assets/dist/js/demo.js"></script>
     <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
     <script src="{{ asset('') }}assets/dist/js/pages/dashboard.js"></script>
+    
 </body>
 
 </html>
