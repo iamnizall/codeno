@@ -71,35 +71,63 @@
     <script src="https://code.highcharts.com/highcharts.js"></script>\
     <script>
         Highcharts.chart('chart', {
-
+            chart: {
+                type: 'spline'
+            },
             title: {
                 text: ''
             },
-
             xAxis: {
-                tickInterval: 1,
-                type: 'logarithmic',
-                accessibility: {
-                    rangeDescription: 'Range: 1 to 10'
-                }
+                categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+                    'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'
+                ]
             },
-
             yAxis: {
-                type: 'logarithmic',
-                minorTickInterval: 0.1,
-                accessibility: {
-                    rangeDescription: 'Range: 0.1 to 1000'
+                title: {
+                    text: ''
+                },
+                labels: {
+                    formatter: function() {
+                        return this.value + '';
+                    }
                 }
             },
-
             tooltip: {
-                headerFormat: '<b>{series.name}</b><br />',
-                pointFormat: 'x = {point.x}, y = {point.y}'
+                crosshairs: true,
+                shared: true
             },
-
+            plotOptions: {
+                spline: {
+                    marker: {
+                        radius: 4,
+                        lineColor: '#666666',
+                        lineWidth: 1
+                    }
+                }
+            },
             series: [{
-                data: [1, 2, 4, 8, 16, 32, 64, 128, 256, 512],
-                pointStart: 1
+                name: 'Tokyo',
+                marker: {
+                    symbol: 'square'
+                },
+                data: [1000,2000,3000,4000,5000, {
+                    y: 2000,
+                    marker: {
+                        symbol: 'url(https://www.highcharts.com/samples/graphics/sun.png)'
+                    }
+                }, 1000]
+
+            }, {
+                name: 'London',
+                marker: {
+                    symbol: 'diamond'
+                },
+                data: [{
+                    y: 3000,
+                    marker: {
+                        symbol: 'url(https://www.highcharts.com/samples/graphics/snow.png)'
+                    }
+                }, 1000,2000,3000,4000,5000]
             }]
         });
     </script>
