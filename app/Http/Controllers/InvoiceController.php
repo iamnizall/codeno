@@ -48,6 +48,7 @@ class InvoiceController extends Controller
             'mail' => 'required',
             'client' => 'required',
             'job_desc' => 'required',
+            'vol' => 'required',
             'price' => 'required'
         ]);
         Invoice::create($request->all());
