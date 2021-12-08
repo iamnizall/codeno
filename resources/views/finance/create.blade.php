@@ -34,7 +34,7 @@
 					{{-- date --}}
 					<div class="col">
 						<label for="date">Due Date</label>
-						<input id="date" type="text" class="form-control{{ $errors->has('date') ? ' is-invalid' : '' }}" name="date" value="{{ old('date') }}" >
+						<input id="date" type="text" class="form-control{{ $errors->has('date') ? ' is-invalid' : '' }}" name="date" value="{{ old('date') }}" autocomplete="off">
 
 						@if ($errors->has('date'))
 						<span class="invalid-feedback" role="alert">
@@ -100,7 +100,7 @@
 					{{-- tax --}}
 					<div class="col">
 						<label for="tax">Tax</label>
-						<select name="tax" id="tax" class="form-control">
+						<select name="tax" id="tax" class="form-control" required>
 							<option>Tax</option>
 							<option value="0.12">PPN 10%</option>
 							<option value="0.05">PPh 21 (freelancer NPWP)</option>
@@ -125,13 +125,13 @@
 					</div>
 					<div class="col">
 						<label for="norek">No. Rekening</label>
-						<select id="norek" name="norek" class="form-control">
+						<select id="norek" name="norek" class="form-control" required>
 							<option value="">No. Rekening</option>
-								<option value="070 1137302">IDR</option>
-								<option value="0902211411">Dollar</option>
-								<option value="090 2212221">Euro</option>
-								<option value="3590119073">IDR(Danamon Bank)</option>
-								<option value="financedept@bintang‐35.net">Paypal</option>
+							<option value="070 1137302">IDR</option>
+							<option value="0902211411">Dollar</option>
+							<option value="090 2212221">Euro</option>
+							<option value="3590119073">IDR(Danamon Bank)</option>
+							<option value="financedept@bintang‐35.net">Paypal</option>
 							
 						</select>
 					</div>
