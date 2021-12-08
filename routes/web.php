@@ -22,6 +22,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/bast', function () {
+    return view('finance.bast',["title" => "BAST"
+]);
+});
+
+Route::get('/newbast', function () {
+    return view('finance.createbast',["title" => "BAST"
+]);
+});
+
 // Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
