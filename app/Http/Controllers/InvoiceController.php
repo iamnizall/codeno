@@ -17,8 +17,9 @@ class InvoiceController extends Controller
      */
     public function index()
     {
+        $title = "Invoice Out";
         $invc = Invoice::orderBy('id', 'DESC')->paginate(10);
-        return view('finance.invoice', compact('invc'));
+        return view('finance.invoice', compact('invc', 'title'));
     }
 
     /**
@@ -28,8 +29,9 @@ class InvoiceController extends Controller
      */
     public function create()
     {
+        $title = "Create invoice";
         $npo = Invoice::orderby('id', 'DESC')->first();
-        return view('finance.create', compact('npo'));
+        return view('finance.create', compact('npo', 'title'));
     }
 
     /**

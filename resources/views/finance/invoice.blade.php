@@ -14,12 +14,12 @@
             </div>
 
             <div class="card-body">
-                <form class="form-inline float-right my-3 my-lg-0" method="POST"
+                <form class="form-inline float-right" method="POST"
                     action="{{ route('finance.invoice.search') }}">
                     @csrf
-                    <input class="form-control mr-sm-2" type="search" name="search" placeholder="Search"
-                        aria-label="Search">
-                    <button type="submit" class="btn btn-outline-success my-2 my-sm-0 mx-2" type="submit"
+                    <input class="form-control mx-2" type="search" name="search" placeholder="Search"
+                        aria-label="Search" style="width: 1050px">
+                    <button type="submit" class="btn btn-outline-success my-2 my-sm-0 mx-2 d-none" type="submit"
                         style="border-radius: 8px">Search</button>
                 </form>
             </div>
