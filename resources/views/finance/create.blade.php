@@ -34,7 +34,7 @@
 					{{-- date --}}
 					<div class="col">
 						<label for="date">Due Date</label>
-						<input id="date" type="text" class="form-control{{ $errors->has('date') ? ' is-invalid' : '' }}" name="date" value="{{ old('date') }}" autocomplete="off">
+						<input id="date" type="text" class="form-control{{ $errors->has('date') ? ' is-invalid' : '' }}" name="date" value="{{ old('date') }}" >
 
 						@if ($errors->has('date'))
 						<span class="invalid-feedback" role="alert">
@@ -100,7 +100,7 @@
 					{{-- tax --}}
 					<div class="col">
 						<label for="tax">Tax</label>
-						<select name="tax" id="tax" class="form-control" required>
+						<select name="tax" id="tax" class="form-control">
 							<option>Tax</option>
 							<option value="0.12">PPN 10%</option>
 							<option value="0.05">PPh 21 (freelancer NPWP)</option>
@@ -125,7 +125,7 @@
 					</div>
 					<div class="col">
 						<label for="norek">No. Rekening</label>
-						<select id="norek" name="norek" class="form-control" required>
+						<select id="norek" name="norek" class="form-control">
 							<option value="">No. Rekening</option>
 							<option value="070 1137302">IDR</option>
 							<option value="0902211411">Dollar</option>
