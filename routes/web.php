@@ -32,6 +32,12 @@ Route::get('/newbast', function () {
 ]);
 });
 
+Route::get('/print', function () {
+    return view('finance.print', [
+        "title" => "PRINT"
+    ]);
+});
+
 // Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
