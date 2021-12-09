@@ -108,8 +108,9 @@ class InvoiceController extends Controller
 
     public function search(Request $request)
     {
+       $title = "Invoice Out";
        $keyword = $request->search;
        $invc = Invoice::where('client', 'like', "%" . $keyword . "%")->paginate(5);
-       return view('finance.invoice', compact('invc'))->with('i', (request()->input('page', 1) - 1) * 5);
+       return view('finance.invoice', compact('invc', 'title'))->with('i', (request()->input('page', 1) - 1) * 5);
    }
 }
