@@ -6,7 +6,7 @@
         <div class="card">
             <div class="card-header mb-2">
                 <h4 class="d-inline"><i class="fas fa-shopping-bag"></i> <b>Invoice</b></h4>
-                <a href="/print" class="btn btn-success mx-2" style="float: right; border-radius: 8px"><i class="fas fa-print"></i>
+                <a href="/print" target="_blank" class="btn btn-success mx-2" style="float: right; border-radius: 8px"><i class="fas fa-print"></i>
                     Print</a>
                 <a href="{{ url('http://127.0.0.1:8000/finance/invoice/create') }}"
                     class="btn btn-primary float-right d-inline" style="border-radius: 8px"><i class="fas fa-plus"></i>
