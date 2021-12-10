@@ -1,4 +1,4 @@
-@extends('layouts.main2')
+@extends('layouts.main')
 
 @section('content')
 
@@ -43,7 +43,7 @@
                     <td scope="row">XXX</td>
                     <td scope="row">XXX</td>
                     <td scope="row">
-                        <a href="" class="btn btn-info d-inline"><i
+                        <a href="/editbast" class="btn btn-info d-inline"><i
                             class="fas fa-edit fa-1x"></i></a>
                         <button type="submit" class="btn btn-danger" style="height: 35px; margin-left: 15px"><i class="fas fa-trash-alt"></i></button>
                     </form>
@@ -56,7 +56,7 @@
                     <td scope="row">XXX</td>
                     <td scope="row">XXX</td>
                     <td scope="row">
-                        <a href="" class="btn btn-info d-inline"><i
+                        <a href="/editbast" class="btn btn-info d-inline"><i
                             class="fas fa-edit fa-1x"></i></a>
                         <button type="submit" class="btn btn-danger" style="height: 35px; margin-left: 15px"><i class="fas fa-trash-alt"></i></button>
                     </form>
