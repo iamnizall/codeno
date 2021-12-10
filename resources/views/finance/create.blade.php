@@ -9,9 +9,10 @@
 		$now = date('D-M-Y');
 		$scode = 'BBBAIDJA';
 		if($npo == null){
-			$hs = 'KEB-00' . (0 + 1) . date('/m/Y');
+			$hs = 'KEB-0001' . date('/m/Y');
 		}else {
-			$hs = 'KEB-00' . ($npo->id + 1) . date('/m/Y');
+			$cnf = substr($npo->no_inv, 4, 4);
+			$hs = 'KEB-' . sprintf("%04d", $cnf + 1) . date('/m/Y');
 		}
 		@endphp
 
