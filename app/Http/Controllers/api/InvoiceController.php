@@ -26,7 +26,7 @@ class InvoiceController extends Controller
             'data' =>$invoice
         ];
         // return view('test',compact('invoice'));
-        return response()->json($response, Response::HTTP_OK); 
+        return response()->json($response, Response::HTTP_OK)->redirect()->route('invoice.index'); 
     }
 
     /**
@@ -88,8 +88,8 @@ class InvoiceController extends Controller
      */
     public function show($id)
     {
-     $invoice = Invoice::findOrfail($id);
-     $response=[
+       $invoice = Invoice::findOrfail($id);
+       $response=[
         'msg' => 'Detail invoice resource',
         'data' => $invoice
     ];
@@ -117,20 +117,20 @@ class InvoiceController extends Controller
      */
     public function update(Request $request, $id)
     {
-       $invoice = Invoice::findOrfail($id);
-       $validator = Validator::make($request->all(), [
-           'no_inv' => ['required'],
-           's_code' => ['required'],
-           'no_po' => ['required'],
-           'address' => ['required'],
-           'mail' => ['required'],
-           'client' => ['required'],
-           'payment' => ['required'],
-           'job_desc' => ['required'],
-           'signature' => ['required'],        
-       ]);
+     $invoice = Invoice::findOrfail($id);
+     $validator = Validator::make($request->all(), [
+         'no_inv' => ['required'],
+         's_code' => ['required'],
+         'no_po' => ['required'],
+         'address' => ['required'],
+         'mail' => ['required'],
+         'client' => ['required'],
+         'payment' => ['required'],
+         'job_desc' => ['required'],
+         'signature' => ['required'],        
+     ]);
 
-       if ($validator->fails()) {
+     if ($validator->fails()) {
         return response()->json($validator->errors(), Response::HTTP_UNPROCESSABLE_ENTITY);
     }
 
