@@ -139,58 +139,64 @@
 				</div>
 				{{-- row 2 --}}
 				<div class="card mt-4">
-					<div class="card-body">
-						<div class="form-row mt">
-							{{-- job desc --}}
-							<div class="col">
-								<label for="job_desc">Job Description</label>
-								<input id="job_desc" type="text" class="form-control{{ $errors->has('job_desc') ? ' is-invalid' : '' }}" name="job_desc" value="{{ old('job_desc') }}">
+					<table class="table">
+						<thead>
+							<tr>
+								<th>Job desc</th>
+								<th>Volume</th>
+								<th>Unit</th>
+								<th>Unit price IDR</th>
+								<th>Amount IDR</th>
+								<th></th>
+							</tr>
+						</thead>
+						<tbody id="form-body">
+							<tr>
+								<td>
+									<input id="job_desc" type="text" class="form-control{{ $errors->has('job_desc') ? ' is-invalid' : '' }}" name="job_desc" value="{{ old('job_desc') }}">
 
-								@if ($errors->has('job_desc'))
-								<span class="invalid-feedback" role="alert">
-									<strong>{{ $errors->first('job_desc') }}</strong>
-								</span>
-								@endif
-							</div>
-							{{-- vol --}}
-							<div class="col">
-								<label for="vol">Volume</label>
-								<input id="vol" type="text" class="form-control{{ $errors->has('vol') ? ' is-invalid' : '' }}" name="vol" value="{{ old('vol') }}" >
+									@if ($errors->has('job_desc'))
+									<span class="invalid-feedback" role="alert">
+										<strong>{{ $errors->first('job_desc') }}</strong>
+									</span>
+									@endif
+								</td>
+								<td>
+									<input id="vol" type="text" class="form-control{{ $errors->has('vol') ? ' is-invalid' : '' }}" name="vol" value="{{ old('vol') }}" >
 
-								@if ($errors->has('vol'))
-								<span class="invalid-feedback" role="alert">
-									<strong>{{ $errors->first('vol') }}</strong>
-								</span>
-								@endif
-							</div>
-							{{-- unit --}}
-							<div class="col">
-								<label for="unit">Unit</label>
-								<input id="unit" type="text" class="form-control{{ $errors->has('unit') ? ' is-invalid' : '' }}" name="unit" value="{{ old('unit') }}">
+									@if ($errors->has('vol'))
+									<span class="invalid-feedback" role="alert">
+										<strong>{{ $errors->first('vol') }}</strong>
+									</span>
+									@endif
+								</td>
+								<td>
+									<input id="unit" type="text" class="form-control{{ $errors->has('unit') ? ' is-invalid' : '' }}" name="unit" value="{{ old('unit') }}">
 
-								@if ($errors->has('unit'))
-								<span class="invalid-feedback" role="alert">
-									<strong>{{ $errors->first('unit') }}</strong>
-								</span>
-								@endif
-							</div>
-							{{-- price --}}
-							<div class="col">
-								<label for="price">Price</label>
-								<input id="price" type="text" class="form-control{{ $errors->has('price') ? ' is-invalid' : '' }}" name="price" value="{{ old('price') }}">
+									@if ($errors->has('unit'))
+									<span class="invalid-feedback" role="alert">
+										<strong>{{ $errors->first('unit') }}</strong>
+									</span>
+									@endif
+								</td>
+								<td>
+									<input id="price" type="text" class="form-control{{ $errors->has('price') ? ' is-invalid' : '' }}" name="price" value="{{ old('price') }}">
 
-								@if ($errors->has('price'))
-								<span class="invalid-feedback" role="alert">
-									<strong>{{ $errors->first('price') }}</strong>
-								</span>
-								@endif
-							</div>
-							<div class="col">
-								<label for="total">Amount</label>
-								<input id="total" type="text" class="form-control" readonly>
-							</div>
-						</div>
-					</div>
+									@if ($errors->has('price'))
+									<span class="invalid-feedback" role="alert">
+										<strong>{{ $errors->first('price') }}</strong>
+									</span>
+									@endif
+								</td>
+								<td>
+									<input id="total" type="text" class="form-control" readonly>
+								</td>
+								<td>
+									<button type="button" onclick="add_form()" class="btn btn-success"><i class="fas fa-plus"></i></button>
+								</td>
+							</tr>
+						</tbody>
+					</table>
 				</div>
 
 				{{-- row 3 Note n Signature --}}
@@ -285,7 +291,7 @@
 			$('#account').val(norek);
 		});
 
-		$('.btn').click(function(){
+		$('.b-on').click(function(){
 			$('.b-on').toggleClass('d-none');
 			$('.b-of').toggleClass('d-none');
 		})
@@ -294,4 +300,27 @@
 
 	});
 </script>
+<script type="text/javascript">
+	function add_form()
+	{
+		var html = '';
+
+		html += '<tr>';
+		html += '<td><input type="text" class="form-control" name=""></td>';
+		html += '<td><input type="text" class="form-control" name=""></td>';
+		html += '<td><input type="text" class="form-control" name=""></td>';
+		html += '<td><input type="text" class="form-control" name=""></td>';
+		html += '<td><input type="text" class="form-control" name="" readonly></td>';
+		html += '<td><button type="button" class="btn btn-danger" onclick="del_form(this)"><i class="fas fa-minus"></i></button></td>';
+		html += '</tr>';
+
+		$('#form-body').prepend(html);
+	}
+
+	function del_form(id)
+	{
+		id.closest('tr').remove();
+	}
+</script>
+
 @endsection
