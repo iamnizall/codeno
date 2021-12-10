@@ -27,6 +27,11 @@ Route::get('/bast', function () {
 ]);
 });
 
+Route::get('/editbast', function () {
+    return view('finance.editbast',["title" => "BAST"
+]);
+});
+
 Route::get('/newbast', function () {
     return view('finance.createbast',["title" => "BAST"
 ]);
