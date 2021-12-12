@@ -54,7 +54,29 @@ class InvoiceController extends Controller
             'vol'      => 'required',
             'price'    => 'required'
         ]);
-        Invoice::create($request->all());
+
+        for($i = 0; $i<count($request->job_desc); $i++){
+            $dt            = new Invoice;
+            $dt->no_inv    = $request->no_inv;
+            $dt->s_code    = $request->s_code;
+            $dt->date      = $request->date;
+            $dt->no_po     = $request->no_po;
+            $dt->address   = $request->address;
+            $dt->mail      = $request->mail;
+            $dt->client    = $request->client;
+            $dt->payment   = $request->payment;
+            $dt->tax       = $request->tax;
+            $dt->indate    = $request->indate;
+            $dt->norek     = $request->norek;
+            $dt->job_desc  = $request->job_desc[$i];
+            $dt->vol       = $request->vol[$i];
+            $dt->unit      = $request->unit[$i];
+            $dt->price     = $request->price[$i];
+            $dt->stotal    = $request->stotal;
+            $dt->notes     = $request->notes;
+            $dt->signature = $request->signature;
+            $dt->save();
+        };
 
         return redirect()->route('invoice.index');
     }

@@ -153,7 +153,7 @@
 						<tbody id="form-body">
 							<tr>
 								<td>
-									<input id="job_desc" type="text" class="form-control{{ $errors->has('job_desc') ? ' is-invalid' : '' }}" name="job_desc" value="{{ old('job_desc') }}">
+									<input id="job_desc" type="text" class="form-control{{ $errors->has('job_desc') ? ' is-invalid' : '' }}" name="job_desc[]" value="{{ old('job_desc') }}">
 
 									@if ($errors->has('job_desc'))
 									<span class="invalid-feedback" role="alert">
@@ -162,7 +162,7 @@
 									@endif
 								</td>
 								<td>
-									<input id="vol" type="text" class="form-control{{ $errors->has('vol') ? ' is-invalid' : '' }}" name="vol" value="{{ old('vol') }}" >
+									<input id="vol" type="text" class="form-control{{ $errors->has('vol') ? ' is-invalid' : '' }}" name="vol[]" value="{{ old('vol') }}" >
 
 									@if ($errors->has('vol'))
 									<span class="invalid-feedback" role="alert">
@@ -171,7 +171,7 @@
 									@endif
 								</td>
 								<td>
-									<input id="unit" type="text" class="form-control{{ $errors->has('unit') ? ' is-invalid' : '' }}" name="unit" value="{{ old('unit') }}">
+									<input id="unit" type="text" class="form-control{{ $errors->has('unit') ? ' is-invalid' : '' }}" name="unit[]" value="{{ old('unit') }}">
 
 									@if ($errors->has('unit'))
 									<span class="invalid-feedback" role="alert">
@@ -180,7 +180,7 @@
 									@endif
 								</td>
 								<td>
-									<input id="price" type="text" class="form-control{{ $errors->has('price') ? ' is-invalid' : '' }}" name="price" value="{{ old('price') }}">
+									<input id="price" type="text" class="form-control{{ $errors->has('price') ? ' is-invalid' : '' }}" name="price[]" value="{{ old('price') }}">
 
 									@if ($errors->has('price'))
 									<span class="invalid-feedback" role="alert">
@@ -306,10 +306,10 @@
 		var html = '';
 
 		html += '<tr>';
-		html += '<td><input type="text" class="form-control" name=""></td>';
-		html += '<td><input type="text" class="form-control" name=""></td>';
-		html += '<td><input type="text" class="form-control" name=""></td>';
-		html += '<td><input type="text" class="form-control" name=""></td>';
+		html += '<td><input type="text" class="form-control" name="job_desc[]"></td>';
+		html += '<td><input type="text" class="form-control" name="vol[]"></td>';
+		html += '<td><input type="text" class="form-control" name="unit[]"></td>';
+		html += '<td><input type="text" class="form-control" name="price[]"></td>';
 		html += '<td><input type="text" class="form-control" name="" readonly></td>';
 		html += '<td><button type="button" class="btn btn-danger" onclick="del_form(this)"><i class="fas fa-minus"></i></button></td>';
 		html += '</tr>';

@@ -1,0 +1,66 @@
+method save data
+
+
+{{ eloquent }}
+
+return $request->all();
+Invoice::create($request->all());
+$data = array(
+'no_inv' => $request->no_inv,
+'s_code' => $request->s_code,
+'date' => $request->date,
+'no_po' => $request->no_po,
+'address' => $request->address,
+'mail' => $request->mail,
+'client' => $request->client,
+'payment' => $request->payment,
+'tax' => $request->tax,
+'indate' => $request->indate,
+'norek' => $request->norek,
+'job_desc' => $request->job_desc,
+'vol' => $request->vol,
+'price' => $request->price,
+'stotal' => $request->stotal,
+'notes' => $request->notes,
+'signature' => $request->signature,
+);
+Invoice::create($data);
+
+
+
+{{ data eloquent }}
+
+$dt->no_inv    = $request->no_inv;
+$dt->s_code    = $request->s_code;
+$dt->date      = $request->date;
+$dt->no_po     = $request->no_po;
+$dt->address   = $request->address;
+$dt->mail      = $request->mail;
+$dt->client    = $request->client;
+$dt->payment   = $request->payment;
+$dt->tax       = $request->tax;
+$dt->indate    = $request->indate;
+$dt->norek     = $request->norek;
+$dt->job_desc  = $request->job_desc;
+$dt->vol       = $request->vol;
+$dt->unit      = $request->unit;
+$dt->price     = $request->price;
+$dt->stotal    = $request->stotal;
+$dt->notes     = $request->notes;
+$dt->signature = $request->signature;
+
+
+{{ if use foreach }}
+
+foreach($request->job_desc as $job){
+$dt->job_desc  = $job;    
+};
+foreach($request->vol as $vol){
+$dt->vol  = $vol;    
+};
+foreach($request->unit as $unit){
+$dt->unit  = $unit;    
+};
+foreach($request->price as $price){
+$dt->price  = $price;    
+};
