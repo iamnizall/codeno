@@ -115,7 +115,7 @@ class InvoiceController extends Controller
      */
     public function update(Request $request, $id)
     {
-       $this->validate($request,[
+     $this->validate($request,[
         'no_inv'   => 'required|min:5',
         's_code'   => 'required|min:7',
         'date'     => 'required',
@@ -127,12 +127,12 @@ class InvoiceController extends Controller
         'vol'      => 'required',
         'price'    => 'required'
     ]);
-       $title = "Invoice Out";
-       $invc = Invoice::findOrfail($id);
-       $invc->update($request->all());
+     $title = "Invoice Out";
+     $invc = Invoice::findOrfail($id);
+     $invc->update($request->all());
 
-       return redirect()->route('invoice.index');
-   }
+     return redirect()->route('invoice.index');
+ }
 
     /**
      * Remove the specified resource from storage.
@@ -149,9 +149,9 @@ class InvoiceController extends Controller
 
     public function search(Request $request)
     {
-       $title = "Invoice Out";
-       $keyword = $request->search;
-       $invc = Invoice::where('no_inv', 'like', "%" . $keyword . "%")->paginate(5);
-       return view('finance.invoice', compact('invc', 'title'))->with('i', (request()->input('page', 1) - 1) * 5);
-   }
+     $title = "Invoice Out";
+     $keyword = $request->search;
+     $invc = Invoice::where('no_inv', 'like', "%" . $keyword . "%")->paginate(5);
+     return view('finance.invoice', compact('invc', 'title'))->with('i', (request()->input('page', 1) - 1) * 5);
+ }
 }
