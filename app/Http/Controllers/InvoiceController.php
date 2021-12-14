@@ -154,4 +154,13 @@ class InvoiceController extends Controller
      $invc = Invoice::where('no_inv', 'like', "%" . $keyword . "%")->paginate(5);
      return view('finance.invoice', compact('invc', 'title'))->with('i', (request()->input('page', 1) - 1) * 5);
  }
+
+    public function print()
+    {
+        return view('/finance/print');
+    }
+    public function printlocal()
+    {
+        return view('/finance/printlocal');
+    }
 }
