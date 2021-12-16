@@ -51,6 +51,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('finance', [FinanceController::class, 'index']);
 Route::get('finance/print', [InvoiceController::class, 'print']);
 Route::get('finance/printlocal', [InvoiceController::class, 'printlocal']);
+Route::get('finance/printluar', [InvoiceController::class, 'printluar']);
 Route::resource('finance/invoice', InvoiceController::class);
 Route::post('finance/invoice', [InvoiceController::class, 'search'])->name('finance.invoice.search');
 

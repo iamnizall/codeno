@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="{{ asset('') }}assets/plugins/fontawesome-free/css/all.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="{{ asset('') }}assets/dist/css/adminlte.min.css">
-{{--   <style>
+  {{-- <style>
     *{
       border-style: solid;
     }
@@ -24,18 +24,21 @@
             <div class="invoice p-3 mb-3">
               <!-- title row -->
               <div class="row">
-                <div class="col-12">
-                  <h3 style="text-align: center">
-                    <img src="{{ asset('') }}assets/star.png" alt="star" style="width: 200px;"">
-                    {{-- <i class="fas fa-globe"></i> Print Invoice --}}
-                    {{-- <small class="float-right">{{ date('d-m-Y') }}</small> --}}
-                  </h3>
+                <div class="col-sm-7">
+                    <img class="float-right" src="{{ asset('') }}assets/star.png" alt="star" style="width: 200px;"">
                 </div>
-                <!-- /.col -->
+                <div class="col-sm-5">
+
+                  <h5 class="float-left mt-3">Software <br>
+                  Translation <br>
+                  Network <br>
+                  Recording 
+                  </h5>
+                </div>
               </div>
               <!-- info row -->
               <div class="row invoice-info">
-                <div class="col-sm-4 invoice-col" style="margin-left: 58%">
+                <div class="col-sm-4 invoice-col mt-2" style="margin-left: 58%; font-size: 14px">
                   <address>
                     <strong>PT Star Software Indonesia</strong><br>
                     Citylofts Sudirman # 1512<br>
@@ -51,7 +54,7 @@
                 
               </div>
               
-              <h3 style="text-align: center">INVOICE</h3><br>
+              <h3 style="text-align: center"> <b>INVOICE</b></h3><br>
               {{-- <div class="col-sm-9"> --}}
                 {{-- <small class="float-right" style="margin-right: 20%">{{ date('d-m-Y') }}</small><br> --}}
                 
@@ -70,22 +73,22 @@
               </div>
               <div class="col-sm">
                 <h5 class="text-center">{{ date('d-m-Y') }}</h5>
-                <h5 class="text-center">Invoice No. STJAK-0009/2021</h5><br>
-                <h5 class="text-center">PO No. 155555-ID</h5>
+                <h5 class="text-center"> <b><u>Invoice No. STJAK-0009/2021</b></u> </h5><br>
+                <h5 class="text-center"><b>PO No. 155555-ID</b></h5>
               </div>
             </div>              
 
               <!-- Table row -->
               <div class="row">
                 <div class="col-12 table-responsive">
-                  <table class="table table-striped">
+                  <table class="table table-bordered">
                     <thead>
-                    <tr>
-                      <th>Qty</th>
-                      <th>Product</th>
-                      <th>Serial #</th>
-                      <th>Description</th>
-                      <th>Subtotal</th>
+                    <tr class="thead-dark">
+                      <th>No</th>
+                      <th>Job Description</th>
+                      <th>Volume Hour</th>
+                      <th>Unit Price</th>
+                      <th>Amount</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -95,6 +98,7 @@
                       <td>455-981-221</td>
                       <td>El snort testosterone trophy driving gloves handsome</td>
                       <td>$64.50</td>
+                      
                     </tr>
                     <tr>
                       <td>1</td>
@@ -117,6 +121,11 @@
                       <td>Tousled lomo letterpress</td>
                       <td>$25.99</td>
                     </tr>
+                    <tr >
+                      <td colspan="2" class="text-center"><b>TOTAL</b></td>
+                      <td colspan="2" class="text-center"><b>Please Pay</b></td>
+                      <td ><b>Rp.21.00000</b></td>
+                    </tr>
                     </tbody>
                   </table>
                 </div>
@@ -126,11 +135,11 @@
               <div class="row">
                 
                   <div class="col-sm-3 text-center border border-dark ml-5" >
-                    PT Star Software Indonesia <br>
-                    Permata Bank, Mid Plaza Branch <br>
-                    Jakarta, Indonesia <br>
-                    Swift Code : <br>
-                    RP Account <br>
+                    <strong>PT Star Software Indonesia</strong> <br>
+                    <strong>Permata Bank, Mid Plaza Branch</strong> <br>
+                    <strong>Jakarta, Indonesia</strong> <br>
+                    <strong>Swift Code :</strong> <br>
+                    <strong>RP Account</strong> <br>
                   </div>
                   <div class="col-sm-3">
 

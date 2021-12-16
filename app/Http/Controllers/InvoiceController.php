@@ -163,4 +163,8 @@ class InvoiceController extends Controller
     {
         return view('/finance/printlocal');
     }
+    public function printluar()
+    {
+        return view('/finance/printluar');
+    }
 }
