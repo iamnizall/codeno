@@ -6,7 +6,7 @@
 	<div class="card">
 
 		@php
-		$now = date('D-M-Y');
+		$now = date('d/m/Y');
 		$scode = 'BBBAIDJA';
 		if($npo == null){
 			$hs = 'KEB-0001' . date('/m/Y');
@@ -16,12 +16,40 @@
 		}
 		@endphp
 
-		<div class="card-header"><b><i class="fas fa-shopping-bag"></i> Create New Invoice</b></div>
-		<div class="card-body">
-			<form method="POST" action="{{ route('invoice.store') }}">
-				@csrf
-				{{-- row 1 --}}
+		<form method="POST" action="{{ route('invoice.store') }}">
+			@csrf
+			<div class="card-header">
+				<div class="row">
+					<div class="col-sm-10">
+						<b><i class="fas fa-shopping-bag"></i> Create New Invoice</b> 						
+					</div>
+					<div class="col-sm-2">
+						<select name="type" class="form-control" onchange="location = this.value;">
+							<option value="luar">Invoice Luar</option>
+							<option value="local" selected>Invoice Local</option>
+							<option value="spq">Invoice SPQ</option>
+						</select>
+					</div>
+				</div>
+			</div>
+			<div class="card-body">
+				{{-- row 0 --}}
 				<div class="form-row">
+					{{-- project name --}}
+					<div class="col">
+						<label for="p_name">Project Name</label>
+						<input id="p_name" type="text" class="form-control{{ $errors->has('p_name') ? ' is-invalid' : '' }}" name="p_name" value="{{ old('p_name') }}" >
+
+						@if ($errors->has('p_name'))
+						<span class="invalid-feedback" role="alert">
+							<strong>{{ $errors->first('p_name') }}</strong>
+						</span>
+						@endif
+					</div>
+					{{-- type --}}
+				</div>
+				{{-- row 1 --}}
+				<div class="form-row mt-2">
 					{{-- no invoice --}}
 					<div class="col">		
 						<label for="no_inv">No. Invoice</label>
@@ -101,9 +129,9 @@
 					{{-- tax --}}
 					<div class="col">
 						<label for="tax">Tax</label>
-						<select name="tax" id="tax" class="form-control" required>
+						<select name="tax" id="tax" class="form-control tax" required>
 							<option>Tax</option>
-							<option value="0.12">PPN 10%</option>
+							<option value="0.12">PPN 10% + PPh 23 <vendor></vendor></option>
 							<option value="0.05">PPh 21 (freelancer NPWP)</option>
 							<option value="0.06">PPh 21 (freelancer non NPWP)</option>
 							<option value="0.025">PPh 21 (expert NPWP)</option>
@@ -261,9 +289,9 @@
 					</div>
 				</div>
 
-			</form>
+			</div>
 		</div>
-	</div>
+	</form>
 </div>
 
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
@@ -272,6 +300,7 @@
 		$("#vol, #price, #tax").keyup(function() {
 			var price  = $("#price").val();
 			var vol = $("#vol").val();
+			
 			// var tax = $('#tax').find('option:selected').val();
 			var tax = $('#tax'). children("option:selected").val();
 
@@ -284,6 +313,7 @@
 			var stotal = total - fax;
 			$("#cost").val(total);
 			$("#stotal").val(stotal);
+
 		});
 
 		$('#norek').on('change', function(){
@@ -298,9 +328,9 @@
 
 		// test
 
+
 	});
-</script>
-<script type="text/javascript">
+
 	function add_form()
 	{
 		var html = '';
@@ -321,6 +351,7 @@
 	{
 		id.closest('tr').remove();
 	}
+
 </script>
 
 @endsection

@@ -51,5 +51,8 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('finance', [FinanceController::class, 'index']);
 Route::resource('finance/invoice', InvoiceController::class);
 Route::post('finance/invoice', [InvoiceController::class, 'search'])->name('finance.invoice.search');
+Route::get('finance/create-invoice/local', [InvoiceController::class, 'createLocal']);
+Route::get('finance/create-invoice/luar', [InvoiceController::class, 'createLuar']);
+Route::get('finance/create-invoice/spq', [InvoiceController::class, 'createSpq']);
 
 Route::resource('ajax', PostController::class);
