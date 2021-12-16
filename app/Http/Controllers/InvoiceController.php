@@ -185,10 +185,31 @@ class InvoiceController extends Controller
 
     public function search(Request $request)
     {
+<<<<<<< HEAD
        $title = "Invoice Out";
        $keyword = $request->search;
        $invc = Invoice::where('no_inv', 'like', "%" . $keyword . "%")->paginate(5);
        return view('finance.invoice.invoice', compact('invc', 'title'))
        ->with('i', (request()->input('page', 1) - 1) * 5);
    }
+=======
+     $title = "Invoice Out";
+     $keyword = $request->search;
+     $invc = Invoice::where('no_inv', 'like', "%" . $keyword . "%")->paginate(5);
+     return view('finance.invoice', compact('invc', 'title'))->with('i', (request()->input('page', 1) - 1) * 5);
+ }
+
+    public function print()
+    {
+        return view('/finance/print');
+    }
+    public function printlocal()
+    {
+        return view('/finance/printlocal');
+    }
+    public function printluar()
+    {
+        return view('/finance/printluar');
+    }
+>>>>>>> f4a82b6b38977c4f1cd7d8266b41144bd26db9dc
 }
