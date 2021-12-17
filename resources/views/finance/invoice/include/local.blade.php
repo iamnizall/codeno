@@ -9,8 +9,10 @@
 		$now = date('d/m/Y');
 		$scode = 'BBBAIDJA';
 		if($npo == null){
+			$id = 1;
 			$hs = 'KEB-0001' . date('/m/Y');
 		}else {
+			$id = $npo->id + 1;
 			$cnf = substr($npo->no_inv, 4, 4);
 			$hs = 'KEB-' . sprintf("%04d", $cnf + 1) . date('/m/Y');
 		}
@@ -45,6 +47,7 @@
 							<strong>{{ $errors->first('p_name') }}</strong>
 						</span>
 						@endif
+						<input type="text" class="d-none" name="invoice_id" value="{{ $id }}">
 					</div>
 					{{-- type --}}
 				</div>

@@ -14,25 +14,23 @@ class CreateInvoicesTable extends Migration
     public function up()
     {
         Schema::create('invoices', function (Blueprint $table) {
-            $table->id();
-            $table->string('no_inv');
-            $table->string('s_code');
-            $table->string('date');        
-            $table->string('no_po');
-            $table->string('address');
-            $table->string('mail');
-            $table->string('client');
-            $table->string('payment')->nullable();
-            $table->string('tax');
-            $table->string('indate');
-            $table->string('norek');
-            $table->string('job_desc');
-            $table->integer('vol');
-            $table->string('unit')->nullable();
-            $table->integer('price');
-            $table->integer('stotal');
-            $table->string('notes')->nullable();
-            $table->string('signature')->nullable();
+            $table->id(); //id
+            $table->string('type'); //type invoice
+            $table->string('p_name'); //project name
+            $table->string('no_inv'); //nomor invoice
+            $table->string('s_code'); //swift code
+            $table->string('date');        //due date
+            $table->string('no_po'); //nomor po
+            $table->string('address'); //alamat
+            $table->string('mail'); //mail client
+            $table->string('client'); //name client
+            $table->string('payment')->nullable(); //payment
+            $table->string('tax'); //pajak
+            $table->string('indate'); //date create
+            $table->string('norek'); //nomor rekening
+            $table->integer('stotal'); // grand total
+            $table->string('notes')->nullable(); //note
+            $table->string('signature')->nullable(); //signature
             $table->timestamps();
         });
     }

@@ -60,4 +60,7 @@ Route::get('finance/create-invoice/local', [InvoiceController::class, 'createLoc
 Route::get('finance/create-invoice/luar', [InvoiceController::class, 'createLuar']);
 Route::get('finance/create-invoice/spq', [InvoiceController::class, 'createSpq']);
 
+
+Route::get('finance/relasi', [InvoiceController::class, 'relasi']);
+
 Route::resource('ajax', PostController::class);

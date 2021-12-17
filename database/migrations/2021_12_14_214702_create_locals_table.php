@@ -15,7 +15,7 @@ class CreateLocalsTable extends Migration
     {
         Schema::create('locals', function (Blueprint $table) {
             $table->id();
-            $table->string('no_inv');
+            $table->string('invoice_id');
             $table->string('job_desc');
             $table->integer('vol');
             $table->string('unit')->nullable();

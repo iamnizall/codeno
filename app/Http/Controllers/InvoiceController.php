@@ -21,6 +21,7 @@ class InvoiceController extends Controller
         $title = "Invoice Out";
         $invc = Invoice::orderBy('id', 'DESC')->paginate(10);
         return view('finance.invoice.invoice', compact('invc', 'title'));
+
     }
 
     /**
@@ -98,12 +99,12 @@ class InvoiceController extends Controller
 
         if ($request->type == 'local') {
             for($i = 0; $i<count($request->job_desc); $i++){
-                $dl           = new Local;
-                $dl->no_inv   = $request->no_inv;
-                $dl->job_desc = $request->job_desc[$i];
-                $dl->vol      = $request->vol[$i];
-                $dl->unit     = $request->unit[$i];
-                $dl->price    = $request->price[$i];
+                $dl             = new Local;
+                $dl->invoice_id = $request->invoice_id;
+                $dl->job_desc   = $request->job_desc[$i];
+                $dl->vol        = $request->vol[$i];
+                $dl->unit       = $request->unit[$i];
+                $dl->price      = $request->price[$i];
                 $dl->save();
             };
             
@@ -125,7 +126,7 @@ class InvoiceController extends Controller
      */
     public function show($id)
     {
-        //
+        // 
     }
 
     /**
@@ -151,7 +152,7 @@ class InvoiceController extends Controller
      */
     public function update(Request $request, $id)
     {
-     $this->validate($request,[
+       $this->validate($request,[
         'no_inv'   => 'required|min:5',
         's_code'   => 'required|min:7',
         'date'     => 'required',
@@ -163,12 +164,12 @@ class InvoiceController extends Controller
         'vol'      => 'required',
         'price'    => 'required'
     ]);
-     $title = "Invoice Out";
-     $invc = Invoice::findOrfail($id);
-     $invc->update($request->all());
+       $title = "Invoice Out";
+       $invc = Invoice::findOrfail($id);
+       $invc->update($request->all());
 
-     return redirect()->route('invoice.index');
- }
+       return redirect()->route('invoice.index');
+   }
 
     /**
      * Remove the specified resource from storage.
@@ -185,10 +186,17 @@ class InvoiceController extends Controller
 
     public function search(Request $request)
     {
-     $title = "Invoice Out";
-     $keyword = $request->search;
-     $invc = Invoice::where('no_inv', 'like', "%" . $keyword . "%")->paginate(5);
-     return view('finance.invoice.invoice', compact('invc', 'title'))
-     ->with('i', (request()->input('page', 1) - 1) * 5);
- }
+       $title = "Invoice Out";
+       $keyword = $request->search;
+       $invc = Invoice::where('no_inv', 'like', "%" . $keyword . "%")->paginate(5);
+       return view('finance.invoice.invoice', compact('invc', 'title'))
+       ->with('i', (request()->input('page', 1) - 1) * 5);
+   }
+
+   public function relasi()
+   {
+       $relasi = Invoice::all();
+       dd($relasi);
+       return view('relasi', compact('relasi'));
+   }
 }
