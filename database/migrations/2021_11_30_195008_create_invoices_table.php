@@ -28,6 +28,7 @@ class CreateInvoicesTable extends Migration
             $table->string('tax'); //pajak
             $table->string('indate'); //date create
             $table->string('norek'); //nomor rekening
+            $table->string('amount'); //amount
             $table->integer('stotal'); // grand total
             $table->string('notes')->nullable(); //note
             $table->string('signature')->nullable(); //signature

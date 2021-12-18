@@ -31,9 +31,7 @@ class InvoiceController extends Controller
      */
     public function create()
     {
-        $title = "Create invoice";
-        $npo = Invoice::orderby('id', 'DESC')->first();
-        return view('finance.invoice.create', compact('npo', 'title'));
+        // 
     }
 
     public function createLocal()
@@ -92,6 +90,7 @@ class InvoiceController extends Controller
         $dt->tax       = $request->tax;
         $dt->indate    = $request->indate;
         $dt->norek     = $request->norek;
+        $dt->amount     = $request->amount;
         $dt->stotal    = $request->stotal;
         $dt->notes     = $request->notes;
         $dt->signature = $request->signature;
