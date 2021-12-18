@@ -1,4 +1,4 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+<p align="center"><a href="https://kochengpoi.my.id" target="_blank"><img src="https://www.pngkit.com/png/detail/356-3562439_codeforcodes-learn-to-code-icon.png" width="400"></a></p>
 
 <p align="center">
 	<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
@@ -13,6 +13,8 @@
 
 ## migration dll
 
-## isi data lewat api . example data di data.json
+## ERROR?? MIGRATE:FRESH !
+
+## ...
 
 
