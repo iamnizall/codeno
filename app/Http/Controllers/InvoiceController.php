@@ -104,6 +104,7 @@ class InvoiceController extends Controller
                 $dl->vol        = $request->vol[$i];
                 $dl->unit       = $request->unit[$i];
                 $dl->price      = $request->price[$i];
+                $dl->total      = $request->total[$i];
                 $dl->save();
             };
             

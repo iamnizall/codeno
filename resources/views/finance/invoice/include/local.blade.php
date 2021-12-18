@@ -121,7 +121,7 @@
 					{{-- paayment --}}
 					<div class="col">
 						<label for="payment">Down Payment</label>
-						<input id="payment" type="text" class="form-control{{ $errors->has('payment') ? ' is-invalid' : '' }}" name="payment" value="{{ old('payment') }}" >
+						<input id="payment" type="text" class="mny form-control{{ $errors->has('payment') ? ' is-invalid' : '' }}" name="payment" value="{{ old('payment') }}" >
 
 						@if ($errors->has('payment'))
 						<span class="invalid-feedback" role="alert">
@@ -188,43 +188,19 @@
 						<tbody id="form-body">
 							<tr>
 								<td>
-									<input id="job_desc" type="text" class="form-control{{ $errors->has('job_desc') ? ' is-invalid' : '' }}" name="job_desc[]" value="{{ old('job_desc') }}">
-
-									@if ($errors->has('job_desc'))
-									<span class="invalid-feedback" role="alert">
-										<strong>{{ $errors->first('job_desc') }}</strong>
-									</span>
-									@endif
+									<input id="job_desc" type="text" class="form-control" name="job_desc[]">
 								</td>
 								<td>
-									<input id="vol" type="text" class="form-control{{ $errors->has('vol') ? ' is-invalid' : '' }}" name="vol[]" value="{{ old('vol') }}" >
-
-									@if ($errors->has('vol'))
-									<span class="invalid-feedback" role="alert">
-										<strong>{{ $errors->first('vol') }}</strong>
-									</span>
-									@endif
+									<input type="text" class="vol form-control" name="vol[]">
 								</td>
 								<td>
-									<input id="unit" type="text" class="form-control{{ $errors->has('unit') ? ' is-invalid' : '' }}" name="unit[]" value="{{ old('unit') }}">
-
-									@if ($errors->has('unit'))
-									<span class="invalid-feedback" role="alert">
-										<strong>{{ $errors->first('unit') }}</strong>
-									</span>
-									@endif
+									<input id="unit" type="text" class="form-control" name="unit[]">
 								</td>
 								<td>
-									<input id="price" type="text" class="form-control{{ $errors->has('price') ? ' is-invalid' : '' }}" name="price[]" value="{{ old('price') }}">
-
-									@if ($errors->has('price'))
-									<span class="invalid-feedback" role="alert">
-										<strong>{{ $errors->first('price') }}</strong>
-									</span>
-									@endif
+									<input type="text" class="price form-control" name="price[]">
 								</td>
 								<td>
-									<input id="total" type="text" class="form-control" readonly>
+									<input type="text" class="form-control total" name="total[]" readonly>
 								</td>
 								<td>
 									<button type="button" onclick="add_form()" class="btn btn-success"><i class="fas fa-plus"></i></button>
@@ -303,66 +279,67 @@
 
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script type="text/javascript">
-	$(document).ready(function() {
-		$("#vol, #price, #tax").keyup(function() {
-			var price  = $("#price").val();
-			var vol = $("#vol").val();
-			
-			// var tax = $('#tax').find('option:selected').val();
-			var tax = $('#tax'). children("option:selected").val();
 
-			var total = parseInt(price) * parseInt(vol);
-			$("#total").val(total);
-
-			var fax = total * parseFloat(tax);
-			$('#fax').val(fax);
-
-			var stotal = total - fax;
-			$("#cost").val(total);
-			$("#stotal").val(stotal);
-
-		});
-
-		$('#amount').on('change', function(){
-			var amount = $(this). children("option:selected"). val()
-			$('#account').val(amount);
-		});
-
-		$('#tax').on('change', function(){
-			var tax = $(this). children("option:selected"). text()
-			$('#vtax').text(tax);
-		});
-
-		$('.b-on').click(function(){
-			$('.b-on').toggleClass('d-none');
-			$('.b-of').toggleClass('d-none');
-		})
-
-		// test
-
-
+	$('#amount').on('change', function(){
+		var amount = $(this). children("option:selected"). val()
+		$('#account').val(amount);
 	});
 
+	$('#tax').on('change', function(){
+		var tax = $(this). children("option:selected"). text()
+		$('#vtax').text(tax);
+	});
+
+	$('.b-on').click(function(){
+		$('.b-on').toggleClass('d-none');
+		$('.b-of').toggleClass('d-none');
+	})
+
+	// test
+
+	$(".vol, .price").keyup(function() {
+		var price  = $(".price").val();
+		var vol = $(".vol").val();
+
+		var total = parseInt(price) * parseInt(vol);
+		if ( price != "" && vol != "" ) {
+			$('.total').val(total);
+		};
+	});
+
+	var i = 0;
 	function add_form()
 	{
+		console.log(i)
+		i++;
 		var html = '';
-
 		html += '<tr>';
 		html += '<td><input type="text" class="form-control" name="job_desc[]"></td>';
-		html += '<td><input type="text" class="form-control" name="vol[]"></td>';
+		html += '<td><input type="text" class="form-control vol' + i +'" name="vol[]"></td>';
 		html += '<td><input type="text" class="form-control" name="unit[]"></td>';
-		html += '<td><input type="text" class="form-control" name="price[]"></td>';
-		html += '<td><input type="text" class="form-control" name="" readonly></td>';
+		html += '<td><input type="text" class="form-control price'+i+'" name="price[]"></td>';
+		html += '<td><input type="text" class="form-control total'+i+'" name="total[]" readonly></td>';
 		html += '<td><button type="button" class="btn btn-danger" onclick="del_form(this)"><i class="fas fa-minus"></i></button></td>';
 		html += '</tr>';
 
 		$('#form-body').prepend(html);
-	}
+
+		$(".vol"+i+", .price"+i).keyup(function() {
+			var price  = $(".price"+i).val();
+			var vol = $(".vol"+i).val();
+			var tax = 5000;
+
+			var total = parseInt(price) * parseInt(vol);
+			if ( price != "" && vol != "" ) {
+				$('.total'+i).val(total);
+			};
+		});
+	};
 
 	function del_form(id)
 	{
 		id.closest('tr').remove();
-	}
+	};
 
 </script>
 

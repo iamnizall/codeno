@@ -20,6 +20,7 @@ class CreateLocalsTable extends Migration
             $table->integer('vol');
             $table->string('unit')->nullable();
             $table->integer('price');
+            $table->integer('total');
             $table->timestamps();
         });
     }
