@@ -171,8 +171,8 @@
 								<th>Job Description</th>
 								<th>Project Manager</th>
 								<th>Star Number</th>
-								<th>Word/page</th>
-								<th>Unit price IDR</th>
+								<th>Number Word/page</th>
+								<th>Unit Price/word</th>
 								<th>
 									<select id="amount" name="amount" required>
 										<option>Amount</option>

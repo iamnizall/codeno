@@ -10,7 +10,8 @@ class PrintController extends Controller
 {
     public function print()
     {
-        return view('/finance/print');
+        $invc = Invoice::all();
+        return view('/finance/print', compact('invc'));
     }
     public function printlocal()
     {

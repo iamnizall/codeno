@@ -13,21 +13,37 @@
   </div>
 
   <div class="container-fluid">
-  <table class="table table-bordered">
-    <thead class="thead-dark">
+    <table class="table table-bordered">
+      <thead class="thead-dark">
         <tr>
-            <th scope="col">No.</th>
-            <th scope="col">No. Ivoice</th>
-            <th scope="col">Client Name</th>
-            <th scope="col">Project Name</th>
-            <th scope="col">Employee Name</th>
-            <th scope="col">Cost in IDR</th>
+          <th scope="col">No.</th>
+          <th scope="col">No. Ivoice</th>
+          <th scope="col">Client Name</th>
+          <th scope="col">Project Name</th>
+          <th scope="col">Employee</th>
+          <th scope="col">Cost in IDR</th>
         </tr>
-    </thead>
-    <tbody>
-  
+      </thead>
+      <tbody>
+       @php
+       $i = 1;
+       @endphp
+       @foreach ($invc as $inv)
+
+       <tr>
+        <th scope="row">{{ $i }}</th>
+        <td>{{ $inv->no_inv }}</td>
+        <td>{{ $inv->client }}</td>
+        <td>{{ $inv->p_name }}</td>
+        <td>{{ $inv->signature }}</td>
+        <td>IDR {{ $inv->stotal }},-</td>
+      </tr>
+      @php
+      $i++;
+      @endphp
+      @endforeach
     </tbody>
-</table>
+  </table>
 </div>
 </body>
 </html>
