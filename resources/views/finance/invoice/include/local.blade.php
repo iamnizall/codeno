@@ -200,7 +200,7 @@
 									<input type="text" class="price form-control" name="price[]">
 								</td>
 								<td>
-									<input type="text" class="form-control total" name="total[]" readonly>
+									<input type="text" class="form-control tot total" name="total[]" readonly>
 								</td>
 								<td>
 									<button type="button" onclick="add_form()" class="btn btn-success"><i class="fas fa-plus"></i></button>
@@ -310,7 +310,19 @@
 	var i = 0;
 	function add_form()
 	{
-		console.log(i)
+		var sum = 0;
+
+		$('.tot').each(function(){
+			var value = $(this).val();
+			if(value.length != 0)
+			{
+				sum += parseFloat(value);
+			}
+		});
+		// console.log(sum);
+		$('#cost').val(sum);
+		// console.log(i)
+
 		i++;
 		var html = '';
 		html += '<tr>';
@@ -318,7 +330,7 @@
 		html += '<td><input type="text" class="form-control vol' + i +'" name="vol[]"></td>';
 		html += '<td><input type="text" class="form-control" name="unit[]"></td>';
 		html += '<td><input type="text" class="form-control price'+i+'" name="price[]"></td>';
-		html += '<td><input type="text" class="form-control total'+i+'" name="total[]" readonly></td>';
+		html += '<td><input type="text" class="form-control tot total'+i+'" name="total[]" readonly></td>';
 		html += '<td><button type="button" class="btn btn-danger" onclick="del_form(this)"><i class="fas fa-minus"></i></button></td>';
 		html += '</tr>';
 
@@ -327,7 +339,6 @@
 		$(".vol"+i+", .price"+i).keyup(function() {
 			var price  = $(".price"+i).val();
 			var vol = $(".vol"+i).val();
-			var tax = 5000;
 
 			var total = parseInt(price) * parseInt(vol);
 			if ( price != "" && vol != "" ) {
@@ -340,6 +351,22 @@
 	{
 		id.closest('tr').remove();
 	};
+
+	$('#tax, #cost').on('change', function(){
+		var tax = $(this). children("option:selected"). val();
+		var tot = $('#cost').val();
+		console.log(tot);
+		tax = parseFloat(tax)*parseInt(tot);
+		var hasil = tot - tax;
+		if ( tot != "" && tax != "" ) {
+			$('#fax').val(tax);
+			$('#stotal').val(hasil);
+		};
+		
+
+		// $('#vtax').val(tax);
+		// console.log(tax);
+	});
 
 </script>
 

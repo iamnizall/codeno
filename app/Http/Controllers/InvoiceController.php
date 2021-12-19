@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Invoice;
-use App\Models\Local;
+use App\Models\subInvoice;
 
 use Illuminate\Support\Facades\Validator; 
 use DataTables;
@@ -99,7 +99,7 @@ class InvoiceController extends Controller
 
         if ($request->type == 'local') {
             for($i = 0; $i<count($request->job_desc); $i++){
-                $dl             = new Local;
+                $dl             = new subInvoice;
                 $dl->invoice_id = $request->invoice_id;
                 $dl->job_desc   = $request->job_desc[$i];
                 $dl->vol        = $request->vol[$i];
@@ -109,9 +109,27 @@ class InvoiceController extends Controller
                 $dl->save();
             };
             
+        }elseif($request->type == 'spq'){
+            for($i = 0; $i<count($request->job_desc); $i++){
+                $dl             = new subInvoice;
+                $dl->invoice_id = $request->invoice_id;
+                $dl->job_desc   = $request->job_desc[$i];
+                $dl->vol        = $request->vol[$i];
+                $dl->price      = $request->price[$i];
+                $dl->total      = $request->total[$i];
+                $dl->save();
+            };
         }elseif($request->type == 'luar'){
             for($i = 0; $i<count($request->job_desc); $i++){
-                $lr = new Luar;
+                $dl             = new subInvoice;
+                $dl->invoice_id = $request->invoice_id;
+                $dl->job_desc   = $request->job_desc[$i];
+                $dl->manager   = $request->manager[$i];
+                $dl->starnum   = $request->starnum[$i];
+                $dl->vol        = $request->vol[$i];
+                $dl->price      = $request->price[$i];
+                $dl->total      = $request->total[$i];
+                $dl->save();
             };
         };
 
@@ -153,7 +171,7 @@ class InvoiceController extends Controller
      */
     public function update(Request $request, $id)
     {
-       $this->validate($request,[
+     $this->validate($request,[
         'no_inv'   => 'required|min:5',
         's_code'   => 'required|min:7',
         'date'     => 'required',
@@ -165,12 +183,12 @@ class InvoiceController extends Controller
         'vol'      => 'required',
         'price'    => 'required'
     ]);
-       $title = "Invoice Out";
-       $invc = Invoice::findOrfail($id);
-       $invc->update($request->all());
+     $title = "Invoice Out";
+     $invc = Invoice::findOrfail($id);
+     $invc->update($request->all());
 
-       return redirect()->route('invoice.index');
-   }
+     return redirect()->route('invoice.index');
+ }
 
     /**
      * Remove the specified resource from storage.
@@ -187,17 +205,17 @@ class InvoiceController extends Controller
 
     public function search(Request $request)
     {
-       $title = "Invoice Out";
-       $keyword = $request->search;
-       $invc = Invoice::where('no_inv', 'like', "%" . $keyword . "%")->paginate(5);
-       return view('finance.invoice.invoice', compact('invc', 'title'))
-       ->with('i', (request()->input('page', 1) - 1) * 5);
-   }
+     $title = "Invoice Out";
+     $keyword = $request->search;
+     $invc = Invoice::where('no_inv', 'like', "%" . $keyword . "%")->paginate(5);
+     return view('finance.invoice.invoice', compact('invc', 'title'))
+     ->with('i', (request()->input('page', 1) - 1) * 5);
+ }
 
-   public function relasi()
-   {
-       $relasi = Invoice::all();
-       dd($relasi);
-       return view('relasi', compact('relasi'));
-   }
+ public function relasi()
+ {
+     $relasi = Invoice::all();
+     dd($relasi);
+     return view('relasi', compact('relasi'));
+ }
 }
