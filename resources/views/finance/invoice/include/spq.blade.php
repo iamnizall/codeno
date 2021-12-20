@@ -27,9 +27,11 @@
 					</div>
 					<div class="col-sm-2">
 						<select name="type" class="form-control" onchange="location = this.value;">
-							<option value="luar">Invoice Luar</option>
 							<option value="local">Invoice Local</option>
+							<option value="luar">Invoice Luar</option>
+							<option value="luar2">Invoice Luar 2</option>
 							<option value="spq" selected>Invoice SPQ</option>
+							<option value="spq2">Invoice SPQ 2</option>
 						</select>
 					</div>
 				</div>

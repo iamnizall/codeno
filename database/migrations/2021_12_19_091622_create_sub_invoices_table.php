@@ -19,9 +19,9 @@ class CreateSubInvoicesTable extends Migration
             $table->string('job_desc');
             $table->string('manager')->nullable();
             $table->string('starnum')->nullable();
-            $table->integer('vol');
+            $table->integer('vol')->nullable();
             $table->string('unit')->nullable();
-            $table->integer('price');
+            $table->integer('price')->nullable();
             $table->integer('total');
             $table->timestamps();
         });

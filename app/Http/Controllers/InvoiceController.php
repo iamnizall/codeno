@@ -48,11 +48,25 @@ class InvoiceController extends Controller
         return view('finance.invoice.include.luar', compact('npo', 'title'));
     }
 
+    public function createLuar2()
+    {
+        $title = "Create Invoice Luar 2";
+        $npo = Invoice::orderby('id', 'DESC')->first();
+        return view('finance.invoice.include.luar2', compact('npo', 'title'));
+    }
+
     public function createSpq()
     {
         $title = "Create Invoice SPQ";
         $npo = Invoice::orderby('id', 'DESC')->first();
         return view('finance.invoice.include.spq', compact('npo', 'title'));
+    }
+
+    public function createSpq2()
+    {
+        $title = "Create Invoice SPQ 2";
+        $npo = Invoice::orderby('id', 'DESC')->first();
+        return view('finance.invoice.include.spq2', compact('npo', 'title'));
     }
 
     /**
@@ -71,7 +85,7 @@ class InvoiceController extends Controller
             'address'  => 'required',
             'mail'     => 'required',
             'client'   => 'required',
-            'norek'   => 'required',
+            'norek'    => 'required',
             'job_desc' => 'required',
             'vol'      => 'required',
             'price'    => 'required'
@@ -91,9 +105,9 @@ class InvoiceController extends Controller
         $dt->tax       = $request->tax;
         $dt->indate    = $request->indate;
         $dt->norek     = $request->norek;
-        $dt->amount     = $request->amount;
-        $dt->totalcost    = $request->totalcost;
-        $dt->totaltax    = $request->totaltax;
+        $dt->amount    = $request->amount;
+        $dt->totalcost = $request->totalcost;
+        $dt->totaltax  = $request->totaltax;
         $dt->stotal    = $request->stotal;
         $dt->notes     = $request->notes;
         $dt->signature = $request->signature;
@@ -111,6 +125,28 @@ class InvoiceController extends Controller
                 $dl->save();
             };
             
+        }elseif($request->type == 'luar'){
+            for($i = 0; $i<count($request->job_desc); $i++){
+                $dl             = new subInvoice;
+                $dl->invoice_id = $request->invoice_id;
+                $dl->job_desc   = $request->job_desc[$i];
+                $dl->manager    = $request->manager[$i];
+                $dl->starnum    = $request->starnum[$i];
+                $dl->vol        = $request->vol[$i];
+                $dl->price      = $request->price[$i];
+                $dl->total      = $request->total[$i];
+                $dl->save();
+            };
+        }elseif($request->type == 'luar2'){
+            for($i = 0; $i<count($request->job_desc); $i++){
+                $dl             = new subInvoice;
+                $dl->invoice_id = $request->invoice_id;
+                $dl->job_desc   = $request->job_desc[$i];
+                $dl->starnum    = $request->starnum[$i];
+                $dl->unit       = $request->unit[$i];
+                $dl->total      = $request->total[$i];
+                $dl->save();
+            };
         }elseif($request->type == 'spq'){
             for($i = 0; $i<count($request->job_desc); $i++){
                 $dl             = new subInvoice;
@@ -120,16 +156,13 @@ class InvoiceController extends Controller
                 $dl->price      = $request->price[$i];
                 $dl->total      = $request->total[$i];
                 $dl->save();
-            };
-        }elseif($request->type == 'luar'){
+            }
+        }elseif($request->type == 'spq2'){
             for($i = 0; $i<count($request->job_desc); $i++){
                 $dl             = new subInvoice;
                 $dl->invoice_id = $request->invoice_id;
                 $dl->job_desc   = $request->job_desc[$i];
-                $dl->manager   = $request->manager[$i];
-                $dl->starnum   = $request->starnum[$i];
-                $dl->vol        = $request->vol[$i];
-                $dl->price      = $request->price[$i];
+                $dl->unit       = $request->unit[$i];;
                 $dl->total      = $request->total[$i];
                 $dl->save();
             };
@@ -183,7 +216,7 @@ class InvoiceController extends Controller
         'address'  => 'required',
         'mail'     => 'required',
         'client'   => 'required',
-        'norek'   => 'required',
+        'norek'    => 'required',
         'job_desc' => 'required',
         'vol'      => 'required',
         'price'    => 'required'
@@ -203,9 +236,9 @@ class InvoiceController extends Controller
      $dt->tax       = $request->tax;
      $dt->indate    = $request->indate;
      $dt->norek     = $request->norek;
-     $dt->amount     = $request->amount;
-     $dt->totalcost    = $request->totalcost;
-     $dt->totaltax    = $request->totaltax;
+     $dt->amount    = $request->amount;
+     $dt->totalcost = $request->totalcost;
+     $dt->totaltax  = $request->totaltax;
      $dt->stotal    = $request->stotal;
      $dt->notes     = $request->notes;
      $dt->signature = $request->signature;
@@ -238,8 +271,8 @@ class InvoiceController extends Controller
             $dl             = new subInvoice;
             $dl->invoice_id = $request->invoice_id;
             $dl->job_desc   = $request->job_desc[$i];
-            $dl->manager   = $request->manager[$i];
-            $dl->starnum   = $request->starnum[$i];
+            $dl->manager    = $request->manager[$i];
+            $dl->starnum    = $request->starnum[$i];
             $dl->vol        = $request->vol[$i];
             $dl->price      = $request->price[$i];
             $dl->total      = $request->total[$i];

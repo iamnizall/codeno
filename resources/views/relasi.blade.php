@@ -16,6 +16,8 @@
 			<li>{{ $t->job_desc }} >> {{ $t->vol }} : {{ $t->total }}</li>
 			@endforeach
 		</ul>
+		<li>{{ $a->totalcost }}</li>
+		<li>{{ $a->totaltax }}</li>
 		<li>{{ $a->stotal }}</li>
 	</ul>
 	@endforeach
