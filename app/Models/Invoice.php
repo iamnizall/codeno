@@ -12,9 +12,11 @@ class Invoice extends Model
     protected $guarded = [];
     
 
-    public function locals()
+    public function subinvoice()
     {
-        return $this->hasMany(Local::class);
+        return $this->hasMany(subInvoice::class);
     }
+    
+
 
 }

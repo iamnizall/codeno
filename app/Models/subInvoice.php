@@ -7,5 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class subInvoice extends Model
 {
-    use HasFactory;
+    // use HasFactory;
+    public function invoice(){
+        return $this->BelongsTo(Invoice::class,'invoice_id');
+    }
 }

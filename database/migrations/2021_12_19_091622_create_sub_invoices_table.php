@@ -15,7 +15,7 @@ class CreateSubInvoicesTable extends Migration
     {
         Schema::create('sub_invoices', function (Blueprint $table) {
             $table->id();
-            $table->string('invoice_id');
+            $table->foreignId('invoice_id')->constrained('invoices')->onDelete('cascade')->onUpdate('cascade');
             $table->string('job_desc');
             $table->string('manager')->nullable();
             $table->string('starnum')->nullable();

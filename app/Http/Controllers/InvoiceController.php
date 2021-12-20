@@ -92,6 +92,8 @@ class InvoiceController extends Controller
         $dt->indate    = $request->indate;
         $dt->norek     = $request->norek;
         $dt->amount     = $request->amount;
+        $dt->totalcost    = $request->totalcost;
+        $dt->totaltax    = $request->totaltax;
         $dt->stotal    = $request->stotal;
         $dt->notes     = $request->notes;
         $dt->signature = $request->signature;
@@ -159,7 +161,7 @@ class InvoiceController extends Controller
         $title = "Invoice Out";
         $invc = Invoice::findOrfail($id);
         // return $invc;
-        return view('finance.invoice.editinvoice', compact('invc','title'));
+        return view('finance.invoice.include.edit', compact('invc','title'));
     }
 
     /**
@@ -171,7 +173,10 @@ class InvoiceController extends Controller
      */
     public function update(Request $request, $id)
     {
+     $title = "Invoice Out";
+     $invc = Invoice::findOrfail($id);
      $this->validate($request,[
+        'p_name'   => 'required',
         'no_inv'   => 'required|min:5',
         's_code'   => 'required|min:7',
         'date'     => 'required',
@@ -183,12 +188,67 @@ class InvoiceController extends Controller
         'vol'      => 'required',
         'price'    => 'required'
     ]);
-     $title = "Invoice Out";
-     $invc = Invoice::findOrfail($id);
-     $invc->update($request->all());
 
-     return redirect()->route('invoice.index');
- }
+     $dt            = new Invoice;
+     $dt->type      = $request->type;
+     $dt->p_name    = $request->p_name;
+     $dt->no_inv    = $request->no_inv;
+     $dt->s_code    = $request->s_code;
+     $dt->date      = $request->date;
+     $dt->no_po     = $request->no_po;
+     $dt->address   = $request->address;
+     $dt->mail      = $request->mail;
+     $dt->client    = $request->client;
+     $dt->payment   = $request->payment;
+     $dt->tax       = $request->tax;
+     $dt->indate    = $request->indate;
+     $dt->norek     = $request->norek;
+     $dt->amount     = $request->amount;
+     $dt->totalcost    = $request->totalcost;
+     $dt->totaltax    = $request->totaltax;
+     $dt->stotal    = $request->stotal;
+     $dt->notes     = $request->notes;
+     $dt->signature = $request->signature;
+     $dt->update();
+
+     if ($request->type == 'local') {
+        for($i = 0; $i<count($request->job_desc); $i++){
+            $dl             = new subInvoice;
+            $dl->invoice_id = $request->invoice_id;
+            $dl->job_desc   = $request->job_desc[$i];
+            $dl->vol        = $request->vol[$i];
+            $dl->unit       = $request->unit[$i];
+            $dl->price      = $request->price[$i];
+            $dl->total      = $request->total[$i];
+            $dl->update();
+        };
+
+    }elseif($request->type == 'spq'){
+        for($i = 0; $i<count($request->job_desc); $i++){
+            $dl             = new subInvoice;
+            $dl->invoice_id = $request->invoice_id;
+            $dl->job_desc   = $request->job_desc[$i];
+            $dl->vol        = $request->vol[$i];
+            $dl->price      = $request->price[$i];
+            $dl->total      = $request->total[$i];
+            $dl->update();
+        };
+    }elseif($request->type == 'luar'){
+        for($i = 0; $i<count($request->job_desc); $i++){
+            $dl             = new subInvoice;
+            $dl->invoice_id = $request->invoice_id;
+            $dl->job_desc   = $request->job_desc[$i];
+            $dl->manager   = $request->manager[$i];
+            $dl->starnum   = $request->starnum[$i];
+            $dl->vol        = $request->vol[$i];
+            $dl->price      = $request->price[$i];
+            $dl->total      = $request->total[$i];
+            $dl->update();
+        };
+    };
+
+    return redirect()->route('invoice.index');
+}
 
     /**
      * Remove the specified resource from storage.
@@ -207,7 +267,7 @@ class InvoiceController extends Controller
     {
      $title = "Invoice Out";
      $keyword = $request->search;
-     $invc = Invoice::where('no_inv', 'like', "%" . $keyword . "%")->paginate(5);
+     $invc = Invoice::where('client', 'like', "%" . $keyword . "%")->paginate(5);
      return view('finance.invoice.invoice', compact('invc', 'title'))
      ->with('i', (request()->input('page', 1) - 1) * 5);
  }
@@ -215,7 +275,8 @@ class InvoiceController extends Controller
  public function relasi()
  {
      $relasi = Invoice::all();
-     dd($relasi);
+
+     // return $relasi;
      return view('relasi', compact('relasi'));
  }
 }

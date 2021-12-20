@@ -243,7 +243,7 @@
 							<div class="form-group row">
 								<label for="staticEmail" class="col-sm-6 col-form-label">Total Cost</label>
 								<div class="col-sm-6">
-									<input type="text" id="cost" readonly class="form-control-plaintext stotal"  value="0">
+									<input type="text" id="cost" name="totalcost" readonly class="form-control-plaintext stotal"  value="0">
 								</div>
 							</div>
 							<hr>
@@ -251,7 +251,7 @@
 							<div class="form-group row">
 								<label for="staticEmail" class="col-sm-6 col-form-label"><span id="vtax">Tax</span></label>
 								<div class="col-sm-6">
-									<input type="text" id="fax" readonly class="form-control-plaintext stotal" value="0">
+									<input type="text" id="fax" name="totaltax" readonly class="form-control-plaintext stotal" value="0">
 								</div>
 							</div>
 							<hr>
