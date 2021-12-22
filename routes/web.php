@@ -53,6 +53,7 @@ Route::get('finance', [FinanceController::class, 'index']);
 Route::get('finance/print', [App\Http\Controllers\PrintController::class, 'print']);
 Route::get('finance/printlocal', [App\Http\Controllers\PrintController::class, 'printlocal']);
 Route::get('finance/printluar', [App\Http\Controllers\PrintController::class, 'printluar']);
+Route::get('finance/printsql', [App\Http\Controllers\PrintController::class, 'printsql']);
 
 Route::resource('finance/invoice', InvoiceController::class)->except(['create']);
 Route::post('finance/invoice', [InvoiceController::class, 'search'])->name('finance.invoice.search');

@@ -21,4 +21,8 @@ class PrintController extends Controller
     {
         return view('/finance/printluar');
     }
+    public function printsql()
+    {
+        return view('/finance/printsql');
+    }
 }

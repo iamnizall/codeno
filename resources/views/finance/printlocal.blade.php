@@ -83,7 +83,7 @@
                 <div class="col-12 table-responsive">
                   <table class="table table-bordered">
                     <thead>
-                    <tr class="thead-dark">
+                    <tr>
                       <th>No</th>
                       <th>Job Description</th>
                       <th>Volume Hour</th>
