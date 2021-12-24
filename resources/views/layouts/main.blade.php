@@ -280,7 +280,7 @@
 
                     <footer class="main-footer">
                         {{-- @include('partials.footer') --}}
-                        <strong>Copyright &copy; 2021-2022 <a href="finance/team">Team UTY</a>.</strong>
+                        <strong>Copyright &copy; 2021-2022 <a href="/finance/team">Team UTY</a>.</strong>
                         All rights reserved.
                         <div class="float-right d-none d-sm-inline-block">
                             <b>Version</b> 1.0.1

@@ -76,7 +76,7 @@
                         <!-- member name & designation -->
                         <div class="member-content">
                             <h3>Michael Yuan A P</h3>
-                            <span>Head Of Marketing</span>
+                            <span>Back End Developer</span>
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur necessitatibus ullam,
                                 culpa odio.</p>
                         </div>
@@ -91,7 +91,7 @@
                     <div class="team-member text-center">
                         <div class="member-photo">
                             <!-- member photo -->
-                            <img class="img-fluid" src="{{ asset('') }}assets/images/team/member-2.jpg" alt="Meghna">
+                            <img class="img-fluid" src="{{ asset('') }}assets/images/team/reza.jpeg" alt="Meghna">
                             <!-- /member photo -->
 
                             <!-- member social profile -->
@@ -109,7 +109,7 @@
                         <!-- member name & designation -->
                         <div class="member-content">
                             <h3>Reza Rahardian Bahar</h3>
-                            <span>Web Developer</span>
+                            <span>Web Designer</span>
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur necessitatibus ullam,
                                 culpa odio.</p>
                         </div>
@@ -122,7 +122,7 @@
                     <div class="team-member text-center">
                         <div class="member-photo">
                             <!-- member photo -->
-                            <img class="img-fluid" src="{{ asset('') }}assets/images/team/member-2.jpg" alt="Meghna">
+                            <img class="img-fluid" src="{{ asset('') }}assets/images/team/tegar.jpeg" alt="Meghna">
                             <!-- /member photo -->
 
                             <!-- member social profile -->
@@ -140,7 +140,7 @@
                         <!-- member name & designation -->
                         <div class="member-content">
                             <h3>Tegar Susilo</h3>
-                            <span>Web Developer</span>
+                            <span>Front End Developer</span>
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur necessitatibus ullam,
                                 culpa odio.</p>
                         </div>
@@ -153,7 +153,7 @@
                     <div class="team-member text-center">
                         <div class="member-photo">
                             <!-- member photo -->
-                            <img class="img-fluid" src="{{ asset('') }}assets/images/team/member-2.jpg" alt="Meghna">
+                            <img class="img-fluid" src="{{ asset('') }}assets/images/team/amin.jpeg" alt="Meghna">
                             <!-- /member photo -->
 
                             <!-- member social profile -->
@@ -171,7 +171,7 @@
                         <!-- member name & designation -->
                         <div class="member-content">
                             <h3>Tholabul Amin</h3>
-                            <span>Web Developer</span>
+                            <span>Back End Developer</span>
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur necessitatibus ullam,
                                 culpa odio.</p>
                         </div>
@@ -185,7 +185,7 @@
                     <div class="team-member text-center">
                         <div class="member-photo">
                             <!-- member photo -->
-                            <img class="img-fluid" src="{{ asset('') }}assets/images/team/member-3.jpg" alt="Meghna">
+                            <img class="img-fluid" src="{{ asset('') }}assets/images/team/nizal.jpg" alt="Meghna">
                             <!-- /member photo -->
 
                             <!-- member social profile -->
@@ -200,14 +200,12 @@
                             <!-- /member social profile -->
                         </div>
 
-                        <!-- member name & designation -->
                         <div class="member-content">
                             <h3>Muhammad Nizal Awaludin R</h3>
-                            <span>Head Of Management</span>
+                            <span>Front End Developer</span>
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur necessitatibus ullam,
                                 culpa odio.</p>
                         </div>
-                        <!-- /member name & designation -->
 
                     </div>
                 </div>
@@ -217,9 +215,7 @@
     </section> <!-- End section -->
 
 
-    <!-- 
-    Essential Scripts
-    =====================================-->
+
     <!-- Main jQuery -->
     <script src="{{ asset('') }}assets/plugin/jquery/jquery.min.js"></script>
     <!-- Google Map -->
