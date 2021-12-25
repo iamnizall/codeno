@@ -14,6 +14,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('assets/style.css') }}" rel="stylesheet">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('') }}assets/images/codeno.png" />
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"

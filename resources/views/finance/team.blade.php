@@ -14,6 +14,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('') }}assets/images/codeno.png" />
     {{-- <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png" /> --}}
 
     <!-- CSS
