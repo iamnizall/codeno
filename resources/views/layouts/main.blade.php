@@ -14,6 +14,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('assets/style.css') }}" rel="stylesheet">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('') }}assets/images/codeno.png" />
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"
@@ -280,7 +281,7 @@
 
                     <footer class="main-footer">
                         {{-- @include('partials.footer') --}}
-                        <strong>Copyright &copy; 2021-2022 <a href="https://adminlte.io">Team UTY</a>.</strong>
+                        <strong>Copyright &copy; 2021-2022 <a href="/finance/team">Team UTY</a>.</strong>
                         All rights reserved.
                         <div class="float-right d-none d-sm-inline-block">
                             <b>Version</b> 1.0.1
