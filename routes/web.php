@@ -59,9 +59,7 @@ Route::resource('finance/invoice', InvoiceController::class)->except(['create'])
 Route::post('finance/invoice', [InvoiceController::class, 'search'])->name('finance.invoice.search');
 Route::get('finance/create-invoice/local', [InvoiceController::class, 'createLocal']);
 Route::get('finance/create-invoice/luar', [InvoiceController::class, 'createLuar']);
-Route::get('finance/create-invoice/luar2', [InvoiceController::class, 'createLuar2']);
 Route::get('finance/create-invoice/spq', [InvoiceController::class, 'createSpq']);
-Route::get('finance/create-invoice/spq2', [InvoiceController::class, 'createSpq2']);
 
 
 Route::get('finance/relasi', [InvoiceController::class, 'relasi']);

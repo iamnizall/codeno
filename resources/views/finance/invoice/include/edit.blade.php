@@ -154,6 +154,7 @@
 				</div>
 				{{-- row 2 --}}
 				<div class="card mt-4">
+					@if ($invc->type == 'local')
 					<table class="table">
 						<thead>
 							<tr>
@@ -197,6 +198,7 @@
 							</tr>
 						</tbody>
 					</table>
+					@endif
 				</div>
 
 				{{-- row 3 Note n Signature --}}

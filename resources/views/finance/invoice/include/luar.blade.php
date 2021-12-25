@@ -29,9 +29,7 @@
 						<select name="type" class="form-control" onchange="location = this.value;">
 							<option value="local">Invoice Local</option>
 							<option value="luar" selected>Invoice Luar</option>
-							<option value="luar2">Invoice Luar 2</option>
 							<option value="spq">Invoice SPQ</option>
-							<option value="spq2">Invoice SPQ 2</option>
 						</select>
 					</div>
 				</div>
@@ -161,7 +159,11 @@
 						<label for="norek">No. Rekening</label>
 						<select id="norek" name="norek" class="form-control" required>
 							<option value="">No. Rekening</option>
-							<option value="PT STAR Software Indonesia">PT STAR Software Indonesia</option>							
+							<option value="070 1137302">PT Star Software Indonesia(IDR)</option>
+							<option value="0902211411">PT Star Software Indonesia(DOLLAR)</option>
+							<option value="090 2212221">PT Star Software Indonesia(EURO)</option>
+							<option value="3590119073">PT STAR Software Indonesia(IDR:Danamon Bank)</option>
+							<option value="financedept@bintang‐35.net">Paypal(PT Bintang Panca Tridasa)</option>
 						</select>
 					</div>
 				</div>
@@ -175,23 +177,14 @@
 								<th>Star Number</th>
 								<th>Number Word/page</th>
 								<th>Unit Price/word</th>
-								<th>
-									<select id="amount" name="amount" required>
-										<option>Amount</option>
-										<option value="070 1137302">Amount IDR</option>
-										<option value="0902211411">Amount Dollar</option>
-										<option value="090 2212221">Amount Euro</option>
-										<option value="3590119073">Amount IDR(Danamon Bank)</option>
-										<option value="financedept@bintang‐35.net">Paypal(PT Bintang Panca Tridasa)</option>
-									</select>
-								</th>
+								<th>Amount IDR</th>
 								<th></th>
 							</tr>
 						</thead>
 						<tbody id="form-body">
 							<tr>
 								<td>
-									<input id="job_desc" type="text" class="form-control" name="job_desc[]">
+									<input id="job_desc" type="text" class="form-control" name="job_desc[]"autocomplete="off">
 								</td>
 								<td>
 									<input type="text" class="form-control" name="manager[]">
@@ -286,9 +279,9 @@
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script type="text/javascript">
 
-	$('#amount').on('change', function(){
-		var amount = $(this). children("option:selected"). val()
-		$('#account').val(amount);
+	$('#norek').on('change', function(){
+		var norek = $(this). children("option:selected"). val()
+		$('#account').val(norek);
 	});
 
 	$('#tax').on('change', function(){
@@ -332,7 +325,7 @@
 		i++;
 		var html = '';
 		html += '<tr>';
-		html += '<td><input type="text" class="form-control" name="job_desc[]"></td>';
+		html += '<td><input type="text" class="form-control" name="job_desc[]"autocomplete="off"></td>';
 		html += '<td><input type="text" class="form-control" name="manager[]"></td>';
 		html += '<td><input type="text" class="form-control" name="starnum[]"></td>';
 		html += '<td><input type="text" class="form-control vol' + i +'" name="vol[]"></td>';

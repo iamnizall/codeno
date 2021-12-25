@@ -29,9 +29,7 @@
 						<select name="type" class="form-control" onchange="location = this.value;">
 							<option value="local">Invoice Local</option>
 							<option value="luar">Invoice Luar</option>
-							<option value="luar2">Invoice Luar 2</option>
 							<option value="spq" selected>Invoice SPQ</option>
-							<option value="spq2">Invoice SPQ 2</option>
 						</select>
 					</div>
 				</div>
@@ -161,7 +159,11 @@
 						<label for="norek">No. Rekening</label>
 						<select id="norek" name="norek" class="form-control" required>
 							<option value="">No. Rekening</option>
-							<option value="PT STAR Software Indonesia">PT STAR Software Indonesia</option>							
+							<option value="070 1137302">PT Star Software Indonesia(IDR)</option>
+							<option value="0902211411">PT Star Software Indonesia(DOLLAR)</option>
+							<option value="090 2212221">PT Star Software Indonesia(EURO)</option>
+							<option value="3590119073">PT STAR Software Indonesia(IDR:Danamon Bank)</option>
+							<option value="financedept@bintang‐35.net">Paypal(PT Bintang Panca Tridasa)</option>
 						</select>
 					</div>
 				</div>
@@ -173,16 +175,7 @@
 								<th>Job Desciption</th>
 								<th>Qtt words</th>
 								<th>Unit price IDR</th>
-								<th>
-									<select id="amount" name="amount" required>
-										<option>Amount</option>
-										<option value="070 1137302">Amount IDR</option>
-										<option value="0902211411">Amount Dollar</option>
-										<option value="090 2212221">Amount Euro</option>
-										<option value="3590119073">Amount IDR(Danamon Bank)</option>
-										<option value="financedept@bintang‐35.net">Paypal(PT Bintang Panca Tridasa)</option>
-									</select>
-								</th>
+								<th>Amount IDR</th>
 								<th></th>
 							</tr>
 						</thead>
@@ -278,9 +271,9 @@
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script type="text/javascript">
 
-	$('#amount').on('change', function(){
-		var amount = $(this). children("option:selected"). val()
-		$('#account').val(amount);
+	$('#norek').on('change', function(){
+		var norek = $(this). children("option:selected"). val()
+		$('#account').val(norek);
 	});
 
 	$('#tax').on('change', function(){
