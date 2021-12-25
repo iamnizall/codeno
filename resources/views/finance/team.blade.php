@@ -34,9 +34,6 @@
 </head>
 
 <body id="body">
-    
-    <!-- Start Our Team
-  =========================================== -->
     <section class="team" id="team">
         <div class="container">
             <div class="row">
@@ -45,9 +42,8 @@
                 <div class="col-12">
                     <div class="title text-center ">
                         <h2>Our Team</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque quasi tempora obcaecati,
-                            quis
-                            similique quos.</p>
+                        <p>Project Codeno Finance ini dibuat dengan Team yang terdiri dari
+                            beberapa anggota yang mempunyai task masing-masing.</p>
                         <div class="border"></div>
                     </div>
                 </div>
@@ -58,7 +54,7 @@
                     <div class="team-member text-center">
                         <div class="member-photo">
                             <!-- member photo -->
-                            <img class="img-fluid" src="{{ asset('') }}assets/images/team/member-1.jpg" alt="Meghna">
+                            <img class="img-fluid" src="{{ asset('') }}assets/images/team/yuan.jpeg" alt="Meghna">
                             <!-- /member photo -->
 
                             <!-- member social profile -->
@@ -77,8 +73,7 @@
                         <div class="member-content">
                             <h3>Michael Yuan A P</h3>
                             <span>Back End Developer</span>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur necessitatibus ullam,
-                                culpa odio.</p>
+                            <p>Bertugas untuk mengerjakan bagian logic dari BAST dan SEND.</p>
                         </div>
                         <!-- /member name & designation -->
 
@@ -110,8 +105,7 @@
                         <div class="member-content">
                             <h3>Reza Rahardian Bahar</h3>
                             <span>Web Designer</span>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur necessitatibus ullam,
-                                culpa odio.</p>
+                            <p>Bertugas untuk mengerjakan design dari Codeno Finance.</p>
                         </div>
                         <!-- /member name & designation -->
                     </div>
@@ -141,8 +135,7 @@
                         <div class="member-content">
                             <h3>Tegar Susilo</h3>
                             <span>Front End Developer</span>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur necessitatibus ullam,
-                                culpa odio.</p>
+                            <p>Bertugas untuk mengerjakan tampilan website dari BAST dan SEND.</p>
                         </div>
                         <!-- /member name & designation -->
                     </div>
@@ -172,8 +165,7 @@
                         <div class="member-content">
                             <h3>Tholabul Amin</h3>
                             <span>Back End Developer</span>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur necessitatibus ullam,
-                                culpa odio.</p>
+                            <p>Bertugas untuk mengerjakan logic dari LOGIN, DASHBOARD, INVOICE OUT.</p>
                         </div>
                         <!-- /member name & designation -->
                     </div>
@@ -203,8 +195,7 @@
                         <div class="member-content">
                             <h3>Muhammad Nizal Awaludin R</h3>
                             <span>Front End Developer</span>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur necessitatibus ullam,
-                                culpa odio.</p>
+                            <p>Bertugas untuk mengerjakan tampilan website dari LOGIN, DASHBOARD dan INVOICE OUT</p>
                         </div>
 
                     </div>
