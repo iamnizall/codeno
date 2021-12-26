@@ -216,16 +216,16 @@
 									<input type="text" class="form-control" name="manager[]" value="{{ $in->manager }}">
 								</td>
 								<td>
-									<input type="text" class="form-control" name="starnum[]" value="starnum">
+									<input type="text" class="form-control" name="starnum[]" value="{{ $in->starnum }}">
 								</td>
 								<td>
-									<input type="text" class="vol form-control" name="vol[]" value="vol">
+									<input type="text" class="vol form-control" name="vol[]" value="{{ $in->vol }}">
 								</td>
 								<td>
-									<input type="text" class="price form-control" name="price[]" value="price">
+									<input type="text" class="price form-control" name="price[]" value="{{ $in->price }}">
 								</td>
 								<td>
-									<input type="text" class="form-control tot total" name="total[]" readonly value="total">
+									<input type="text" class="form-control tot total" name="total[]" readonly value="{{ $in->total }}">
 								</td>
 								<td>
 									<button type="button" onclick="add_form()" class="btn btn-success"><i class="fas fa-plus"></i></button>
