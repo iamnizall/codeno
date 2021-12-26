@@ -146,7 +146,9 @@ class InvoiceController extends Controller
      */
     public function show($id)
     {
-        // 
+        $invc = Invoice::find($id);
+        // return $invc;
+        return view('finance/invoice/print', compact('invc'));
     }
 
     /**
@@ -173,22 +175,8 @@ class InvoiceController extends Controller
     public function update(Request $request, $id)
     {
        $title = "Invoice Out";
-       $invc = Invoice::findOrfail($id);
-       $this->validate($request,[
-        'p_name'   => 'required',
-        'no_inv'   => 'required|min:5',
-        's_code'   => 'required|min:7',
-        'date'     => 'required',
-        'address'  => 'required',
-        'mail'     => 'required',
-        'client'   => 'required',
-        'norek'    => 'required',
-        'job_desc' => 'required',
-        'vol'      => 'required',
-        'price'    => 'required'
-    ]);
 
-       $dt            = new Invoice;
+       $dt            = Invoice::find($id);
        $dt->type      = $request->type;
        $dt->p_name    = $request->p_name;
        $dt->no_inv    = $request->no_inv;
@@ -207,43 +195,19 @@ class InvoiceController extends Controller
        $dt->stotal    = $request->stotal;
        $dt->notes     = $request->notes;
        $dt->signature = $request->signature;
-       $dt->update();
+       $dt->save();
 
        if ($request->type == 'local') {
         for($i = 0; $i<count($request->job_desc); $i++){
-            $dl             = new subInvoice;
-            $dl->invoice_id = $request->invoice_id;
+            $dl             = Invoice::find($invoice_id);
             $dl->job_desc   = $request->job_desc[$i];
             $dl->vol        = $request->vol[$i];
             $dl->unit       = $request->unit[$i];
             $dl->price      = $request->price[$i];
             $dl->total      = $request->total[$i];
-            $dl->update();
+            $dl->save();
         };
-
-    }elseif($request->type == 'spq'){
-        for($i = 0; $i<count($request->job_desc); $i++){
-            $dl             = new subInvoice;
-            $dl->invoice_id = $request->invoice_id;
-            $dl->job_desc   = $request->job_desc[$i];
-            $dl->vol        = $request->vol[$i];
-            $dl->price      = $request->price[$i];
-            $dl->total      = $request->total[$i];
-            $dl->update();
-        };
-    }elseif($request->type == 'luar'){
-        for($i = 0; $i<count($request->job_desc); $i++){
-            $dl             = new subInvoice;
-            $dl->invoice_id = $request->invoice_id;
-            $dl->job_desc   = $request->job_desc[$i];
-            $dl->manager    = $request->manager[$i];
-            $dl->starnum    = $request->starnum[$i];
-            $dl->vol        = $request->vol[$i];
-            $dl->price      = $request->price[$i];
-            $dl->total      = $request->total[$i];
-            $dl->update();
-        };
-    };
+    }
 
     return redirect()->route('invoice.index');
 }

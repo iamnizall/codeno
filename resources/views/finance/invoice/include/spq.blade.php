@@ -182,7 +182,7 @@
 						<tbody id="form-body">
 							<tr>
 								<td>
-									<input id="job_desc" type="text" class="form-control" name="job_desc[]">
+									<input id="job_desc" type="text" class="form-control" name="job_desc[]" autocomplete="off">
 								</td>
 								<td>
 									<input type="text" class="vol form-control" name="vol[]">
@@ -222,7 +222,6 @@
 						
 						{{-- submit --}}
 						<div class="text-center mt-4">
-							<a href="/finance/printsql" class="btn btn-success mx-3" style="width: 150px;" type="submit"><i class="fas fa-print"></i> Print</a>
 							<button style="width: 150px;" type="submit" class="btn btn-primary b-on mx-auto"><i class="far fa-save fa-lg"></i> save</button>
 							<button class="btn btn-primary d-none b-of" type="button" disabled>
 								<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
@@ -317,7 +316,7 @@
 		i++;
 		var html = '';
 		html += '<tr>';
-		html += '<td><input type="text" class="form-control" name="job_desc[]"></td>';
+		html += '<td><input type="text" class="form-control" name="job_desc[]" autocomplete="off"></td>';
 		html += '<td><input type="text" class="form-control vol' + i +'" name="vol[]"></td>';
 		html += '<td><input type="text" class="form-control price'+i+'" name="price[]"></td>';
 		html += '<td><input type="text" class="form-control tot total'+i+'" name="total[]" readonly></td>';

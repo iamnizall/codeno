@@ -45,6 +45,7 @@
         $(function() {
             $("#date").datepicker({
                 minDate: moment().add('d', 0).toDate(),
+                dateFormat: 'd/m/yy',
             });
         });
     </script>

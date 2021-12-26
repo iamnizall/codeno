@@ -15,10 +15,8 @@
 					<div class="col-sm-2">
 						<select name="type" class="form-control" onchange="location = this.value;">
 							<option value="luar" @if ($invc->type == 'luar')selected @endif>Invoice Luar</option>
-							<option value="luar2" @if ($invc->type == 'luar2')selected @endif>Invoice Luar 2</option>
 							<option value="local" @if ($invc->type == 'local')selected @endif>Invoice Local</option>
 							<option value="spq" @if ($invc->type == 'spq')selected @endif>Invoice SPQ</option>
-							<option value="spq2" @if ($invc->type == 'spq2')selected @endif>Invoice SPQ 2</option>
 						</select>
 					</div>
 				</div>
@@ -137,7 +135,7 @@
 					{{-- account --}}
 					<div class="col">
 						<label for="account">Account</label>
-						<input id="account" type="text" class="form-control" value="{{ $invc->amount }}" readonly>
+						<input id="account" type="text" class="form-control" value="{{ $invc->norek }}" readonly>
 					</div>
 					{{-- date --}}
 					<div class="col">
@@ -148,7 +146,11 @@
 						<label for="norek">No. Rekening</label>
 						<select id="norek" name="norek" class="form-control" required>
 							<option value="">No. Rekening</option>
-							<option value="PT STAR Software Indonesia" @if ($invc->norek == 'PT STAR Software Indonesia')selected @endif>PT STAR Software Indonesia</option>							
+							<option value="070 1137302" @if ($invc->norek == '070 1137302')selected @endif>PT Star Software Indonesia(IDR)</option>
+							<option value="0902211411" @if ($invc->norek == '0902211411')selected @endif>PT Star Software Indonesia(DOLLAR)</option>
+							<option value="090 2212221" @if ($invc->norek == '090 2212221')selected @endif>PT Star Software Indonesia(EURO)</option>
+							<option value="3590119073" @if ($invc->norek == '3590119073')selected @endif>PT Star Software Indonesia(IDR:Danamon Bank)</option>
+							<option value="financedept@bintang‐35.net" @if ($invc->norek == 'financedept@bintang‐35.net')selected @endif>Paypal(PT Bintang Panca Tridasa)</option>
 						</select>
 					</div>
 				</div>
@@ -162,16 +164,7 @@
 								<th>Volume</th>
 								<th>Unit</th>
 								<th>Unit price IDR</th>
-								<th>
-									<select id="amount" name="amount" required>
-										<option>Amount</option>
-										<option value="070 1137302" @if ($invc->amount == '070 1137302')selected @endif>Amount IDR</option>
-										<option value="0902211411" @if ($invc->amount == '0902211411')selected @endif>Amount Dollar</option>
-										<option value="090 2212221" @if ($invc->amount == '090 2212221')selected @endif>Amount Euro</option>
-										<option value="3590119073" @if ($invc->amount == '3590119073')selected @endif>Amount IDR(Danamon Bank)</option>
-										<option value="financedept@bintang‐35.net" @if ($invc->amount == 'financedept@bintang‐35.net')selected @endif>Paypal(PT Bintang Panca Tridasa)</option>
-									</select>
-								</th>
+								<th>Amount IDR</th>
 								<th></th>
 							</tr>
 						</thead>
@@ -222,7 +215,6 @@
 						
 						{{-- submit --}}
 						<div class="text-center mt-4">
-							<a href="/finance/printlocal" class="btn btn-success mx-3" style="width: 150px;" type="submit"><i class="fas fa-print"></i> Print</a>
 							<button style="width: 150px;" type="submit" class="btn btn-primary b-on mx-auto"><i class="far fa-save fa-lg"></i> save</button>
 							<button class="btn btn-primary d-none b-of" type="button" disabled>
 								<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
@@ -238,7 +230,7 @@
 							<div class="form-group row">
 								<label for="staticEmail" class="col-sm-6 col-form-label">Total Cost</label>
 								<div class="col-sm-6">
-									<input type="text" id="cost" readonly class="form-control-plaintext stotal"  value="{{ $invc->totalcost }}">
+									<input type="text" id="cost" class="form-control-plaintext stotal"  value="{{ $invc->totalcost }}">
 								</div>
 							</div>
 							<hr>
@@ -246,7 +238,7 @@
 							<div class="form-group row">
 								<label for="staticEmail" class="col-sm-6 col-form-label"><span id="vtax">Tax</span></label>
 								<div class="col-sm-6">
-									<input type="text" id="fax" readonly class="form-control-plaintext stotal" value="{{ $invc->totaltax }}">
+									<input type="text" id="fax" class="form-control-plaintext stotal" value="{{ $invc->totaltax }}">
 								</div>
 							</div>
 							<hr>
@@ -254,7 +246,7 @@
 							<div class="form-group row">
 								<label for="staticEmail" class="col-sm-6 col-form-label"><b>Grand Total</b></label>
 								<div class="col-sm-6">
-									<input type="text" name="stotal" id="stotal" readonly class="form-control-plaintext stotal" value="{{ $invc->stotal }}">
+									<input type="text" name="stotal" id="stotal" class="form-control-plaintext stotal" value="{{ $invc->stotal }}">
 								</div>
 							</div>
 							<hr>
@@ -271,9 +263,9 @@
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script type="text/javascript">
 
-	$('#amount').on('change', function(){
-		var amount = $(this). children("option:selected"). val()
-		$('#account').val(amount);
+	$('#norek').on('change', function(){
+		var norek = $(this). children("option:selected"). val()
+		$('#account').val(norek);
 	});
 
 	$('#tax').on('change', function(){

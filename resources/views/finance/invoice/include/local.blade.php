@@ -226,7 +226,6 @@
 
 						{{-- submit --}}
 						<div class="text-center mt-4">
-							<a href="/finance/printlocal" class="btn btn-success mx-3" style="width: 150px;" type="submit"><i class="fas fa-print"></i> Print</a>
 							<button style="width: 150px;" type="submit" class="btn btn-primary b-on mx-auto"><i class="far fa-save fa-lg"></i> save</button>
 							<button class="btn btn-primary d-none b-of" type="button" disabled>
 								<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
