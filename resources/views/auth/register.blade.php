@@ -10,23 +10,11 @@
         <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
         <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <!-- <link rel="stylesheet" href="asset/css/style.css"> -->
-
-        <!-- Styles -->
-<<<<<<< HEAD
-        <link href="{!! asset('assets/login/login.css') !!}" rel="stylesheet">
 
         <link rel="shortcut icon" href="{!! asset('assets/login/logo.png') !!}" type="image/x-icon">
-=======
-        {{-- <link href="{{ asset('login/login.css') }}" rel="stylesheet"> --}}
-        <link rel="stylesheet" href="{{ asset('') }}assets/login/login.css">
 
-<<<<<<< HEAD
->>>>>>> 382c0e4118d74c027d268c61036422747193b980
-        <title>Login Page</title>
-=======
+        <link rel="stylesheet" href="{{ asset('') }}assets/login/login.css">
         <title>Registrasi Page</title>
->>>>>>> a670027982fe2451f65c81e8daca3d93865bfab5
     </head>
 
     <body>

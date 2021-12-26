@@ -18,11 +18,8 @@ use App\Http\Controllers\PostController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-Route::redirect('/', 'finance', 308);
-Route::redirect('/home', 'finance', 308);
+Route::redirect('/', 'finance', 307);
+Route::redirect('/home', 'finance', 307);
 
 Route::get('/bast', function () {
     return view('finance.bast',["title" => "BAST"
@@ -45,11 +42,6 @@ Route::get('/newbast', function () {
 //     ]);
 // });
 
-// Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-
 Route::get('finance', [FinanceController::class, 'index']);
 
 Route::get('finance/print', [App\Http\Controllers\PrintController::class, 'print']);
@@ -65,11 +57,6 @@ Route::get('finance/create-invoice/local', [InvoiceController::class, 'createLoc
 Route::get('finance/create-invoice/luar', [InvoiceController::class, 'createLuar']);
 Route::get('finance/create-invoice/spq', [InvoiceController::class, 'createSpq']);
 
-
 Route::get('finance/relasi', [InvoiceController::class, 'relasi']);
 
-Route::resource('ajax', PostController::class);
-
 Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

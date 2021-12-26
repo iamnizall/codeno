@@ -176,13 +176,13 @@
 									<input id="job_desc" type="text" class="form-control" value="{{ $in->job_desc }}" name="job_desc[]">
 								</td>
 								<td>
-									<input type="text" class="vol form-control" value="{{ $in->vol }}" name="vol[]">
+									<input type="text" class="vol form-control" value="{{ $in->vol }}" name="vol[]" readonly>
 								</td>
 								<td>
 									<input id="unit" type="text" class="form-control" value="{{ $in->unit }}" name="unit[]">
 								</td>
 								<td>
-									<input type="text" class="price form-control" value="{{ $in->price }}" name="price[]">
+									<input type="text" class="price form-control" value="{{ $in->price }}" name="price[]" readonly>
 								</td>
 								<td>
 									<input type="text" class="form-control tot total" value="{{ $in->total }}" name="total[]" readonly>
@@ -191,10 +191,49 @@
 							@endforeach
 						</tbody>
 					</table>
+
 					@elseif($invc->type == 'luar')
-					<h1>luar</h1>
-					@elseif($invc->type == 'spq')
-					<h1>spq</h1>
+					<table class="table">
+						<thead>
+							<tr>
+								<th>Job Description</th>
+								<th>Project Manager</th>
+								<th>Star Number</th>
+								<th>Number Word/page</th>
+								<th>Unit Price/word</th>
+								<th>Amount IDR</th>
+								<th></th>
+							</tr>
+						</thead>
+						<tbody id="form-body">
+							@foreach ($invc->subinvoice as $in)
+
+							<tr>
+								<td>
+									<input id="job_desc" type="text" class="form-control" name="job_desc[]" value="{{ $in->job_desc }}" autocomplete="off">
+								</td>
+								<td>
+									<input type="text" class="form-control" name="manager[]" value="{{ $in->manager }}">
+								</td>
+								<td>
+									<input type="text" class="form-control" name="starnum[]" value="starnum">
+								</td>
+								<td>
+									<input type="text" class="vol form-control" name="vol[]" value="vol">
+								</td>
+								<td>
+									<input type="text" class="price form-control" name="price[]" value="price">
+								</td>
+								<td>
+									<input type="text" class="form-control tot total" name="total[]" readonly value="total">
+								</td>
+								<td>
+									<button type="button" onclick="add_form()" class="btn btn-success"><i class="fas fa-plus"></i></button>
+								</td>
+							</tr>
+							@endforeach
+						</tbody>
+					</table>
 					@endif
 				</div>
 
