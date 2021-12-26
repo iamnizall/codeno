@@ -13,9 +13,15 @@
         <!-- <link rel="stylesheet" href="asset/css/style.css"> -->
 
         <!-- Styles -->
+<<<<<<< HEAD
         <link href="{!! asset('assets/login/login.css') !!}" rel="stylesheet">
 
         <link rel="shortcut icon" href="{!! asset('assets/login/logo.png') !!}" type="image/x-icon">
+=======
+        {{-- <link href="{{ asset('login/login.css') }}" rel="stylesheet"> --}}
+        <link rel="stylesheet" href="{{ asset('') }}assets/login/login.css">
+
+>>>>>>> 382c0e4118d74c027d268c61036422747193b980
         <title>Login Page</title>
     </head>
 
