@@ -10,12 +10,12 @@
         <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
         <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <link rel="stylesheet" href="asset/css/style.css">
+        <!-- <link rel="stylesheet" href="asset/css/style.css"> -->
 
         <!-- Styles -->
-        <link href="{{ asset('login/login.css') }}" rel="stylesheet">
+        <link href="{!! asset('assets/login/login.css') !!}" rel="stylesheet">
 
-        <link rel="shortcut icon" href="{{ asset('login/logo.png') }}" type="image/x-icon">
+        <link rel="shortcut icon" href="{!! asset('assets/login/logo.png') !!}" type="image/x-icon">
         <title>Login Page</title>
     </head>
 
