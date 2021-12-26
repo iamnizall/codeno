@@ -61,10 +61,9 @@
                             <!-- member social profile -->
                             <div class="mask">
                                 <ul class="clearfix">
-                                    <li><a href="#"><i class="tf-ion-social-facebook"></i></a></li>
-                                    <li><a href="#"><i class="tf-ion-social-twitter"></i></a></li>
-                                    <li><a href="#"><i class="tf-ion-social-google-outline"></i></a></li>
-                                    <li><a href="#"><i class="tf-ion-social-dribbble"></i></a></li>
+                                    <li><a target="_blank" href="https://web.facebook.com/gtads"><i class="tf-ion-social-facebook"></i></a></li>
+                                    <li><a target="_blank" href="#"><i class="tf-ion-social-twitter"></i></a></li>
+                                    <li><a target="_blank" href="https://www.linkedin.com/in/michaelyuan1/"><i class="fab fa-linkedin-in"></i></a></li>
                                 </ul>
                             </div>
                             <!-- /member social profile -->
@@ -93,10 +92,9 @@
                             <!-- member social profile -->
                             <div class="mask">
                                 <ul class="clearfix">
-                                    <li><a href="#"><i class="tf-ion-social-facebook"></i></a></li>
-                                    <li><a href="#"><i class="tf-ion-social-twitter"></i></a></li>
-                                    <li><a href="#"><i class="tf-ion-social-google-outline"></i></a></li>
-                                    <li><a href="#"><i class="tf-ion-social-dribbble"></i></a></li>
+                                    <li><a target="_blank" href="https://web.facebook.com/profile.php?id=100016534335008"><i class="tf-ion-social-facebook"></i></a></li>
+                                    <li><a target="_blank" href="#"><i class="tf-ion-social-twitter"></i></a></li>
+                                    <li><a target="_blank" href="https://www.linkedin.com/in/reza-rahardian-bahar-22268021a/"><i class="fab fa-linkedin-in"></i></a></li>
                                 </ul>
                             </div>
                             <!-- /member social profile -->
@@ -123,10 +121,9 @@
                             <!-- member social profile -->
                             <div class="mask">
                                 <ul class="clearfix">
-                                    <li><a href="#"><i class="tf-ion-social-facebook"></i></a></li>
-                                    <li><a href="#"><i class="tf-ion-social-twitter"></i></a></li>
-                                    <li><a href="#"><i class="tf-ion-social-google-outline"></i></a></li>
-                                    <li><a href="#"><i class="tf-ion-social-dribbble"></i></a></li>
+                                    <li><a target="_blank" href="#"><i class="tf-ion-social-facebook"></i></a></li>
+                                    <li><a target="_blank" href="#"><i class="tf-ion-social-twitter"></i></a></li>
+                                    <li><a target="_blank" href="#"><i class="fab fa-linkedin-in"></i></a></li>
                                 </ul>
                             </div>
                             <!-- /member social profile -->
@@ -153,10 +150,9 @@
                             <!-- member social profile -->
                             <div class="mask">
                                 <ul class="clearfix">
-                                    <li><a href="#"><i class="tf-ion-social-facebook"></i></a></li>
-                                    <li><a href="#"><i class="tf-ion-social-twitter"></i></a></li>
-                                    <li><a href="#"><i class="tf-ion-social-google-outline"></i></a></li>
-                                    <li><a href="#"><i class="tf-ion-social-dribbble"></i></a></li>
+                                    <li><a target="_blank" href="#"><i class="tf-ion-social-facebook"></i></a></li>
+                                    <li><a target="_blank" href="#"><i class="tf-ion-social-twitter"></i></a></li>
+                                    <li><a target="_blank" href="https://www.linkedin.com/in/tholabul-amin-21aa62211/"><i class="fab fa-linkedin-in"></i></a></li>
                                 </ul>
                             </div>
                             <!-- /member social profile -->
@@ -184,10 +180,9 @@
                             <!-- member social profile -->
                             <div class="mask">
                                 <ul class="clearfix">
-                                    <li><a href="#"><i class="tf-ion-social-facebook"></i></a></li>
-                                    <li><a href="#"><i class="tf-ion-social-twitter"></i></a></li>
-                                    <li><a href="#"><i class="tf-ion-social-google-outline"></i></a></li>
-                                    <li><a href="#"><i class="tf-ion-social-dribbble"></i></a></li>
+                                    <li><a target="_blank" href="https://web.facebook.com/nizaleleven"><i class="tf-ion-social-facebook"></i></a></li>
+                                    <li><a target="_blank" href="https://twitter.com/BoywithLuuuv"><i class="tf-ion-social-twitter"></i></a></li>
+                                    <li><a target="_blank" href="https://www.linkedin.com/in/muhammad-nizal-awaludin-rizqi-0baa611a0/"><i class="fab fa-linkedin-in"></i></a></li>
                                 </ul>
                             </div>
                             <!-- /member social profile -->
@@ -202,9 +197,9 @@
                     </div>
                 </div>
                 <!-- end team member -->
-            </div> <!-- End row -->
-        </div> <!-- End container -->
-    </section> <!-- End section -->
+            </div> 
+        </div> 
+    </section> 
 
 
 
@@ -212,11 +207,6 @@
     <script src="{{ asset('') }}assets/plugin/jquery/jquery.min.js"></script>
     <!-- Google Map -->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu5nZKbeK-WHQ70oqOWo-_4VmwOwKP9YQ"></script>
-    <script src="plugins/google-map/gmap.js"></script>
-
-    <!-- Form Validation -->
-    <script src="{{ asset('') }}assets/plugin/form-validation/jquery.form.js"></script>
-    <script src="{{ asset('') }}assets/plugin/form-validation/jquery.validate.min.js"></script>
 
     <!-- Bootstrap4 -->
     <script src="{{ asset('') }}assets/plugin/bootstrap/js/bootstrap.min.js"></script>
@@ -233,6 +223,9 @@
 
     <!-- Custom js -->
     <script src="{{ asset('') }}assets/css/script.js"></script>
+
+    {{-- fontawesome --}}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
 </body>
 
