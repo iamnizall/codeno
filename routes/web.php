@@ -67,3 +67,7 @@ Route::get('finance/create-invoice/spq', [InvoiceController::class, 'createSpq']
 Route::get('finance/relasi', [InvoiceController::class, 'relasi']);
 
 Route::resource('ajax', PostController::class);
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
