@@ -16,7 +16,7 @@
         {{-- <link href="{{ asset('login/login.css') }}" rel="stylesheet"> --}}
         <link rel="stylesheet" href="{{ asset('') }}assets/login/login.css">
 
-        <title>Login Page</title>
+        <title>Registrasi Page</title>
     </head>
 
     <body>
