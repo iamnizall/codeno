@@ -9,13 +9,18 @@ use Dompdf\Dompdf;
 
 class PrintController extends Controller
 {
-    public function print()
-    {
-        $invc = Invoice::all();
-        return view('/finance/print', compact('invc'));
-    }
-    public function team()
-    {
-        return view('/finance/team');
-    }
+   public function __construct()
+   {
+    $this->middleware('auth');
+}
+
+public function print()
+{
+    $invc = Invoice::all();
+    return view('/finance/print', compact('invc'));
+}
+public function team()
+{
+    return view('/finance/team');
+}
 }

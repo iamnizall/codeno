@@ -21,6 +21,8 @@ use App\Http\Controllers\PostController;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::redirect('/', 'finance', 308);
+Route::redirect('/home', 'finance', 308);
 
 Route::get('/bast', function () {
     return view('finance.bast',["title" => "BAST"
