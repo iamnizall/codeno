@@ -13,9 +13,9 @@
         <link rel="stylesheet" href="asset/css/style.css">
 
         <!-- Styles -->
-        <link href="{{ asset('login/login.css') }}" rel="stylesheet">
+        {{-- <link href="{{ asset('login/login.css') }}" rel="stylesheet"> --}}
+        <link rel="stylesheet" href="{{ asset('') }}assets/login/login.css">
 
-        <link rel="shortcut icon" href="{{ asset('login/logo.png') }}" type="image/x-icon">
         <title>Login Page</title>
     </head>
 
