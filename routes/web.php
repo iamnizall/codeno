@@ -51,11 +51,11 @@ Route::get('finance/printsql', [App\Http\Controllers\PrintController::class, 'pr
 
 Route::get('finance/team', [App\Http\Controllers\PrintController::class, 'team']);
 
-Route::resource('finance/invoice', InvoiceController::class)->except(['create']);
-Route::post('finance/invoice', [InvoiceController::class, 'search'])->name('finance.invoice.search');
-Route::get('finance/create-invoice/local', [InvoiceController::class, 'createLocal']);
-Route::get('finance/create-invoice/luar', [InvoiceController::class, 'createLuar']);
-Route::get('finance/create-invoice/spq', [InvoiceController::class, 'createSpq']);
+Route::resource('finance/invoice', InvoiceController::class)->except(['create'])->middleware('auth');
+Route::post('finance/invoice', [InvoiceController::class, 'search'])->name('finance.invoice.search')->middleware('auth');
+Route::get('finance/create-invoice/local', [InvoiceController::class, 'createLocal'])->middleware('auth');
+Route::get('finance/create-invoice/luar', [InvoiceController::class, 'createLuar'])->middleware('auth');
+Route::get('finance/create-invoice/spq', [InvoiceController::class, 'createSpq'])->middleware('auth');
 
 Route::get('finance/relasi', [InvoiceController::class, 'relasi']);
 
