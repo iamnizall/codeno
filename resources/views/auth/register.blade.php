@@ -21,8 +21,12 @@
         {{-- <link href="{{ asset('login/login.css') }}" rel="stylesheet"> --}}
         <link rel="stylesheet" href="{{ asset('') }}assets/login/login.css">
 
+<<<<<<< HEAD
 >>>>>>> 382c0e4118d74c027d268c61036422747193b980
         <title>Login Page</title>
+=======
+        <title>Registrasi Page</title>
+>>>>>>> a670027982fe2451f65c81e8daca3d93865bfab5
     </head>
 
     <body>
