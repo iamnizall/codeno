@@ -169,28 +169,32 @@
 							</tr>
 						</thead>
 						<tbody id="form-body">
+							@foreach ($invc->subinvoice as $in)
+
 							<tr>
 								<td>
-									<input id="job_desc" type="text" class="form-control" name="job_desc[]">
+									<input id="job_desc" type="text" class="form-control" value="{{ $in->job_desc }}" name="job_desc[]">
 								</td>
 								<td>
-									<input type="text" class="vol form-control" name="vol[]">
+									<input type="text" class="vol form-control" value="{{ $in->vol }}" name="vol[]">
 								</td>
 								<td>
-									<input id="unit" type="text" class="form-control" name="unit[]">
+									<input id="unit" type="text" class="form-control" value="{{ $in->unit }}" name="unit[]">
 								</td>
 								<td>
-									<input type="text" class="price form-control" name="price[]">
+									<input type="text" class="price form-control" value="{{ $in->price }}" name="price[]">
 								</td>
 								<td>
-									<input type="text" class="form-control tot total" name="total[]" readonly>
-								</td>
-								<td>
-									<button type="button" onclick="add_form()" class="btn btn-success"><i class="fas fa-plus"></i></button>
+									<input type="text" class="form-control tot total" value="{{ $in->total }}" name="total[]" readonly>
 								</td>
 							</tr>
+							@endforeach
 						</tbody>
 					</table>
+					@elseif($invc->type == 'luar')
+					<h1>luar</h1>
+					@elseif($invc->type == 'spq')
+					<h1>spq</h1>
 					@endif
 				</div>
 
@@ -278,8 +282,6 @@
 		$('.b-of').toggleClass('d-none');
 	})
 
-	// test
-
 	$(".vol, .price").keyup(function() {
 		var price  = $(".price").val();
 		var vol = $(".vol").val();
@@ -290,67 +292,5 @@
 		};
 	});
 
-	var i = 0;
-	function add_form()
-	{
-		var sum = 0;
-
-		$('.tot').each(function(){
-			var value = $(this).val();
-			if(value.length != 0)
-			{
-				sum += parseFloat(value);
-			}
-		});
-		// console.log(sum);
-		$('#cost').val(sum);
-		// console.log(i)
-
-		i++;
-		var html = '';
-		html += '<tr>';
-		html += '<td><input type="text" class="form-control" name="job_desc[]"></td>';
-		html += '<td><input type="text" class="form-control vol' + i +'" name="vol[]"></td>';
-		html += '<td><input type="text" class="form-control" name="unit[]"></td>';
-		html += '<td><input type="text" class="form-control price'+i+'" name="price[]"></td>';
-		html += '<td><input type="text" class="form-control tot total'+i+'" name="total[]" readonly></td>';
-		html += '<td><button type="button" class="btn btn-danger" onclick="del_form(this)"><i class="fas fa-minus"></i></button></td>';
-		html += '</tr>';
-
-		$('#form-body').prepend(html);
-
-		$(".vol"+i+", .price"+i).keyup(function() {
-			var price  = $(".price"+i).val();
-			var vol = $(".vol"+i).val();
-
-			var total = parseInt(price) * parseInt(vol);
-			if ( price != "" && vol != "" ) {
-				$('.total'+i).val(total);
-			};
-		});
-	};
-
-	function del_form(id)
-	{
-		id.closest('tr').remove();
-	};
-
-	$('#tax, #cost').on('change', function(){
-		var tax = $(this). children("option:selected"). val();
-		var tot = $('#cost').val();
-		console.log(tot);
-		tax = parseFloat(tax)*parseInt(tot);
-		var hasil = tot - tax;
-		if ( tot != "" && tax != "" ) {
-			$('#fax').val(tax);
-			$('#stotal').val(hasil);
-		};
-		
-
-		// $('#vtax').val(tax);
-		// console.log(tax);
-	});
-
 </script>
-
 @endsection

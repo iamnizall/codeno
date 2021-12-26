@@ -23,9 +23,9 @@
 	@include('finance.invoice.print.local')
 	@elseif($invc->type == 'luar')
 	@include('finance.invoice.print.luar')
+	@elseif($invc->type == 'spq')
+	@include('finance.invoice.print.spq')
 	@endif
-
-
 
 	<!-- jQuery -->
 	<script src="{{ asset('') }}assets/plugins/jquery/jquery.min.js"></script>
