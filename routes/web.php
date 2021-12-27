@@ -4,8 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\InvoiceController;
 use App\Http\Controllers\FinanceController;
-
-use App\Http\Controllers\PostController;
+use App\Http\Controllers\BASTController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,35 +20,17 @@ use App\Http\Controllers\PostController;
 Route::redirect('/', 'finance', 307);
 Route::redirect('/home', 'finance', 307);
 
-Route::get('/bast', function () {
-    return view('finance.bast',["title" => "BAST"
-]);
-});
-
-Route::get('/editbast', function () {
-    return view('finance.editbast',["title" => "BAST"
-]);
-});
-
-Route::get('/newbast', function () {
-    return view('finance.createbast',["title" => "BAST"
-]);
-});
-
-// Route::get('/print', function () {
-//     return view('finance.print', [
-//         "title" => "PRINT"
-//     ]);
-// });
-
 Route::get('finance', [FinanceController::class, 'index']);
 
+// team
+Route::get('finance/team', [App\Http\Controllers\PrintController::class, 'team']);
+
+// Invoice
 Route::get('finance/print', [App\Http\Controllers\PrintController::class, 'print']);
 Route::get('finance/printlocal', [App\Http\Controllers\PrintController::class, 'printlocal']);
 Route::get('finance/printluar', [App\Http\Controllers\PrintController::class, 'printluar']);
 Route::get('finance/printsql', [App\Http\Controllers\PrintController::class, 'printsql']);
 
-Route::get('finance/team', [App\Http\Controllers\PrintController::class, 'team']);
 
 Route::resource('finance/invoice', InvoiceController::class)->except(['create'])->middleware('auth');
 Route::post('finance/invoice', [InvoiceController::class, 'search'])->name('finance.invoice.search')->middleware('auth');
@@ -58,5 +39,14 @@ Route::get('finance/create-invoice/luar', [InvoiceController::class, 'createLuar
 Route::get('finance/create-invoice/spq', [InvoiceController::class, 'createSpq'])->middleware('auth');
 
 Route::get('finance/relasi', [InvoiceController::class, 'relasi']);
+
+
+// BAST
+Route::resource('finance/bast', BASTController::class);
+Route::post('finance/bast', [BASTController::class, 'search'])->name('finance.bast.search');
+
+Route::post('finance/bast/create', [BASTController::class, 'store'])->name('finance.bast.store');
+//Route::put('finance/bast/edit', [BASTController::class, 'update'])->name('finance.bast.update');
+Route::get ('finance/bast/print', [App\Http\Controllers\bastcontroller::class, 'show']);
 
 Auth::routes();

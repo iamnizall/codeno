@@ -152,7 +152,7 @@
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a href="/bast" class="nav-link">
+                            <a href="/finance/bast" class="nav-link">
                                 <i class="nav-icon fab fa-buffer"></i>
                                 <p>
                                     BAST
