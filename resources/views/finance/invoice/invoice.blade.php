@@ -49,7 +49,7 @@
             <td>{{ $inv->p_name }}</td>
             <td>IDR {{ $inv->stotal }},-</td>
             <td>
-                <a href="{{ route('invoice.show', $inv->id) }}" class="btn btn-success d-inline"><i class="fas fa-eye fa-1x"></i></a>
+                <a href="{{ route('invoice.show', $inv->id) }}" class="btn btn-success d-inline"><i class="fas fa-print fa-1x"></i></a>
                 <a href="{{ route('invoice.edit', $inv->id) }}" class="btn btn-info d-inline"><i class="fas fa-edit fa-1x"></i></a>
                 <form method="POST" action="{{ route('invoice.destroy', $inv->id) }}"
                     class="d-inline">
