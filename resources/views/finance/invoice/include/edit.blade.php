@@ -219,16 +219,45 @@
 									<input type="text" class="form-control" name="starnum[]" value="{{ $in->starnum }}">
 								</td>
 								<td>
-									<input type="text" class="vol form-control" name="vol[]" value="{{ $in->vol }}">
+									<input type="text" class="vol form-control" name="vol[]" value="{{ $in->vol }}"  readonly>
 								</td>
 								<td>
-									<input type="text" class="price form-control" name="price[]" value="{{ $in->price }}">
+									<input type="text" class="price form-control" name="price[]" value="{{ $in->price }}" readonly>
 								</td>
 								<td>
 									<input type="text" class="form-control tot total" name="total[]" readonly value="{{ $in->total }}">
 								</td>
+							</tr>
+							@endforeach
+						</tbody>
+					</table>
+
+					@elseif($invc->type == 'spq')
+					<table class="table">
+						<thead>
+							<tr>
+								<th>Job Desciption</th>
+								<th>Qtt words</th>
+								<th>Unit price IDR</th>
+								<th>Amount IDR</th>
+								<th></th>
+							</tr>
+						</thead>
+						<tbody id="form-body">
+
+							@foreach ($invc->subinvoice as $in)
+							<tr>
 								<td>
-									<button type="button" onclick="add_form()" class="btn btn-success"><i class="fas fa-plus"></i></button>
+									<input id="job_desc" type="text" class="form-control" name="job_desc[]" autocomplete="off" value="{{ $in->job_desc }}">
+								</td>
+								<td>
+									<input type="text" class="vol form-control" name="vol[]" value="{{ $in->vol }}" readonly>
+								</td>
+								<td>
+									<input type="text" class="price form-control" name="price[]" readonly value="{{ $in->price }}">
+								</td>
+								<td>
+									<input type="text" class="form-control tot total" name="total[]" value="{{ $in->total }}" readonly>
 								</td>
 							</tr>
 							@endforeach
