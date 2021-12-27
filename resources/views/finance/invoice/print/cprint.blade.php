@@ -17,7 +17,7 @@
     }
   </style> --}}
 </head>
-<body>
+<body onload="window.print()">
 
 	@if ($invc->type == 'local')
 	@include('finance.invoice.print.local')
