@@ -121,7 +121,7 @@
                             <!-- member social profile -->
                             <div class="mask">
                                 <ul class="clearfix">
-                                    <li><a target="_blank" href="#"><i class="tf-ion-social-facebook"></i></a></li>
+                                    <li><a target="_blank" href="https://web.facebook.com/tegar.susilo.520?_rdc=1&_rdr"><i class="tf-ion-social-facebook"></i></a></li>
                                     <li><a target="_blank" href="#"><i class="tf-ion-social-twitter"></i></a></li>
                                     <li><a target="_blank" href="#"><i class="fab fa-linkedin-in"></i></a></li>
                                 </ul>
@@ -150,8 +150,8 @@
                             <!-- member social profile -->
                             <div class="mask">
                                 <ul class="clearfix">
-                                    <li><a target="_blank" href="#"><i class="tf-ion-social-facebook"></i></a></li>
-                                    <li><a target="_blank" href="#"><i class="tf-ion-social-twitter"></i></a></li>
+                                    <li><a target="_blank" href="https://web.facebook.com/4duuuh?_rdc=1&_rdr"><i class="tf-ion-social-facebook"></i></a></li>
+                                    <li><a target="_blank" href="https://twitter.com/4duuuh"><i class="tf-ion-social-twitter"></i></a></li>
                                     <li><a target="_blank" href="https://www.linkedin.com/in/tholabul-amin-21aa62211/"><i class="fab fa-linkedin-in"></i></a></li>
                                 </ul>
                             </div>
