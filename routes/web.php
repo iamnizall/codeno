@@ -6,6 +6,9 @@ use App\Http\Controllers\InvoiceController;
 use App\Http\Controllers\FinanceController;
 use App\Http\Controllers\BASTController;
 
+use App\Http\Controllers\MailerController;
+
+use Illuminate\Support\Facades\Mail;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -33,10 +36,11 @@ Route::get('finance/printsql', [App\Http\Controllers\PrintController::class, 'pr
 
 
 Route::resource('finance/invoice', InvoiceController::class)->except(['create'])->middleware('auth');
-Route::post('finance/invoice', [InvoiceController::class, 'search'])->name('finance.invoice.search')->middleware('auth');
 Route::get('finance/create-invoice/local', [InvoiceController::class, 'createLocal'])->middleware('auth');
 Route::get('finance/create-invoice/luar', [InvoiceController::class, 'createLuar'])->middleware('auth');
 Route::get('finance/create-invoice/spq', [InvoiceController::class, 'createSpq'])->middleware('auth');
+
+Route::post('finance/invoice', [InvoiceController::class, 'search'])->name('finance.invoice.search')->middleware('auth'); //search
 
 Route::get('finance/relasi', [InvoiceController::class, 'relasi']);
 
@@ -50,3 +54,16 @@ Route::post('finance/bast/create', [BASTController::class, 'store'])->name('fina
 Route::get ('finance/bast/print', [App\Http\Controllers\bastcontroller::class, 'show']);
 
 Auth::routes();
+
+// mail
+Route::get ('finance/mail', [App\Http\Controllers\MailerController::class, 'index'])->middleware('auth');
+Route::get ('finance/mailer', function(){
+	$details = [
+		'title' => 'Mail from CodeNuklir',
+		'body' => 'Test mail sent by Laravel 8 using SMTP.'
+	];
+
+	Mail::to('4duuuh@gmail.com')->send(new \App\Mail\Gmail($details));
+
+	dd("Email is Sent, please check your inbox.");
+});
