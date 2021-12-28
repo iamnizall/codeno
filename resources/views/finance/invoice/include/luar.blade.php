@@ -96,7 +96,7 @@
 					{{-- email --}}
 					<div class="col">
 						<label for="mail">Email</label>
-						<input id="mail" type="text" class="form-control{{ $errors->has('mail') ? ' is-invalid' : '' }}" name="mail" value="{{ old('mail') }}" >
+						<input id="mail" type="email" class="form-control{{ $errors->has('mail') ? ' is-invalid' : '' }}" name="mail" value="{{ old('mail') }}" >
 
 						@if ($errors->has('mail'))
 						<span class="invalid-feedback" role="alert">
