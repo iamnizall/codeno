@@ -43,6 +43,7 @@ Route::get('finance/create-invoice/spq', [InvoiceController::class, 'createSpq']
 Route::post('finance/invoice', [InvoiceController::class, 'search'])->name('finance.invoice.search')->middleware('auth'); //search
 
 Route::get('finance/relasi', [InvoiceController::class, 'relasi']);
+Route::get('finance/data', [InvoiceController::class, 'data']);
 
 
 // BAST
