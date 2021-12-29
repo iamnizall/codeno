@@ -9,7 +9,7 @@
         <div class="row">
             <div class="col-lg-4 col-6">
                 <!-- small box -->
-                <div class="small-box bg-light">
+                <div class="small-box" style="background: white">
                     <div class="inner">
                         <h3>{{ $invc }}</h3>
 
@@ -24,9 +24,9 @@
             <!-- ./col -->
             <div class="col-lg-4 col-6">
                 <!-- small box -->
-                <div class="small-box bg-light">
+                <div class="small-box" style="background: white">
                     <div class="inner">
-                        <h3>53<sup style="font-size: 20px">%</sup></h3>
+                        <h3>2<sup style="font-size: 20px"></sup></h3>
 
                         <p>BAST</p>
                     </div>
@@ -38,7 +38,7 @@
             <!-- ./col -->
             <div class="col-lg-4 col-12">
                 <!-- small box -->
-                <div class="small-box bg-light">
+                <div class="small-box" style="background: white">
                     <div class="inner">
                         <h3>{{ $invcvol }}</h3>
 
