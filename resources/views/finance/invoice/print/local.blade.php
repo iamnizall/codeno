@@ -44,7 +44,7 @@
 						</address>
 					</div>
 					<div class="col-sm">
-						<h5 class="text-center">{{ date('d-M-Y') }}</h5>
+						<h5 class="text-center">{{ date('d F Y') }}</h5>
 						<h5 class="text-center"> <b><u>Invoice No. {{ $invc->no_inv }}</b></u> </h5><br>
 						<h5 class="text-center"><b>PO No. {{ $invc->no_inv }}</b></h5>
 					</div>
@@ -118,10 +118,7 @@
 						</table>
 					</div>
 				</div>
-				@php
-				$diff = strtotime($invc->indate);
-				@endphp
-				<p> Payment : {{ $diff }}</p> 
+				<p> Payment : {{ $days }} days</p> 
 				<p> Transfer to:</p>
 				<div class="row">
 

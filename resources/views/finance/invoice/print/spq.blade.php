@@ -33,7 +33,7 @@
                 </address>
             </div>
             <div class="col-sm mt-4">
-                <h5 class="text-center">{{ date('M d, Y') }}</h5>
+                <h5 class="text-center">{{ date('d F Y') }}</h5>
             </div>
         </div>
 
@@ -76,7 +76,7 @@
                 </table>
             </div>
         </div>
-        <p> Payment :</p>
+        <p> Payment : {{ $days }} days</p>
         <p> Transfer to:</p>
 
         <div class="row">
@@ -97,11 +97,19 @@
             </div>
         </div>
 
+        <div class="row">
+            <div class="col-sm-6 mt-5">
+                <table>
+                    <tbody>
+                        <tr><td style="color: rgb(87, 69, 255); font-weight: bold">Amira Natasya</td><td>|</td><td style="color: red">Business Development Executive/Support</td></tr>
+                    </tbody></table>
+                </div>
+            </div>
             <div class="row">
-                <div class="col-sm-6 mt-5">
+                <div class="col-sm-6">
                     <table>
                         <tbody>
-                            <tr><td style="color: rgb(87, 69, 255); font-weight: bold">Amira Natasya</td><td>|</td><td style="color: red">Business Development Executive/Support</td></tr>
+                            <tr><td>W: <strong>www.speequal.com</strong></td><td>|</td><td> E: <strong>amira@speequal.com</strong></td><td>|</td><td>S: amiraramora </td></tr>
                         </tbody></table>
                     </div>
                 </div>
@@ -109,27 +117,19 @@
                     <div class="col-sm-6">
                         <table>
                             <tbody>
-                                <tr><td>W: <strong>www.speequal.com</strong></td><td>|</td><td> E: <strong>amira@speequal.com</strong></td><td>|</td><td>S: amiraramora </td></tr>
+                                <tr><td>INDONESIA, Jakarta & Yogyakarta</td><td>|</td><td>MALAYSIA, Kuala Lumpur</td></tr>
                             </tbody></table>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <table>
-                                <tbody>
-                                    <tr><td>INDONESIA, Jakarta & Yogyakarta</td><td>|</td><td>MALAYSIA, Kuala Lumpur</td></tr>
-                                </tbody></table>
-                            </div>
-                        </div>
 
-                        <div class="row">
-                            <div class="col-sm-8 mt-3">
-                                <img  src="{{ asset('') }}assets/spq.png" alt="spq" style="width: 150px">
-                                <a href="" style="text-decoration: none; color: inherit"><i class="fab fa-instagram fa-1x mx-2"> Speequal_translation</i></a>
-                                <a href="" style="text-decoration: none; color: inherit"><i class="fab fa-facebook fa-1x"> Speequal</i></a>
-                                <a href="" style="text-decoration: none; color: inherit"><i class="fab fa-twitter fa-1x mx-2"> SpeeQual</i></a>
-                                <a href="" style="text-decoration: none; color: inherit"><i class="fab fa-linkedin fa-1x"> SpeeQual</i></a>
-                            </div>
+                    <div class="row">
+                        <div class="col-sm-8 mt-3">
+                            <img  src="{{ asset('') }}assets/spq.png" alt="spq" style="width: 150px">
+                            <a href="" style="text-decoration: none; color: inherit"><i class="fab fa-instagram fa-1x mx-2"> Speequal_translation</i></a>
+                            <a href="" style="text-decoration: none; color: inherit"><i class="fab fa-facebook fa-1x"> Speequal</i></a>
+                            <a href="" style="text-decoration: none; color: inherit"><i class="fab fa-twitter fa-1x mx-2"> SpeeQual</i></a>
+                            <a href="" style="text-decoration: none; color: inherit"><i class="fab fa-linkedin fa-1x"> SpeeQual</i></a>
                         </div>
                     </div>
                 </div>
+            </div>

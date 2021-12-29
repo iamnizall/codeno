@@ -43,7 +43,7 @@
                     </address>
                 </div>
                 <div class="col-sm">
-                    <h5 class="text-center">{{ date('d-M-Y') }}</h5>
+                    <h5 class="text-center">{{ date('d F Y') }}</h5>
                     <h5 class="text-center"> <b><u>Invoice No. {{ $invc->no_inv }}</b></u> </h5><br>
                 </div>
             </div>
@@ -95,7 +95,7 @@
                     </table>
                 </div>
             </div>
-            <p> Payment :</p>
+            <p> Payment : {{ $days }} days</p>
             <p> Transfer to:</p>
             <div class="row">
 

@@ -1,3 +1,12 @@
+@php
+
+function genDate($date){
+	$datetime = DateTime::createFromFormat('d/m/Y', $date);
+	return $datetime->format('Y/m/d');
+}
+
+$days = abs((strtotime(genDate($invc->indate)))-(strtotime(genDate($invc->date))))/86400;
+@endphp
 <!DOCTYPE html>
 <html lang="en">
 <head>
