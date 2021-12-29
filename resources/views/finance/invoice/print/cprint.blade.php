@@ -20,11 +20,6 @@ $days = abs((strtotime(genDate($invc->indate)))-(strtotime(genDate($invc->date))
 	<link rel="stylesheet" href="{{ asset('') }}assets/plugins/fontawesome-free/css/all.min.css">
 	<!-- Theme style -->
 	<link rel="stylesheet" href="{{ asset('') }}assets/dist/css/adminlte.min.css">
-  {{-- <style>
-    *{
-      border-style: solid;
-    }
-  </style> --}}
 </head>
 <body onload="window.print()">
 

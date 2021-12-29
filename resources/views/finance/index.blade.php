@@ -26,7 +26,7 @@
                 <!-- small box -->
                 <div class="small-box bg-light">
                     <div class="inner">
-                        <h3>53<sup style="font-size: 20px">%</sup></h3>
+                        <h3>{{ $bastvol }}</h3>
 
                         <p>BAST</p>
                     </div>
@@ -116,11 +116,11 @@
         },
         series: [{
             name: 'Invoice',
-            data: [{{ $desinv21 }}, {{ $janinv22 }}, ]
+            data: [{{ $desinv21 }}, {{ $janinv22 }}, {{ $febinv22 }}, {{ $marinv22 }}, {{ $aprinv22 }}, {{ $meiinv22 }}, {{ $juninv22 }}, {{ $julinv22 == null? '' : $julinv22 }}, ]
 
         }, {
             name: 'BAST',
-            data: [{{ $desjob21 }}, {{ $janjob22 }}, ]
+            data: [{{ $desbst21 }}, {{ $janbst22 }}, {{ $febbst22 }}, {{ $marbst22 }}, {{ $aprbst22 }}, {{ $meibst22 }}, {{ $junbst22 }}, {{ $julbst22 == null? '' : $julbst22 }},  ]
         }]
     });
 </script>
