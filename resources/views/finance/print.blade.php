@@ -14,7 +14,7 @@
 
   <div class="container-fluid">
     <table class="table table-bordered">
-      <thead class="thead-dark">
+      <thead class="">
         <tr>
           <th scope="col">No.</th>
           <th scope="col">No. Ivoice</th>

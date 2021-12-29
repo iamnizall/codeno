@@ -1,4 +1,5 @@
-   <div class="wrapper">
+
+<div class="wrapper">
     <!-- Main content -->
     <div class="invoice p-3 mb-3">
         <!-- title row -->
@@ -46,7 +47,7 @@
                             <th>Job Description</th>
                             <th>Qtt Words</th>
                             <th>Unit Price</th>
-                            <th>Amount/euro</th>
+                            <th>Amount</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -69,7 +70,7 @@
                             <td></td>
                             <td class="text-center"><strong>GRAND TOTAL</strong></td>
                             <td colspan="2" class="text-center"><strong>Please pay</strong></td>
-                            <td>RM. {{ $invc->totalcost }}</td>
+                            <td>{{ $invc->totalcost }}</td>
                         </tr>
                     </tbody>
                 </table>
@@ -95,45 +96,6 @@
                 Dedi Afianto
             </div>
         </div>
-
-        <div class="row">
-            <div class="col-sm-4 mt-3">
-                <strong>or paypal :</strong> <br>
-                Full Name : <strong>PT Bintang Panca Tridasa</strong> <br>
-                Paypal Account : <strong>financedept@bintang-35.net</strong> <br>
-                <strong>Subject :</strong> Invoice for ISKLrong <br>
-                <strong>From:</strong><a href="" style="text-decoration: none; color: inherit">  amira amira@speequal.com </a> <br>
-                <strong>Date:</strong> {{ date('d/m/y') }}, 11:41 AM <br>
-                <strong>To:</strong><a href="" style="text-decoration: none; color: inherit"> 'Invoice SQ' invoice@speequal.com </a> <br>
-                <strong>CC:</strong><a href="" style="text-decoration: none; color: inherit"> Dwi Ayu dwi.ayu@speequal.com </a>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-sm-12 mt-4" style="line-height: 4 0px">
-                Dear Ayu, <br>
-                Kindly be informed that we need an invoice for ISKL project, below is the details needed: <br>
-                i) Project name     : {{ $invc->p_name }} <br>
-                <table>
-                    <tbody>
-                        @foreach ($invc->subinvoice as $in)
-                        <tr><td>Quantity</td><td class="mx-4">: </td><td>{{ $in->vol }} words</td></tr>
-                        <tr><td>Rate</td><td>: </td><td>RM. {{ $in->total }}/word</td></tr>
-                        @endforeach
-
-                        <tr><td>Address</td><td>: </td><td>{{ $invc->client }} {{ $invc->address }}</td></tr>
-                        <tr><td>Attn</td><td>: </td><td></td></tr>
-                    </tbody></table>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-sm-4 mt-5">
-                    Thank you and have a nice day. <br><br>
-                    -- <br><br>
-                    Warmest regards,
-                </div>
-            </div>
 
             <div class="row">
                 <div class="col-sm-6 mt-5">
