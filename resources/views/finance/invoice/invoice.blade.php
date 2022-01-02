@@ -55,7 +55,7 @@
                     class="d-inline">
                     @csrf
                     @method('DELETE')
-                    <button type="submit" class="btn btn-danger" style="height: 35px"><i class="fas fa-trash-alt"></i></button>
+                    <button type="submit" onclick="return confirm('Are you sure you want to delete this item?');" class="btn btn-danger" style="height: 35px"><i class="fas fa-trash-alt"></i></button>
                 </form>
             </td>
         </tr>

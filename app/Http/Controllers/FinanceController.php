@@ -11,18 +11,19 @@ use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 class FinanceController extends Controller
 {
     //login
- public function __construct()
- {
+   public function __construct()
+   {
     $this->middleware('auth');
 }
     //index
 public function index()
 {
+    // menghitung jumlah data pada tabel Invoice, subinvoice(project), dab BAST
     $invc = Invoice::count(); 
     $invcvol = subInvoice::count();
     $bastvol = bast::count();
     $title = "Dashboard";
-
+        // menghitung data, dan menampilkannya pada chart
         // data desember 2021
     $des21 = date('m',strtotime('2021-12-01 00:00:01'));
     $desinv21 = Invoice::whereMonth('created_at',$des21)->count();     
@@ -63,7 +64,7 @@ public function index()
     $julinv22 = Invoice::whereMonth('created_at',$jul22)->count();
     $julbst22 = bast::whereMonth('created_at',$jul22)->count();
 
-
+        // mengcompact beberapa variable ke view finance/index.blade.php 
     return view('finance.index', compact(
         'invc',
         'invcvol',

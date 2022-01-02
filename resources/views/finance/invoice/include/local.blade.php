@@ -6,8 +6,9 @@
 	<div class="card">
 
 		@php
-		$now = date('d/m/Y');
-		$scode = 'BBBAIDJA';
+		$now = date('d/m/Y'); //format kalender 02/01/2022
+		$scode = 'BBBAIDJA'; //swift code
+		//code invoice otomatis, dan akan increment sesuai data yang ada.
 		if($npo == null){
 			$id = 1;
 			$hs = 'KEB-0001' . date('/m/Y');
@@ -273,23 +274,25 @@
 
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script type="text/javascript">
-
+	//ketika select data pada id = norek, value data akan ditampilkan pada id = account
 	$('#norek').on('change', function(){
 		var norek = $(this). children("option:selected"). val()
 		$('#account').val(norek);
 	});
 
+	//select data pada kolom input tax, maka akan menampilkan data text nya pada tax diatas totalcost
 	$('#tax').on('change', function(){
 		var tax = $(this). children("option:selected"). text()
 		$('#vtax').text(tax);
 	});
 
+	//tombol loading pada saat save data invoice
 	$('.b-on').click(function(){
 		$('.b-on').toggleClass('d-none');
 		$('.b-of').toggleClass('d-none');
 	})
 
-	// test
+	// perhitungan pada kolom input volume dan price
 
 	$(".vol, .price").keyup(function() {
 		var price  = $(".price").val();
@@ -300,12 +303,12 @@
 			$('.total').val(total);
 		};
 	});
-
+	//ketika tombol add di klik maka akan menambahkan form dinamis,
 	var i = 0;
 	function add_form()
 	{
 		var sum = 0;
-
+		//perhitungan penjumlahan vertical pada form dinamis
 		$('.tot').each(function(){
 			var value = $(this).val();
 			if(value.length != 0)
@@ -313,9 +316,7 @@
 				sum += parseFloat(value);
 			}
 		});
-		// console.log(sum);
 		$('#cost').val(sum);
-		// console.log(i)
 
 		i++;
 		var html = '';
@@ -328,8 +329,9 @@
 		html += '<td><button type="button" class="btn btn-danger" onclick="del_form(this)"><i class="fas fa-minus"></i></button></td>';
 		html += '</tr>';
 
+		//menambahkan form dinamis berada diatas form sebelumnya
 		$('#form-body').prepend(html);
-
+		//perhitungan horizontal pada form dinamis
 		$(".vol"+i+", .price"+i).keyup(function() {
 			var price  = $(".price"+i).val();
 			var vol = $(".vol"+i).val();
@@ -341,11 +343,13 @@
 		});
 	};
 
+	//menghapus 1 kolom form dinamis
 	function del_form(id)
 	{
 		id.closest('tr').remove();
 	};
 
+	//menghitung nilai pada total, diambil dari nilai totalcost - nilai pajak yang dipilih
 	$('#tax, #cost').on('change', function(){
 		var tax = $(this). children("option:selected"). val();
 		var tot = $('#cost').val();
@@ -356,10 +360,6 @@
 			$('#fax').val(tax);
 			$('#stotal').val(hasil);
 		};
-		
-
-		// $('#vtax').val(tax);
-		// console.log(tax);
 	});
 
 </script>
