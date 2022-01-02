@@ -51,12 +51,32 @@
             <td>
                 <a href="{{ route('invoice.show', $inv->id) }}" class="btn btn-success d-inline"><i class="fas fa-print fa-1x"></i></a>
                 <a href="{{ route('invoice.edit', $inv->id) }}" class="btn btn-info d-inline"><i class="fas fa-edit fa-1x"></i></a>
-                <form method="POST" action="{{ route('invoice.destroy', $inv->id) }}"
-                    class="d-inline">
-                    @csrf
-                    @method('DELETE')
-                    <button type="submit" onclick="return confirm('Are you sure you want to delete this item?');" class="btn btn-danger" style="height: 35px"><i class="fas fa-trash-alt"></i></button>
-                </form>
+                <button type="submit" class="btn btn-danger" data-toggle="modal" data-target="#exampleModalLong"><i class="fas fa-trash-alt"></i></button>
+                {{-- pop up DELETE --}}
+                <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLongTitle">DELETE</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                Delete Data?
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                                <form method="POST" action="{{ route('invoice.destroy', $inv->id) }}"
+                                    class="d-inline">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </td>
         </tr>
         @php
