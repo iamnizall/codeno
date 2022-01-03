@@ -8,5 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class bast extends Model
 {
     use HasFactory;
-    // protected $guarded = ['_token'];
+    protected $guarded = [];
 }

@@ -1,0 +1,12 @@
+.kertas {
+    height: 297mm;
+    width: 210mm;
+    background-image: url("/assets/0001.jpg");
+    background-size: 100%;
+}
+
+.coltitle {
+    position: relative;
+    bottom: 0;
+}
+

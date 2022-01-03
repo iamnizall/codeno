@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\InvoiceController;
 use App\Http\Controllers\FinanceController;
 use App\Http\Controllers\BASTController;
+use App\Http\Controllers\BAST1Controller;
 
 use App\Http\Controllers\MailerController;
 
@@ -47,12 +48,15 @@ Route::get('finance/data', [InvoiceController::class, 'data']);
 
 
 // BAST
-Route::resource('finance/bast', BASTController::class);
-Route::post('finance/bast', [BASTController::class, 'search'])->name('finance.bast.search');
+// Route::resource('finance/bast', BASTController::class);
+// Route::post('finance/bast', [BASTController::class, 'search'])->name('finance.bast.search');
 
-Route::post('finance/bast/create', [BASTController::class, 'store'])->name('finance.bast.store');
-//Route::put('finance/bast/edit', [BASTController::class, 'update'])->name('finance.bast.update');
-Route::get ('finance/bast/print', [App\Http\Controllers\bastcontroller::class, 'show']);
+// Route::post('finance/bast/create', [BASTController::class, 'store'])->name('finance.bast.store');
+// Route::put('finance/bast/edit', [BASTController::class, 'update'])->name('finance.bast.update');
+// Route::get ('finance/bast/print', [App\Http\Controllers\bastcontroller::class, 'show']);
+
+Route::resource('finance/bast', Bast1Controller::class);
+Route::post('finance/bast', [Bast1Controller::class, 'search'])->name('finance.bast.search');
 
 Auth::routes();
 

@@ -41,7 +41,7 @@
 
                         <tr>
                             <th scope="row">{{ $i }}</th>
-                            <td>{{ $bast->no_inv }}</td>
+                            <td>{{ $bast->no_bast }}</td>
                             <td>{{ $bast->Cname }}</td>
                             <td>{{ $bast->perihal }}</td>
                             <td>{{ $bast->Quan }}</td>
@@ -51,11 +51,33 @@
                                 <a href="{{ route('bast.show', $bast->id) }}" class="btn btn-success" style="border-radius: 8px; margin-left: 15px;">
                                 <i class="fas fa-print"></i>
                                 </a>
-                                <form method="POST" action="{{ route('bast.destroy', $bast->id) }}"
-                                    class="d-inline">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit" class="btn btn-danger" style="height: 35px; margin-left: 15px;"><i class="fas fa-trash-alt"></i></button>
+                                <button type="submit" class="btn btn-danger" data-toggle="modal" data-target="#exampleModalLong" style="height: 35px; margin-left: 15px;"><i class="fas fa-trash-alt"></i></button>
+
+                        {{-- pop up DELETE --}}
+                        <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLongTitle">DELETE</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        Delete Data?
+                                    </div>
+                                    <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                                        <form method="POST" action="{{ route('bast.destroy', $bast->id) }}"
+                                            class="d-inline">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="btn btn-danger">Delete</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                                 </form>
                             </td>
                         </tr>

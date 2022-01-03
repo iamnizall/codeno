@@ -8,7 +8,8 @@
 
         <div class="card-header"><i class="nav-icon fab fa-buffer"></i>Edit BAST</div>
         <div class="card-body">
-            <form action="{{ route('bast.update') }}" method="post">
+            <form method="POST" action="{{ route('bast.update', $bst->id) }}"> @csrf @method('PUT')
+			@csrf
                 {{-- row 1 --}}
 				<div class="form-row">
 					{{-- no bast --}}
@@ -57,7 +58,7 @@
                 <div class="form-row mt-4">
 					{{-- subjek --}}
 					<div class="col">
-						<label for="perihal">Perihal</label>
+						<label for="perihal">Subject</label>
 						<input id="perihal" type="text" class="form-control" name="perihal" value="{{ $bst->perihal }}">
 					</div>
 					{{-- company name --}}
@@ -83,12 +84,7 @@
 					<table class="table">
 						<thead>
 							<tr>
-								<th>
-									<select name="item/volume" id="">
-										<option value="1">Item</option>
-										<option value="2">Job Description</option>
-									</select>
-								</th>
+								<th>Item</th>
 								<th>Quantitiy</th>
 								<th>Unit</th>
 								<th>Status</th>
@@ -125,7 +121,7 @@
 									@endif
 								</td>
 								<td style="text-align: center">
-										<input class="form-check-input" type="checkbox" name="status">
+										<input class="form-check-input" type="checkbox" name="status" value="{{ $bst->status }}">
 								</td>
 								<td>
 									<button type="button" onclick="add_row()" class="btn btn-success"><i class="bi bi-plus-circle-fill"></i></button>

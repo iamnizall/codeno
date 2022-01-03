@@ -27,7 +27,7 @@ class CreateBastsTable extends Migration
             $table->string('item');
             $table->integer('Quan');
             $table->string('unit');
-            $table->string('status');
+            $table->string('status')->nullable();
             $table->string('notes')->nullable();
             $table->string('signature')->nullable();
             $table->timestamps();
