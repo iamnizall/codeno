@@ -10,14 +10,16 @@
     <title>Print Table</title>
 </head>
 
+{{-- Print Priview --}}
 <body onload="window.print();">
     <div class="container-fluid">
         <h2 class="text-center my-4"> Table Invoice</h2>
     </div>
 
+    {{-- Table Print --}}
     <div class="container-fluid">
         <table class="table table-bordered">
-            <thead class="">
+            <thead>
                 <tr>
                     <th scope="col">No.</th>
                     <th scope="col">No. Ivoice</th>
@@ -32,7 +34,7 @@
                     $i = 1;
                 @endphp
                 @foreach ($invc as $inv)
-
+                    {{-- Menampilkan inputan pada tabel --}}
                     <tr>
                         <th scope="row">{{ $i }}</th>
                         <td>{{ $inv->no_inv }}</td>
@@ -42,12 +44,13 @@
                         <td>IDR {{ $inv->stotal }},-</td>
                     </tr>
                     @php
-                        $i++;
+                        $i++; //perulangan untuk penomoran 
                     @endphp
                 @endforeach
             </tbody>
         </table>
     </div>
+    {{-- End Table Print --}}
 </body>
 
 </html>

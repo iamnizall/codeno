@@ -10,8 +10,6 @@
 
     <title>{{ $title }}</title>
 
-    {{-- css --}}
-
     <!-- Styles -->
     <link href="{{ asset('assets/style.css') }}" rel="stylesheet">
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('') }}assets/images/codeno.png" />
@@ -36,11 +34,12 @@
     <link rel="stylesheet" href="{{ asset('') }}assets/plugins/daterangepicker/daterangepicker.css">
     <!-- summernote -->
     <link rel="stylesheet" href="{{ asset('') }}assets/plugins/summernote/summernote-bs4.min.css">
-
+    {{-- Javascript --}}
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://momentjs.com/downloads/moment.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    {{-- Datepicker --}}
     <script>
         $(function() {
             $("#date").datepicker({
@@ -49,6 +48,7 @@
             });
         });
     </script>
+    {{-- End Datepicker --}}
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -59,7 +59,6 @@
             height="60" width="60">
         </div>
 
-        {{-- @include('partials/nav-header') --}}
         <!-- Navbar -->
         <nav class="main-header navbar navbar-expand navbar-white navbar-light">
             <!-- Left navbar links -->
@@ -72,7 +71,7 @@
 
                 <!-- Right navbar links -->
                 <ul class="navbar-nav ml-auto">
-                    <!-- Navbar Search -->
+{{--                     <!-- Navbar Search -->
                     <li class="nav-item">
                         <div class="navbar-search-block">
                             <form class="form-inline">
@@ -83,14 +82,11 @@
                                         <button class="btn btn-navbar" type="submit">
                                             <i class="fas fa-search"></i>
                                         </button>
-                                        <button class="btn btn-navbar" type="button" data-widget="navbar-search">
-                                            <i class="fas fa-times"></i>
-                                        </button>
                                     </div>
                                 </div>
                             </form>
                         </div>
-                    </li>
+                    </li> --}}
 
                     <!-- Messages Dropdown Menu -->
                     <li class="nav-item">
@@ -103,7 +99,6 @@
             </nav>
             <!-- /.navbar -->
 
-            {{-- @include('partials/sidebar') --}}
             <!-- Main Sidebar Container -->
             <aside class="main-sidebar sidebar-dark-primary elevation-4">
 
