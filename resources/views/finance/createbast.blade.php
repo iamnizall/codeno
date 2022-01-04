@@ -166,9 +166,7 @@
 					<div class="col">
 						<div class="text-center mt-4">
 							<button style="width: 150px;" type="submit" class="btn btn-primary b-on mx-auto"><i class="far fa-save fa-lg"></i> save</button>
-                            <a href="/printbast" class="btn btn-success" style="border-radius: 6px; margin-left: 20px;">
-                                <i class="fas fa-print"></i> print
-                        	</a>
+                            
 							<button class="btn btn-primary d-none b-of" type="button" disabled>
 								<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
 								Loading...

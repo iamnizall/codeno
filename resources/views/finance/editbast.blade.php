@@ -15,7 +15,7 @@
 					{{-- no bast --}}
 					<div class="col">		
 						<label for="no_bast">No. Bast</label>
-						<input id="no_bast" type="text" class="form-control" name="no_bast" value="{{ $bst->no_bast }}">
+						<input id="no_bast" type="text" class="form-control" name="no_bast" readonly value="{{ $bst->no_bast }}">
 					</div>
 					{{-- type of work --}}
 					<div class="col">
@@ -40,7 +40,7 @@
 					{{-- no invoice --}}
 					<div class="col">
 						<label for="no_inv">No. Invoice</label>
-						<input id="no_inv" type="text" class="form-control" name="no_inv" value="{{ $bst->no_inv }}">
+						<input id="no_inv" type="text" class="form-control" name="no_inv" readonly value="{{ $bst->no_inv }}">
 					</div>
 					{{-- project name --}}
 					<div class="col">
@@ -155,9 +155,7 @@
 					<div class="col">
 						<div class="text-center mt-4">
 							<button style="width: 150px;" type="submit" class="btn btn-primary b-on mx-auto"><i class="far fa-save fa-lg"></i> save</button>
-                            <a href="/printbast" class="btn btn-success" style="border-radius: 6px; margin-left: 20px;">
-                                <i class="fas fa-print"></i> print
-                        	</a>
+                            
 							<button class="btn btn-primary d-none b-of" type="button" disabled>
 								<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
 								Loading...

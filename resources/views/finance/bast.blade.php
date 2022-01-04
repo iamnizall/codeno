@@ -48,7 +48,7 @@
                             <td>
                                 <a href="{{ route('bast.edit', $bast->id) }}" class="btn btn-info d-inline"><i
                                         class="fas fa-edit fa-1x"></i></a>
-                                <a href="{{ route('bast.show', $bast->id) }}" class="btn btn-success" style="border-radius: 8px; margin-left: 15px;">
+                                <a href="{{ route('bast.show', $bast->id) }}" class="btn btn-success" style="margin-left: 15px;">
                                 <i class="fas fa-print"></i>
                                 </a>
                                 <button type="submit" class="btn btn-danger" data-toggle="modal" data-target="#exampleModalLong" style="height: 35px; margin-left: 15px;"><i class="fas fa-trash-alt"></i></button>
