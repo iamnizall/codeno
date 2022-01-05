@@ -124,7 +124,7 @@
 										<input class="form-check-input" type="checkbox" name="status" value="{{ $bst->status }}">
 								</td>
 								<td>
-									<button type="button" onclick="add_row()" class="btn btn-success"><i class="bi bi-plus-circle-fill"></i></button>
+									<button type="button" onclick="add_row()" class="btn btn-success"><i class="bi bi-plus-circle"></i></button>
 								</td>
 							</tr>
 						</tbody>
@@ -180,7 +180,7 @@
 		html += '<td><input type="text" class="form-control" name="Quan[]"></td>';
 		html += '<td><input type="text" class="form-control" name="unit[]"></td>';
 		html += '<td style="text-align: center"><input class="form-check-input" type="checkbox" value="" name="status"></td>';
-		html += '<td><button type="button" class="btn btn-danger" onclick="del_row(this)"><i class="bi bi-dash-circle-fill"></i></button></td>';
+		html += '<td><button type="button" class="btn btn-danger" onclick="del_row(this)"><i class="bi bi-x-circle"></i></button></td>';
 		html += '</tr>';
 
 		$('#form-body').prepend(html);
