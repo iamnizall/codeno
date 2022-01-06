@@ -19,7 +19,27 @@ $days = abs((strtotime(genDate($invc->indate)))-(strtotime(genDate($invc->date))
 	<link rel="stylesheet" href="{{ asset('') }}assets/plugins/fontawesome-free/css/all.min.css">
 	<!-- Theme style -->
 	<link rel="stylesheet" href="{{ asset('') }}assets/dist/css/adminlte.min.css">
+	<style>
+	@media print {
+		body {
+			-webkit-print-color-adjust: exact;
+		}
 
+		.table{
+			background: transparent;
+		}
+	}
+
+	.bg-luar{
+		background-image: url('{{ asset('') }}assets/images/bg-luar.jpg') !important;
+		background-size: 600px 100% !important; 
+		background-repeat: no-repeat !important;
+		padding-left: 5%;
+	}
+	.table{
+		border-width: 10px;
+	}
+</style>
 </head>
 <body onload="window.print()">
 

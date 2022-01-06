@@ -5,16 +5,16 @@
         <!-- title row -->
         <div class="row">
             <div class="col-sm-12 mt-4">
-                <img class="float-right" src="{{ asset('') }}assets/spq.png" alt="spq" style="width: 150px">
+                <img class="float-right" src="{{ asset('') }}assets/images/spq-logo.jpg" alt="spq" style="width: 700px">
             </div>
         </div>
         <div class="row">
             <div class="col-sm-12">
-                <h6 class="float-right mt-3" style="text-align: right"><strong>SpeeQual Sdn Bhd</strong><br>
-                    C12-2, Jalan Ampang Utama 1/1, <br>
-                    Ampang Avenue, 68000 Ampang, <br>
-                    Selangor, Malaysia. <br>
-                    Phone : +60 342 660 087 <br>
+                <h6 class="float-right mt-3" style="text-align: right"><strong>SpeeQual Language Solutions</strong><br>
+                    Jl. K.H. Mas Mansyur No. 121,<br>
+                    Karet Tengsin, Tanah Abang,<br>
+                    Jakarta 10220. Indonesia. <br>
+                    Phone : +62 21 2555 8965 <br>
                     Email: speequal@speequal.com
                 </h6>
             </div>
@@ -76,40 +76,39 @@
                 </table>
             </div>
         </div>
-        <p> Payment : {{ $days }} days</p>
+        <p> Payment : within {{ $days }} days after receiving the invoice</p>
         <p> Transfer to:</p>
 
         <div class="row">
             <div class="col-sm-4">
                 Payment method : <br>
-                Account Name : <strong> Speequal Sdn Bhd</strong> <br>
-                MYR Account No : <strong>1063034598</strong> <br>
-                Bank Name : <strong> UOB (United Overseas Bank) Bhd</strong> <br>
-                Address : <strong> Head Office Menara UOB, </strong> <br>
-                <strong>Jalan Raja Laut, PO BOX 11212, </strong> <br>
-                <strong>50738, Kuala Lumpur-Malaysia,</strong> <br>
-                Swift Code : <strong>UOVBMYK10K1</strong>
-            </div>
-            <div class="col-sm-3"></div>
-            <div class="col-sm-4 text-center ml-5">
-                Speequal Sdn Bhd <br><br><br><br>
-                Dedi Afianto
-            </div>
-        </div>
+                @if ($invc->norek == 'financedept@bintang‐35.net')
+                Full Name : <b>PT Bintang Panca Tridasa</b><br>
+                Paypal Account : <b>financedept@bintang-35.net</b>
+                @else
+                Account Name : <strong> SpeeQual Language Solutions</strong> <br>
+                Account No : <strong>{{ $invc->norek }}</strong> <br>
+                Bank Name : <strong> Permata Bank</strong> <br>
+                Address :  <b>Jl. K.H. Mas Mansyur No. 121,<br>
+                    Karet Tengsin, Tanah Abang,<br>
+                    Jakarta 10220. Indonesia. <br></b>
+                    Swift Code : <strong>{{ $invc->s_code }}</strong>
+                    @endif
 
-        <div class="row">
-            <div class="col-sm-6 mt-5">
-                <table>
-                    <tbody>
-                        <tr><td style="color: rgb(87, 69, 255); font-weight: bold">Amira Natasya</td><td>|</td><td style="color: red">Business Development Executive/Support</td></tr>
-                    </tbody></table>
+
+                </div>
+                <div class="col-sm-3"></div>
+                <div class="col-sm-4 text-center ml-5">
+                    Speequal Sdn Bhd <br><br><br><br>
+                    Dedi Afianto
                 </div>
             </div>
+
             <div class="row">
-                <div class="col-sm-6">
+                <div class="col-sm-6 mt-5">
                     <table>
                         <tbody>
-                            <tr><td>W: <strong>www.speequal.com</strong></td><td>|</td><td> E: <strong>amira@speequal.com</strong></td><td>|</td><td>S: amiraramora </td></tr>
+                            <tr><td style="color: rgb(87, 69, 255); font-weight: bold">Amira Natasya</td><td>|</td><td style="color: red">Business Development Executive/Support</td></tr>
                         </tbody></table>
                     </div>
                 </div>
@@ -117,19 +116,27 @@
                     <div class="col-sm-6">
                         <table>
                             <tbody>
-                                <tr><td>INDONESIA, Jakarta & Yogyakarta</td><td>|</td><td>MALAYSIA, Kuala Lumpur</td></tr>
+                                <tr><td>W: <strong>www.speequal.com</strong></td><td>|</td><td> E: <strong>amira@speequal.com</strong></td><td>|</td><td>S: amiraramora </td></tr>
                             </tbody></table>
                         </div>
                     </div>
-
                     <div class="row">
-                        <div class="col-sm-8 mt-3">
-                            <img  src="{{ asset('') }}assets/spq.png" alt="spq" style="width: 150px">
-                            <a href="" style="text-decoration: none; color: inherit"><i class="fab fa-instagram fa-1x mx-2"> Speequal_translation</i></a>
-                            <a href="" style="text-decoration: none; color: inherit"><i class="fab fa-facebook fa-1x"> Speequal</i></a>
-                            <a href="" style="text-decoration: none; color: inherit"><i class="fab fa-twitter fa-1x mx-2"> SpeeQual</i></a>
-                            <a href="" style="text-decoration: none; color: inherit"><i class="fab fa-linkedin fa-1x"> SpeeQual</i></a>
+                        <div class="col-sm-6">
+                            <table>
+                                <tbody>
+                                    <tr><td>INDONESIA, Jakarta & Yogyakarta</td><td>|</td><td>MALAYSIA, Kuala Lumpur</td></tr>
+                                </tbody></table>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-sm-8 mt-3">
+                                <img  src="{{ asset('') }}assets/spq.png" alt="spq" style="width: 150px">
+                                <a href="" style="text-decoration: none; color: inherit"><i class="fab fa-instagram fa-1x mx-2"> Speequal_translation</i></a>
+                                <a href="" style="text-decoration: none; color: inherit"><i class="fab fa-facebook fa-1x"> Speequal</i></a>
+                                <a href="" style="text-decoration: none; color: inherit"><i class="fab fa-twitter fa-1x mx-2"> SpeeQual</i></a>
+                                <a href="" style="text-decoration: none; color: inherit"><i class="fab fa-linkedin fa-1x"> SpeeQual</i></a>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
