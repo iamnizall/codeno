@@ -46,7 +46,7 @@
                             <td>{{ $bast->perihal }}</td>
                             <td>{{ $bast->Quan }}</td>
                             <td>
-                                <a href="{{ route('bast.show', $bast->id) }}" class="btn btn-success"><i class="fas fa-print fa-1x"></i></a>
+                                <a  target="_blank" href="{{ route('bast.show', $bast->id) }}" class="btn btn-success"><i class="fas fa-print fa-1x"></i></a>
                                 <a href="{{ route('bast.edit', $bast->id) }}" class="btn btn-info d-inline"><i class="fas fa-edit fa-fa-1x"></i></a>
                                 <button type="submit" class="btn btn-danger" data-toggle="modal" data-target="#exampleModalLong" ><i class="fas fa-trash-alt"></i></button>
 
