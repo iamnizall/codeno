@@ -67,7 +67,7 @@
                                         Delete Data?
                                     </div>
                                     <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                                            <button type="button" class="btn btn-primary" data-dismiss="modal">Cancel</button>
                                         <form method="POST" action="{{ route('bast.destroy', $bast->id) }}"
                                             class="d-inline">
                                             @csrf
