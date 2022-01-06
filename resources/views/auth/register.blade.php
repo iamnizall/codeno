@@ -25,9 +25,9 @@
 
                 </div>
                 <div class="col-md-6 login-form-2">
-                    <h3 style="text-align: left;">Login In to continue</h3>
-                    <p>Please log in using that account has</p>
-                    <p style="line-height: 0;">pregistered on the website.</p>
+                    <h3 style="text-align: left;">Register to Continue</h3>
+                    <p>Please Register Using a Valid email address</p>
+                    <p style="line-height: 0;">to proceed.</p>
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
                         <div class="form-group">
