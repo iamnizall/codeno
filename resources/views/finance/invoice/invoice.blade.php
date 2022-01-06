@@ -51,7 +51,7 @@
             <td>
                 <a href="{{ route('invoice.show', $inv->id) }}" target="_blank" class="btn btn-success d-inline"><i class="fas fa-print fa-1x"></i></a>
                 <a href="{{ route('invoice.edit', $inv->id) }}" class="btn btn-info d-inline"><i class="fas fa-edit fa-1x"></i></a>
-                <button type="submit" class="btn btn-danger" data-toggle="modal" data-target="#exampleModalLong"><i class="fas fa-trash-alt"></i></button>
+                <button type="submit" class="btn btn-danger d-inline" data-toggle="modal" data-target="#exampleModalLong"><i class="fas fa-trash-alt fa-1x"></i></button>
                 {{-- pop up DELETE --}}
                 <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
                     <div class="modal-dialog" role="document">
