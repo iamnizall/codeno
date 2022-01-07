@@ -28,7 +28,7 @@
                     <h5><strong>{{ $invc->client }} </strong><br>
                         {{ $invc->address }}
                         <br>
-                        Attn.:
+                        Attn.: {{ $invc->client }}
                     </h5>
                 </address>
             </div>

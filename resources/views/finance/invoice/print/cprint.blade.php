@@ -24,10 +24,11 @@ $days = abs((strtotime(genDate($invc->indate)))-(strtotime(genDate($invc->date))
 		body {
 			-webkit-print-color-adjust: exact;
 		}
+	}
 
-		.table{
-			background: transparent;
-		}
+	@page {
+		size: A4;
+		margin: 0 10px 0 0;
 	}
 
 	.bg-luar{
@@ -35,22 +36,28 @@ $days = abs((strtotime(genDate($invc->indate)))-(strtotime(genDate($invc->date))
 		background-size: 600px 100% !important; 
 		background-repeat: no-repeat !important;
 		padding-left: 5%;
+		margin: 0 0 0 0;
 	}
-	.table{
-		border-width: 10px;
+	.bg-local{
+		/*background-color: #f7c8cc ;*/
+		background-repeat: no-repeat !important;
+		background-size: 100px 100%;
+		padding-left: 5%;
 	}
 </style>
 </head>
 <body onload="window.print()">
-
-	@if ($invc->type == 'local')
-	@include('finance.invoice.print.local')
-	@elseif($invc->type == 'luar')
-	@include('finance.invoice.print.luar')
-	@elseif($invc->type == 'spq')
-	@include('finance.invoice.print.spq')
-	@endif
-
+	<div class="@if ($invc->type == 'luar')
+		bg-luar
+		@endif">
+		@if ($invc->type == 'local')
+		@include('finance.invoice.print.local')
+		@elseif($invc->type == 'luar')
+		@include('finance.invoice.print.luar')
+		@elseif($invc->type == 'spq')
+		@include('finance.invoice.print.spq')
+		@endif
+	</div>
 	<!-- jQuery -->
 	<script src="{{ asset('') }}assets/plugins/jquery/jquery.min.js"></script>
 	<!-- Bootstrap 4 -->

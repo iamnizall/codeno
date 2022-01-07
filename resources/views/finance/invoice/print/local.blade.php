@@ -1,9 +1,9 @@
 	<div class="wrapper">
 		<!-- Main content -->
-		<div class="invoice p-3 mb-3">
+		<div class="bg-local mb-3">
 			<!-- title row -->
 			<div class="row">
-				<div class="col-sm-7">
+				<div class="col-sm-7 mt-3">
 					<img class="float-right" src="{{ asset('') }}assets/star.png" alt="star" style="width: 200px;"">
 					</div>
 					<div class="col-sm-5">
