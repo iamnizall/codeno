@@ -85,7 +85,7 @@
 						<thead>
 							<tr>
 								<th>Item</th>
-								<th>Quantitiy</th>
+								<th>Quantity</th>
 								<th>Unit</th>
 								<th>Status</th>
 								<th></th>
