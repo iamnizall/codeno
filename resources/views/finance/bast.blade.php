@@ -44,7 +44,8 @@
                             <td>{{ $bast->no_bast }}</td>
                             <td>{{ $bast->Cname }}</td>
                             <td>{{ $bast->Pname }}</td>
-                            <td>{{ $bast->Quan }}</td>
+                            <td>{{ $bast->Quan }}
+                                {{ $bast->unit }}</td>
                             <td>
                                 <a  target="_blank" href="{{ route('bast.show', $bast->id) }}" class="btn btn-success"><i class="fas fa-print fa-1x"></i></a>
                                 <a href="{{ route('bast.edit', $bast->id) }}" class="btn btn-info d-inline"><i class="fas fa-edit fa-fa-1x"></i></a>
