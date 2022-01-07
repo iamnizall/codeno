@@ -40,10 +40,10 @@
         <!-- Table row -->
         <div class="row">
             <div class="col-12 table-responsive">
-                <table class="table table-bordered">
+                <table>
                     <thead>
                         <tr>
-                            <th>No</th>
+                            <th class="no">No</th>
                             <th>Job Description</th>
                             <th>Qtt Words</th>
                             <th>Unit Price</th>
@@ -67,10 +67,10 @@
                         @endphp
                         @endforeach
                         <tr>
-                            <td></td>
-                            <td class="text-center"><strong>GRAND TOTAL</strong></td>
-                            <td colspan="2" class="text-center"><strong>Please pay</strong></td>
-                            <td>{{ $invc->totalcost }}</td>
+                            <th></th>
+                            <th class="text-center">GRAND TOTAL</th>
+                            <th colspan="2" class="text-center">Please pay</th>
+                            <th>{{ $invc->totalcost }}</th>
                         </tr>
                     </tbody>
                 </table>
@@ -106,7 +106,7 @@
 
             <div class="row">
                 <div class="col-sm-6 mt-5">
-                    <table>
+                    <table class="t-none">
                         <tbody>
                             <tr><td style="color: rgb(87, 69, 255); font-weight: bold">Amira Natasya</td><td>|</td><td style="color: red">Business Development Executive/Support</td></tr>
                         </tbody></table>
@@ -114,7 +114,7 @@
                 </div>
                 <div class="row">
                     <div class="col-sm-6">
-                        <table>
+                        <table class="t-none">
                             <tbody>
                                 <tr><td>W: <strong>www.speequal.com</strong></td><td>|</td><td> E: <strong>amira@speequal.com</strong></td><td>|</td><td>S: amiraramora </td></tr>
                             </tbody></table>
@@ -122,7 +122,7 @@
                     </div>
                     <div class="row">
                         <div class="col-sm-6">
-                            <table>
+                            <table class="t-none">
                                 <tbody>
                                     <tr><td>INDONESIA, Jakarta & Yogyakarta</td><td>|</td><td>MALAYSIA, Kuala Lumpur</td></tr>
                                 </tbody></table>

@@ -53,10 +53,10 @@
 			<!-- Table row -->
 			<div class="row">
 				<div class="col-12 table-responsive">
-					<table class="table table-bordered">
+					<table>
 						<thead>
 							<tr>
-								<th>No</th>
+								<th class="no">No</th>
 								<th>Job Description</th>
 								<th>Volume Hour</th>
 								<th>Unit Price</th>
@@ -81,14 +81,14 @@
 							@endforeach
 							<tr>
 								<td></td>
-								<td class="text-right">Subtotal</td>
+								<td class="text-right"><b>Subtotal</b></td>
 								<td></td>
 								<td></td>
 								<td>{{ $invc->totalcost }}</td>
 							</tr>
 							<tr>
 								<td></td>
-								<td class="text-right">
+								<td class="text-right"><b>
 									@php
 									if($invc->tax == '0.12'){
 										echo 'PPN 10% + PPh 23';
@@ -103,65 +103,65 @@
 									}elseif($invc->tax == '0.02'){
 										echo 'PPh 23 (vendor)';
 									}
-									@endphp
-								</td>
-								<td></td>
-								<td></td>
-								<td>{{ $invc->totaltax }}</td>
-							</tr>
-							<tr >
-								<td colspan="2" class="text-center"><b>TOTAL</b></td>
-								<td colspan="2" class="text-center"><b>Please Pay</b></td>
-								<td ><b>Rp.{{ $invc->stotal }}</b></td>
-							</tr>
-						</tbody>
-					</table>
-				</div>
+								@endphp</b>
+							</td>
+							<td></td>
+							<td></td>
+							<td>{{ $invc->totaltax }}</td>
+						</tr>
+						<tr >
+							<th colspan="2" class="text-center"><b>TOTAL</b></th>
+							<th colspan="2" class="text-center"><b>Please Pay</b></th>
+							<th >Rp.{{ $invc->stotal }}</th>
+						</tr>
+					</tbody>
+				</table>
 			</div>
-			<p> Payment : {{ $days }} days</p> 
-			<p> Transfer to:</p>
-			<div class="row">
-
-				<div class="col-sm-3 text-center border border-dark ml-5" >
-					<strong>
-						@php
-						if($invc->norek == 'financedept@bintang‐35.net'){
-							echo 'PT Bintang Panca Tridasa';
-						}else{
-							echo 'PT Star Software Indonesia';
-						}
-						@endphp	
-
-					</strong> <br>
-					<strong>
-						@php
-						if($invc->norek == '3590119073'){
-							echo 'Bank Danamon';
-						}elseif($invc->norek == 'financedept@bintang‐35.net'){
-
-						}else{
-							echo 'Permata Bank, Mid Plaza Branch';
-						}
-						@endphp							
-					</strong> <br>
-					@if ($invc->norek == 'financedept@bintang‐35.net')
-					@else
-					<strong>Jakarta, Indonesia</strong> <br>
-					@endif
-					<strong>Swift Code : {{ $invc->s_code }}</strong> <br>
-					<strong>RP Account {{ $invc->norek }}</strong> <br>
-				</div>
-				<div class="col-sm-3">
-
-				</div>
-				<div class="col-sm-4 text-center ml-5">
-					PT Star Software Indonesia <br><br><br><br>
-					Kusuma
-				</div>
-			</div>
-			<div class="row" style="height: 180px;"></div>
 		</div>
+		<p> Payment : {{ $days }} days</p> 
+		<p> Transfer to:</p>
+		<div class="row">
+
+			<div class="col-sm-3 text-center border border-dark ml-5" >
+				<strong>
+					@php
+					if($invc->norek == 'financedept@bintang‐35.net'){
+						echo 'PT Bintang Panca Tridasa';
+					}else{
+						echo 'PT Star Software Indonesia';
+					}
+					@endphp	
+
+				</strong> <br>
+				<strong>
+					@php
+					if($invc->norek == '3590119073'){
+						echo 'Bank Danamon';
+					}elseif($invc->norek == 'financedept@bintang‐35.net'){
+
+					}else{
+						echo 'Permata Bank, Mid Plaza Branch';
+					}
+					@endphp							
+				</strong> <br>
+				@if ($invc->norek == 'financedept@bintang‐35.net')
+				@else
+				<strong>Jakarta, Indonesia</strong> <br>
+				@endif
+				<strong>Swift Code : {{ $invc->s_code }}</strong> <br>
+				<strong>RP Account {{ $invc->norek }}</strong> <br>
+			</div>
+			<div class="col-sm-3">
+
+			</div>
+			<div class="col-sm-4 text-center ml-5">
+				PT Star Software Indonesia <br><br><br><br>
+				Kusuma
+			</div>
+		</div>
+		<div class="row" style="height: 180px;"></div>
 	</div>
+</div>
 </div>
 </div>
 

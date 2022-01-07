@@ -51,10 +51,10 @@
         <!-- Table row -->
         <div class="row">
             <div class="col-12 table-responsive">
-                <table class="table table-bordered" style="background: transparent;">
+                <table class="tablee" style="background: transparent;">
                     <thead>
                         <tr>
-                            <th>No</th>
+                            <th class="no">No</th>
                             <th>Job Description</th>
                             <th>Project Manager</th>
                             <th>STAR Number</th>
@@ -82,14 +82,14 @@
                         @endphp
                         @endforeach
                         <tr>
-                            <td></td>
-                            <td colspan="5" class="text-center"><strong>TOTAL</strong></td>
-                            <td >€ {{ $invc->totalcost }}</td>
+                            <th></th>
+                            <th colspan="5" class="text-center"><strong>TOTAL</strong></th>
+                            <th >€ {{ $invc->totalcost }}</th>
                         </tr>
                         <tr>
-                            <td colspan="3" class="text-center"><strong>GRAND TOTAL</strong></td>
-                            <td colspan="3" class="text-center"><strong>Please pay</strong></td>
-                            <td >€ {{ $invc->totalcost }}</td>
+                            <th colspan="3" class="text-center"><strong>GRAND TOTAL</strong></th>
+                            <th colspan="3" class="text-center"><strong>Please pay</strong></th>
+                            <th >€ {{ $invc->totalcost }}</th>
                         </tr>
                     </tbody>
                 </table>

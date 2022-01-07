@@ -36,6 +36,7 @@ $days = abs((strtotime(genDate($invc->indate)))-(strtotime(genDate($invc->date))
 		background-size: 620px 100% !important; 
 		background-repeat: no-repeat !important;
 		padding-left: 5%;
+		padding-right: 4%;
 		margin: 0 0 0 0;
 	}
 	.bg-local{
@@ -48,6 +49,37 @@ $days = abs((strtotime(genDate($invc->indate)))-(strtotime(genDate($invc->date))
 	.bg-spq{
 		padding: 0 6% 0 6%;
 	}
+
+	table {
+		border-collapse: collapse;
+		width: 100%;
+	}
+	table, th{
+		border: 2px solid black;
+		padding: 3px 10px 3px 10px;
+	}
+	td{
+		padding: 3px 10px 3px 10px;
+		border-right: 2px solid black;
+	}
+
+	.no{
+		width :33px;
+	}
+	.vol{
+		width: 100px;
+		float: right;
+	}
+
+	.t-none{
+		border: none;
+		width: auto;
+	}
+
+	.t-none td{
+		border: none;
+	}
+
 </style>
 </head>
 <body onload="window.print()">
