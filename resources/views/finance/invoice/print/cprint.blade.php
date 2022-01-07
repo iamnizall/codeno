@@ -33,22 +33,30 @@ $days = abs((strtotime(genDate($invc->indate)))-(strtotime(genDate($invc->date))
 
 	.bg-luar{
 		background-image: url('{{ asset('') }}assets/images/bg-luar.jpg') !important;
-		background-size: 600px 100% !important; 
+		background-size: 620px 100% !important; 
 		background-repeat: no-repeat !important;
 		padding-left: 5%;
 		margin: 0 0 0 0;
 	}
 	.bg-local{
-		/*background-color: #f7c8cc ;*/
-		background-repeat: no-repeat !important;
-		background-size: 100px 100%;
-		padding-left: 5%;
+		background-image: url('{{ asset('') }}assets/images/bg-local.png') !important;
+		background-repeat: repeat-y;
+		background-size: 7% !important;
+		padding-left: 10%;
+		padding-right: 7%;
+	}
+	.bg-spq{
+		padding: 0 6% 0 6%;
 	}
 </style>
 </head>
 <body onload="window.print()">
 	<div class="@if ($invc->type == 'luar')
 		bg-luar
+		@elseif($invc->type == 'local')
+		bg-local
+		@else
+		bg-spq
 		@endif">
 		@if ($invc->type == 'local')
 		@include('finance.invoice.print.local')
