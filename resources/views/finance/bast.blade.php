@@ -43,7 +43,7 @@
                             <th scope="row">{{ $i }}</th>
                             <td>{{ $bast->no_bast }}</td>
                             <td>{{ $bast->Cname }}</td>
-                            <td>{{ $bast->perihal }}</td>
+                            <td>{{ $bast->Pname }}</td>
                             <td>{{ $bast->Quan }}</td>
                             <td>
                                 <a  target="_blank" href="{{ route('bast.show', $bast->id) }}" class="btn btn-success"><i class="fas fa-print fa-1x"></i></a>
