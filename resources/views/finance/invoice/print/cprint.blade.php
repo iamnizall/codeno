@@ -58,10 +58,10 @@ $days = abs((strtotime(genDate($invc->indate)))-(strtotime(genDate($invc->date))
 		border: 2px solid black;
 		padding: 3px 10px 3px 10px;
 	}
-	td{
+	/* td{
 		padding: 3px 10px 3px 10px;
 		border-right: 2px solid black;
-	}
+	} */
 
 	.no{
 		width :33px;

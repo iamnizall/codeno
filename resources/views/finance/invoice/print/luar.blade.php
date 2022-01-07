@@ -69,13 +69,20 @@
                         @endphp
                         @foreach ($invc->subinvoice as $in)
                         <tr>
-                            <td>{{ $i }}</td>
-                            <td>{{ $in->job_desc }}</td>
-                            <td>{{ $in->manager }}</td>
-                            <td>{{ $in->starnum }}</td>
-                            <td>{{ $in->vol }}</td>
-                            <td>{{ $in->price }}</td>
-                            <td>{{ $in->total }}</td>
+                            <td style="padding: 3px 10px 3px 10px;
+                            border-right: 2px solid black;">{{ $i }}</td>
+                            <td style="padding: 3px 10px 3px 10px;
+                            border-right: 2px solid black;">{{ $in->job_desc }}</td>
+                            <td style="padding: 3px 10px 3px 10px;
+                            border-right: 2px solid black;">{{ $in->manager }}</td>
+                            <td style="padding: 3px 10px 3px 10px;
+                            border-right: 2px solid black;">{{ $in->starnum }}</td>
+                            <td style="padding: 3px 10px 3px 10px;
+                            border-right: 2px solid black;">{{ $in->vol }}</td>
+                            <td style="padding: 3px 10px 3px 10px;
+                            border-right: 2px solid black;">{{ $in->price }}</td>
+                            <td style="padding: 3px 10px 3px 10px;
+                            border-right: 2px solid black;">{{ $in->total }}</td>
                         </tr>
                         @php
                         $i++;

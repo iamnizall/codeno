@@ -69,26 +69,38 @@
 							@endphp
 							@foreach ($invc->subinvoice as $in)
 							<tr>
-								<td>{{ $i }}</td>
-								<td>{{ $in->job_desc }}</td>
-								<td>{{ $in->vol }}</td>
-								<td>{{ $in->price }}</td>
-								<td>{{ $in->total }}</td>
+								<td style="padding: 3px 10px 3px 10px;
+								border-right: 2px solid black;">{{ $i }}</td>
+								<td style="padding: 3px 10px 3px 10px;
+								border-right: 2px solid black;">{{ $in->job_desc }}</td>
+								<td style="padding: 3px 10px 3px 10px;
+								border-right: 2px solid black;">{{ $in->vol }}</td>
+								<td style="padding: 3px 10px 3px 10px;
+								border-right: 2px solid black;">{{ $in->price }}</td>
+								<td style="padding: 3px 10px 3px 10px;
+								border-right: 2px solid black;">{{ $in->total }}</td>
 							</tr>
 							@php
 							$i++;
 							@endphp
 							@endforeach
 							<tr>
-								<td></td>
-								<td class="text-right"><b>Subtotal</b></td>
-								<td></td>
-								<td></td>
-								<td>{{ $invc->totalcost }}</td>
+								<td style="padding: 3px 10px 3px 10px;
+								border-right: 2px solid black;"></td>
+								<td class="text-right" style="padding: 3px 10px 3px 10px;
+								border-right: 2px solid black;"><b>Subtotal</b></td>
+								<td style="padding: 3px 10px 3px 10px;
+								border-right: 2px solid black;"></td>
+								<td style="padding: 3px 10px 3px 10px;
+								border-right: 2px solid black;"></td>
+								<td style="padding: 3px 10px 3px 10px;
+								border-right: 2px solid black;">{{ $invc->totalcost }}</td>
 							</tr>
 							<tr>
-								<td></td>
-								<td class="text-right"><b>
+								<td style="padding: 3px 10px 3px 10px;
+								border-right: 2px solid black;"></td>
+								<td class="text-right" style="padding: 3px 10px 3px 10px;
+								border-right: 2px solid black;"><b>
 									@php
 									if($invc->tax == '0.12'){
 										echo 'PPN 10% + PPh 23';
@@ -105,9 +117,12 @@
 									}
 								@endphp</b>
 							</td>
-							<td></td>
-							<td></td>
-							<td>{{ $invc->totaltax }}</td>
+							<td style="padding: 3px 10px 3px 10px;
+                            border-right: 2px solid black;"></td>
+							<td style="padding: 3px 10px 3px 10px;
+                            border-right: 2px solid black;"></td>
+							<td style="padding: 3px 10px 3px 10px;
+                            border-right: 2px solid black;">{{ $invc->totaltax }}</td>
 						</tr>
 						<tr >
 							<th colspan="2" class="text-center"><b>TOTAL</b></th>
