@@ -351,10 +351,7 @@
 			$('#fax').val(tax);
 			$('#stotal').val(hasil);
 		};
-		
 
-		// $('#vtax').val(tax);
-		// console.log(tax);
 	});
 
 </script>

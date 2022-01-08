@@ -27,7 +27,7 @@
 							<div class="card-body">
 								<div class="form-group">
 									<label for="emailRecipient">Email To </label>
-									<input type="email" name="emailRecipient" id="emailRecipient" class="form-control" placeholder="Mail To">
+									<input type="email" name="pesan" id="emailRecipient" class="form-control" placeholder="Mail To">
 								</div>
 
 								<div class="form-group">

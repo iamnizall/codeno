@@ -47,28 +47,23 @@ Route::get('finance/relasi', [InvoiceController::class, 'relasi']);
 Route::get('finance/data', [InvoiceController::class, 'data']);
 
 
-// BAST
-// Route::resource('finance/bast', BASTController::class);
-// Route::post('finance/bast', [BASTController::class, 'search'])->name('finance.bast.search');
-
-// Route::post('finance/bast/create', [BASTController::class, 'store'])->name('finance.bast.store');
-// Route::put('finance/bast/edit', [BASTController::class, 'update'])->name('finance.bast.update');
-// Route::get ('finance/bast/print', [App\Http\Controllers\bastcontroller::class, 'show']);
-
 Route::resource('finance/bast', Bast1Controller::class);
 Route::post('finance/bast', [Bast1Controller::class, 'search'])->name('finance.bast.search');
 
 Auth::routes();
 
 // mail
-Route::get ('finance/mail', [App\Http\Controllers\MailerController::class, 'index'])->middleware('auth');
-Route::get ('finance/mailer', function(){
-	$details = [
-		'title' => 'Mail from CodeNuklir',
-		'body' => 'Test mail sent by Laravel 8 using SMTP.'
-	];
+// Route::get ('finance/mail', [App\Http\Controllers\MailerController::class, 'index'])->middleware('auth');
+// Route::get ('finance/mailer', function(){
+// 	$details = [
+// 		'title' => 'Mail from CodeNuklir',
+// 		'body' => 'Test mail sent by Laravel 8 using SMTP.'
+// 	];
 
-	Mail::to('4duuuh@gmail.com')->send(new \App\Mail\Gmail($details));
+// 	Mail::to('4duuuh@gmail.com')->send(new \App\Mail\Gmail($details));
 
-	dd("Email is Sent, please check your inbox.");
-});
+// 	dd("Email is Sent, please check your inbox.");
+// });
+
+Route::get('finance/mail', [App\Http\Controllers\SendMailController::class, 'index'])->middleware('auth');
+Route::post('mail/mail', [App\Http\Controllers\SendMailController::class, 'send']);

@@ -1,13 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Online Web Tutor</title>
+    <title>Send Mail</title>
 </head>
 <body>
-  
-    <h1>{{ $details['title'] }}</h1>
-    <p>{{ $details['body'] }}</p>
-    
-    <p>Thank you</p>
+    <h3> SEND MAIL FROM UTY </h3>
+    <p> {{ $pesan }}
 </body>
 </html>
