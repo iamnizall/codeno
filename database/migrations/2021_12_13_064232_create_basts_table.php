@@ -28,8 +28,8 @@ class CreateBastsTable extends Migration
             $table->integer('Quan');
             $table->string('unit');
             $table->string('status')->nullable();
-            $table->string('notes')->nullable();
-            $table->string('signature')->nullable();
+            $table->string('partyF')->nullable();
+            $table->string('partyS')->nullable();
             $table->timestamps();
         });
     }

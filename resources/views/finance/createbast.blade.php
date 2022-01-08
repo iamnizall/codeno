@@ -96,7 +96,7 @@
 						<thead>
 							<tr>
 								<th>Item</th>
-								<th>Quantitiy</th>
+								<th>Quantity</th>
 								<th>Unit</th>
 								<th>Status</th>
 								<th></th>
@@ -151,11 +151,11 @@
 								<div class="row">
 									<div class="col">
 										<label for="text">The First Party</label>
-										<input type="text" class="form-control" name="notes" value="{{ old('note') }}" >
+										<input type="text" class="form-control" name="partyF" value="{{ old('partyF') }}" >
 									</div>
 									<div class="col">
 										<label for="signature">The Second Party</label>
-										<input id="signature" type="text" class="form-control" name="signature" value="{{ old('signature') }}">
+										<input id="signature" type="text" class="form-control" name="partyS" value="{{ old('partyS') }}">
 									</div>
 								</div>
 							</div>
