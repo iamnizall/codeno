@@ -40,8 +40,9 @@
         @php
         $i = 1;
         @endphp
+        {{-- menangkap variabel $invc dan looping dalam bentuk tabel --}}
+        {{-- variabel $invc berisi data-data invoice --}}
         @foreach ($invc as $inv)
-
         <tr>
             <th scope="row">{{ $i }}</th>
             <td>{{ $inv->no_inv }}</td>
@@ -49,10 +50,15 @@
             <td>{{ $inv->p_name }}</td>
             <td>IDR {{ $inv->stotal }},-</td>
             <td>
+                {{-- tombol print invoice --}}
                 <a href="{{ route('invoice.show', $inv->id) }}" target="_blank" class="btn btn-success d-inline"><i class="fas fa-print fa-1x"></i></a>
+
+                {{-- tombol edit invoice --}}
                 <a href="{{ route('invoice.edit', $inv->id) }}" class="btn btn-info d-inline"><i class="fas fa-edit fa-1x"></i></a>
+
+                {{-- tombol delete invoice berupa pop up modal bootstrap --}}
                 <button type="submit" class="btn btn-danger d-inline" data-toggle="modal" data-target="#exampleModalLong"><i class="fas fa-trash-alt fa-1x"></i></button>
-                {{-- pop up DELETE --}}
+                {{-- pop up DELETE dalam bentuk modal bootstrap --}}
                 <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
@@ -86,6 +92,7 @@
     </tbody>
 </table>
 <div class="d-flex float-right">
+    {{-- pagination pada tabel invoice --}}
     {!! $invc->links('pagination::bootstrap-4') !!}
 </div>
 </div>

@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class subInvoice extends Model
 {
-    // use HasFactory;
+    // relasi tabel pada subInvoice
     public function invoice(){
         return $this->BelongsTo(Invoice::class,'invoice_id');
     }

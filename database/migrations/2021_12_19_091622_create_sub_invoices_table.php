@@ -13,16 +13,17 @@ class CreateSubInvoicesTable extends Migration
      */
     public function up()
     {
+        // cerate tabel sub_invoices
         Schema::create('sub_invoices', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('invoice_id')->constrained('invoices')->onDelete('cascade')->onUpdate('cascade');
-            $table->string('job_desc');
-            $table->string('manager')->nullable();
-            $table->string('starnum')->nullable();
-            $table->integer('vol')->nullable();
-            $table->string('unit')->nullable();
-            $table->integer('price')->nullable();
-            $table->integer('total');
+            $table->foreignId('invoice_id')->constrained('invoices')->onDelete('cascade')->onUpdate('cascade'); //invoice_id
+            $table->string('job_desc'); //job description
+            $table->string('manager')->nullable(); //manager
+            $table->string('starnum')->nullable(); //star number
+            $table->integer('vol')->nullable(); //volume
+            $table->string('unit')->nullable(); //unit
+            $table->integer('price')->nullable(); //price
+            $table->integer('total'); //total
             $table->timestamps();
         });
     }

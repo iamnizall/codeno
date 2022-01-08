@@ -13,6 +13,7 @@ class CreateInvoicesTable extends Migration
      */
     public function up()
     {
+        // create tabel invoices
         Schema::create('invoices', function (Blueprint $table) {
             $table->id(); //id
             $table->string('type'); //type invoice

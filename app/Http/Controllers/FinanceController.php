@@ -11,8 +11,8 @@ use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 class FinanceController extends Controller
 {
     //login
-   public function __construct()
-   {
+ public function __construct()
+ {
     $this->middleware('auth');
 }
     //index
@@ -64,7 +64,7 @@ public function index()
     $julinv22 = Invoice::whereMonth('created_at',$jul22)->count();
     $julbst22 = bast::whereMonth('created_at',$jul22)->count();
 
-        // mengcompact beberapa variable ke view finance/index.blade.php 
+        // mengcompact beberapa variable ke view finance/index.blade.php (Dashboard)
     return view('finance.index', compact(
         'invc',
         'invcvol',

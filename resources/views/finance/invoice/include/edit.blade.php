@@ -5,7 +5,6 @@
 <div class="container">
 	<div class="card">
 
-		
 		<form method="POST" action="{{ route('invoice.update', $invc->id) }}"> @csrf @method('PUT')
 			<div class="card-header">
 				<div class="row">

@@ -21,39 +21,30 @@ use Illuminate\Support\Facades\Mail;
 |
 */
 
-Route::redirect('/', 'finance', 307);
-Route::redirect('/home', 'finance', 307);
+Route::redirect('/', 'finance', 307); //redirect url '/' -> '/finance'
+Route::redirect('/home', 'finance', 307); //redirect url '/home' -> '/finance'
 
 Route::get('finance', [FinanceController::class, 'index']);
 
 // team
 Route::get('finance/team', [App\Http\Controllers\PrintController::class, 'team']);
 
-// Invoice
+// print Invoice
 Route::get('finance/print', [App\Http\Controllers\PrintController::class, 'print']);
 Route::get('finance/printlocal', [App\Http\Controllers\PrintController::class, 'printlocal']);
 Route::get('finance/printluar', [App\Http\Controllers\PrintController::class, 'printluar']);
 Route::get('finance/printsql', [App\Http\Controllers\PrintController::class, 'printsql']);
 
-
+// tabel Invoice dan create Invoice (local, luar, spq)
 Route::resource('finance/invoice', InvoiceController::class)->except(['create'])->middleware('auth');
 Route::get('finance/create-invoice/local', [InvoiceController::class, 'createLocal'])->middleware('auth');
 Route::get('finance/create-invoice/luar', [InvoiceController::class, 'createLuar'])->middleware('auth');
 Route::get('finance/create-invoice/spq', [InvoiceController::class, 'createSpq'])->middleware('auth');
-
+// search invoice
 Route::post('finance/invoice', [InvoiceController::class, 'search'])->name('finance.invoice.search')->middleware('auth'); //search
-
-Route::get('finance/relasi', [InvoiceController::class, 'relasi']);
-Route::get('finance/data', [InvoiceController::class, 'data']);
 
 
 // BAST
-// Route::resource('finance/bast', BASTController::class);
-// Route::post('finance/bast', [BASTController::class, 'search'])->name('finance.bast.search');
-
-// Route::post('finance/bast/create', [BASTController::class, 'store'])->name('finance.bast.store');
-// Route::put('finance/bast/edit', [BASTController::class, 'update'])->name('finance.bast.update');
-// Route::get ('finance/bast/print', [App\Http\Controllers\bastcontroller::class, 'show']);
 
 Route::resource('finance/bast', Bast1Controller::class);
 Route::post('finance/bast', [Bast1Controller::class, 'search'])->name('finance.bast.search');
