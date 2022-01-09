@@ -7,6 +7,11 @@
         <div class="col-8">
             <div class="card" style="width: 40rem">
                 <div class="card-body">
+                    @if(session()->has('message'))
+                    <div class="alert alert-success" role="alert">
+                        {{ session()->get('message') }}
+                    </div>
+                    @endif
                     <form action=" {{ url('mail/mail') }}" method="POST">
                         {{ csrf_field() }}
                         <div class="mb-3 row">

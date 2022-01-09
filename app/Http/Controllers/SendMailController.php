@@ -21,6 +21,6 @@ class SendMailController extends Controller
             return response (['status' => false,'errors' => $e->getMessage()]);
         }
 
-        return redirect()->route('mail.index'); 
+        return redirect()->route('mail.index')->with('message', 'Successfully'); 
     }
 }

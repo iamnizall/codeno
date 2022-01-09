@@ -37,6 +37,7 @@ Route::resource('finance/invoice', InvoiceController::class)->except(['create'])
 Route::get('finance/create-invoice/local', [InvoiceController::class, 'createLocal'])->middleware('auth');
 Route::get('finance/create-invoice/luar', [InvoiceController::class, 'createLuar'])->middleware('auth');
 Route::get('finance/create-invoice/spq', [InvoiceController::class, 'createSpq'])->middleware('auth');
+Route::get('finance/print', [InvoiceController::class, 'print']);
 // search invoice
 Route::post('finance/invoice', [InvoiceController::class, 'search'])->name('finance.invoice.search')->middleware('auth'); //search
 
