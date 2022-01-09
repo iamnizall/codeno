@@ -28,13 +28,9 @@ Route::redirect('/mail', '/finance/mail', 307); //redirect url '/mail' -> '/fina
 Route::get('finance', [FinanceController::class, 'index']);
 
 // team
-Route::get('finance/team', [App\Http\Controllers\PrintController::class, 'team']);
-
-// print Invoice
-Route::get('finance/print', [App\Http\Controllers\PrintController::class, 'print']);
-Route::get('finance/printlocal', [App\Http\Controllers\PrintController::class, 'printlocal']);
-Route::get('finance/printluar', [App\Http\Controllers\PrintController::class, 'printluar']);
-Route::get('finance/printsql', [App\Http\Controllers\PrintController::class, 'printsql']);
+Route::get('finance/team', function(){
+	return view('/finance/team');
+});
 
 // tabel Invoice dan create Invoice (local, luar, spq)
 Route::resource('finance/invoice', InvoiceController::class)->except(['create'])->middleware('auth');
