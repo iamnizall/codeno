@@ -23,6 +23,7 @@ use Illuminate\Support\Facades\Mail;
 
 Route::redirect('/', 'finance', 307); //redirect url '/' -> '/finance'
 Route::redirect('/home', 'finance', 307); //redirect url '/home' -> '/finance'
+Route::redirect('/mail', '/finance/mail', 307); //redirect url '/mail' -> '/finance/mail'
 
 Route::get('finance', [FinanceController::class, 'index']);
 
