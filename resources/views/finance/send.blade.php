@@ -20,12 +20,12 @@
                                 <input type="text" class="form-control" id="kepada" name="penerima">
                             </div>
                         </div>
-                            {{-- <div class="mb-3 row">
+                            <div class="mb-3 row">
                                 <label for="kepada" class="col-sm-2 col-form-label">Cc</label>
                                 <div class="col-sm-10">
-                                <input type="text" class="form-control" id="kepada">
+                                <input type="text" class="form-control" id="kepada" name="cc_mail">
                                 </div>
-                            </div>  --}}
+                            </div>
                             <div class="mb-3 row">
                                 <label for="kepada" class="col-sm-2 col-form-label">Subject</label>
                                 <div class="col-sm-10">
