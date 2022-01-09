@@ -231,12 +231,6 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
-<<<<<<< HEAD
-        'PDF' => Barryvdh\DomPDF\Facade::class,
-=======
-        'Alert' => RealRashid\SweetAlert\Facades\Alert::class,
-        
->>>>>>> 8df6df0a064507adfc808d7871d6468ea78002b2
 
     ],
 
