@@ -51,15 +51,6 @@ Route::post('finance/bast', [Bast1Controller::class, 'search'])->name('finance.b
 
 Auth::routes();
 
-// mail
-Route::get ('finance/mail', [App\Http\Controllers\MailerController::class, 'index'])->middleware('auth');
-Route::get ('finance/mailer', function(){
-	$details = [
-		'title' => 'Mail from CodeNuklir',
-		'body' => 'Test mail sent by Laravel 8 using SMTP.'
-	];
 
-	Mail::to('4duuuh@gmail.com')->send(new \App\Mail\Gmail($details));
-
-	dd("Email is Sent, please check your inbox.");
-});
+Route::get('finance/mail', [App\Http\Controllers\SendMailController::class, 'index'])->name('mail.index')->middleware('auth');
+Route::post('mail/mail', [App\Http\Controllers\SendMailController::class, 'send']);

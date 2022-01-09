@@ -140,11 +140,11 @@
 								<div class="row">
 									<div class="col">
 										<label for="text">The First Party</label>
-										<input type="text" class="form-control" name="notes" value="{{ $bst->notes }}" >
+										<input type="text" class="form-control" name="partyF" value="{{ $bst->partyF }}" >
 									</div>
 									<div class="col">
-										<label for="signature">The Second Party</label>
-										<input id="signature" type="text" class="form-control" name="signature" value="{{ $bst->signature }}">
+										<label for="text">The Second Party</label>
+										<input id="text" type="text" class="form-control" name="partyS" value="{{ $bst->partyS }}">
 									</div>
 								</div>
 							</div>
