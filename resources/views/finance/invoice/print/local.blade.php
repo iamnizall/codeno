@@ -39,9 +39,9 @@
 
 					<address>
 						<strong>{{ $invc->client }}</strong><br>
-
-						{{ $invc->address }} 
+						<p>{{ $invc->address }} </p>
 					</address>
+					Attn.: {{ $invc->client }}
 				</div>
 				<div class="col-sm">
 					<h5 class="text-center">{{ date('d F Y') }}</h5>
@@ -76,9 +76,9 @@
 								<td style="padding: 3px 10px 3px 10px;
 								border-right: 2px solid black;">{{ $in->vol }}</td>
 								<td style="padding: 3px 10px 3px 10px;
-								border-right: 2px solid black;">{{ $in->price }}</td>
+								border-right: 2px solid black;">IDR {{ $in->price }}</td>
 								<td style="padding: 3px 10px 3px 10px;
-								border-right: 2px solid black;">{{ $in->total }}</td>
+								border-right: 2px solid black;">IDR {{ $in->total }}</td>
 							</tr>
 							@php
 							$i++;
@@ -94,7 +94,7 @@
 								<td style="padding: 3px 10px 3px 10px;
 								border-right: 2px solid black;"></td>
 								<td style="padding: 3px 10px 3px 10px;
-								border-right: 2px solid black;">{{ $invc->totalcost }}</td>
+								border-right: 2px solid black;">IDR {{ $invc->totalcost }}</td>
 							</tr>
 							<tr>
 								<td style="padding: 3px 10px 3px 10px;
@@ -122,12 +122,12 @@
 							<td style="padding: 3px 10px 3px 10px;
                             border-right: 2px solid black;"></td>
 							<td style="padding: 3px 10px 3px 10px;
-                            border-right: 2px solid black;">{{ $invc->totaltax }}</td>
+                            border-right: 2px solid black;">IDR {{ $invc->totaltax }}</td>
 						</tr>
 						<tr >
 							<th colspan="2" class="text-center"><b>TOTAL</b></th>
 							<th colspan="2" class="text-center"><b>Please Pay</b></th>
-							<th >Rp.{{ $invc->stotal }}</th>
+							<th >IDR {{ $invc->stotal }}</th>
 						</tr>
 					</tbody>
 				</table>

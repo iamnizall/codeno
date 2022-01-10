@@ -75,7 +75,7 @@
                             <th></th>
                             <th class="text-center">GRAND TOTAL</th>
                             <th colspan="2" class="text-center">Please pay</th>
-                            <th>{{ $invc->totalcost }}</th>
+                            <th>IDR {{ $invc->totalcost }}</th>
                         </tr>
                     </tbody>
                 </table>

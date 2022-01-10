@@ -39,7 +39,7 @@
                 <address>
                     <strong>{{ $invc->client }}</strong><br>
                     <p>{{ $invc->address }}</p>
-                    Attn.:
+                    Attn.: {{ $invc->client }}
                 </address>
             </div>
             <div class="col-sm">
@@ -91,12 +91,12 @@
                         <tr>
                             <th></th>
                             <th colspan="5" class="text-center"><strong>TOTAL</strong></th>
-                            <th >€ {{ $invc->totalcost }}</th>
+                            <th >IDR {{ $invc->totalcost }}</th>
                         </tr>
                         <tr>
                             <th colspan="3" class="text-center"><strong>GRAND TOTAL</strong></th>
                             <th colspan="3" class="text-center"><strong>Please pay</strong></th>
-                            <th >€ {{ $invc->totalcost }}</th>
+                            <th >IDR {{ $invc->totalcost }}</th>
                         </tr>
                     </tbody>
                 </table>
